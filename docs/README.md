@@ -6,7 +6,7 @@
 The Gemstone PQDIF Library organizes all Gemstone functionality related to pqdif.
 
 [![GitHub license](https://img.shields.io/github/license/gemstone/pqdif?color=4CC61E)](https://github.com/gemstone/pqdif/blob/master/LICENSE)
-[![Build status](https://ci.appveyor.com/api/projects/status/ury75mtaq7tj1sp0?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/pqdif)
+[![Build status](https://ci.appveyor.com/api/projects/status/ghedacvalu5imiev?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/pqdif)
 
 This library includes helpful pqdif classes like the following:
 
