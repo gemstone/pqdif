@@ -28,7 +28,7 @@ namespace gemstone.pqdif
     /// <summary>
     /// The <see cref="gemstone.pqdif"/> namespace organizes all Gemstone library functionality
     /// related to pqdif. The root pqdif namespace also includes common pqdif classes,
-    /// e.g., <see cref="Class"/>.
+    /// e.g., <see cref="Tag"/>.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc
