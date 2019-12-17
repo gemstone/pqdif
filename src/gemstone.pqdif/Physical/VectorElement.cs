@@ -284,7 +284,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToUInt16(copy.ToArray(), 0);
+        #else
             return BitConverter.ToUInt16(copy);
+        #endif
         }
 
         /// <summary>
@@ -321,7 +325,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToUInt32(copy.ToArray(), 0);
+        #else
             return BitConverter.ToUInt32(copy);
+        #endif
         }
 
         /// <summary>
@@ -372,7 +380,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToInt16(copy.ToArray(), 0);
+        #else
             return BitConverter.ToInt16(copy);
+        #endif
         }
 
         /// <summary>
@@ -409,7 +421,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToInt32(copy.ToArray(), 0);
+        #else
             return BitConverter.ToInt32(copy);
+        #endif
         }
 
         /// <summary>
@@ -446,7 +462,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToSingle(copy.ToArray(), 0);
+        #else
             return BitConverter.ToSingle(copy);
+        #endif
         }
 
         /// <summary>
@@ -483,7 +503,11 @@ namespace gemstone.pqdif.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
+        #if NETSTANDARD20
+            return BitConverter.ToDouble(copy.ToArray(), 0);
+        #else
             return BitConverter.ToDouble(copy);
+        #endif
         }
 
         /// <summary>
@@ -532,8 +556,13 @@ namespace gemstone.pqdif.Physical
                 secondSpan = secondSwap;
             }
 
+        #if NETSTANDARD20
+            uint days = BitConverter.ToUInt32(daySpan.ToArray(), 0);
+            double seconds = BitConverter.ToDouble(secondSpan.ToArray(), 0);
+        #else
             uint days = BitConverter.ToUInt32(daySpan);
             double seconds = BitConverter.ToDouble(secondSpan);
+        #endif
 
             // Timestamps in a PQDIF file are represented by two separate numbers, one being the number of
             // days since January 1, 1900 and the other being the number of seconds since midnight. The
@@ -596,7 +625,11 @@ namespace gemstone.pqdif.Physical
             Span<byte> copy = new byte[size];
             int byteIndex = index * size;
             Values.AsSpan().Slice(byteIndex, size).CopyTo(copy);
+        #if NETSTANDARD20
+            return new Guid(copy.ToArray());
+        #else
             return new Guid(copy);
+        #endif
         }
 
         /// <summary>
@@ -632,7 +665,7 @@ namespace gemstone.pqdif.Physical
         /// <returns>A string representation of this vector.</returns>
         public override string ToString()
         {
-            return string.Format("Vector -- Type: {0}, Size: {1}, Tag: {2}", TypeOfValue, m_size, TagOfElement);
+            return $"Vector -- Type: {TypeOfValue}, Size: {m_size}, Tag: {TagOfElement}";
         }
 
         // Reallocates the byte array containing the vector data based on
