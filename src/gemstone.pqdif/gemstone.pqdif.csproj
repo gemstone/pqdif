@@ -8,10 +8,10 @@
     <Company>Grid Protection Alliance</Company>
     <Product>gemstone</Product>
     <PackageDescription>GPA Gemstone PQDIF Library</PackageDescription>
-    <Description>GPA Gemstone PQDIF Library</Description>
+    <Description>GPA Gemstone Power Quality Data Exchange File Format Parser Library</Description>
     <Copyright>Copyright © 2019</Copyright>
     <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/gemstone/gemstone.pqdif</RepositoryUrl>
+    <RepositoryUrl>https://github.com/gemstone/pqdif</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
