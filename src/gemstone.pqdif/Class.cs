@@ -21,10 +21,10 @@
 //
 //******************************************************************************************************
 
-namespace gemstone.gemtem
+namespace gemstone.pqdif
 {
     /// <summary>
-    /// Sample class for new GemTem library.
+    /// Sample class for new PQDIF library.
     /// </summary>
     public class Class
     {
