@@ -43,18 +43,18 @@ namespace gemstone.pqdif.Logical
         /// <summary>
         /// Straight array of data points.
         /// </summary>
-        Values = 0x0u,
+        Values = 0x1u,
         
         /// <summary>
         /// Data values are scaled.
         /// </summary>
-        Scaled = 0x1u,
+        Scaled = 0x2u,
 
         /// <summary>
         /// Start, count, and increment are stored and
         /// the series is recreated from those values.
         /// </summary>
-        Increment = 0x2u
+        Increment = 0x4u
     }
 
     /// <summary>
