@@ -11,6 +11,7 @@
     <Description>GPA Gemstone Power Quality Data Exchange File Format Parser Library</Description>
     <Copyright>Copyright © 2019</Copyright>
     <PackageProjectUrl>https://github.com/gemstone</PackageProjectUrl>
+    <PackageIcon>gemstone-square-128.png</PackageIcon>
     <RepositoryUrl>https://github.com/gemstone/pqdif</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -27,16 +28,23 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <OutputPath>$(SolutionDir)..\build\$(Configuration)</OutputPath>
+    <OutputPath>..\..\build\$(Configuration)</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>$(SolutionDir)..\build\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+    <DocumentationFile>..\..\build\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD20</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\img\gemstone-square-128.png" Link="gemstone-square-128.png" Visible="false">
+      <Pack>True</Pack>
+      <PackagePath />
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetZip" Version="1.13.4" />
