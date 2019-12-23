@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     #region [ Enumerations ]
 

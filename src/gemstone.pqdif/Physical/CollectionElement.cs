@@ -30,7 +30,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// Represents an <see cref="Element"/> which is a collection of other

@@ -26,7 +26,7 @@
 using System;
 using System.Text;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// The header of a PQDIF <see cref="Record"/>. The header is part of

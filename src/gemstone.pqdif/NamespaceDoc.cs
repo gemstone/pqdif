@@ -23,10 +23,10 @@
 
 using System.Runtime.CompilerServices;
 
-namespace gemstone.pqdif
+namespace Gemstone.PQDIF
 {
     /// <summary>
-    /// The <see cref="gemstone.pqdif"/> namespace organizes all Gemstone library functionality
+    /// The <see cref="Gemstone.PQDIF"/> namespace organizes all Gemstone library functionality
     /// related to pqdif. The root pqdif namespace also includes common pqdif classes,
     /// e.g., <see cref="Tag"/>.
     /// </summary>

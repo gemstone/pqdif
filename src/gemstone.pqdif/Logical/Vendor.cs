@@ -25,7 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// Vendors for power quality hardware.

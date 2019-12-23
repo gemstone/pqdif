@@ -29,7 +29,7 @@ using Ionic.Zlib;
 using System.Collections.Generic;
 using System.Text;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     #region [ Enumerations ]
 

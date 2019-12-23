@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace gemstone.pqdif
+namespace Gemstone.PQDIF
 {
     /// <summary>
     /// Represents an identifier as defined by the PQDIF standard.

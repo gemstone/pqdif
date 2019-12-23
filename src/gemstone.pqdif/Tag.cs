@@ -26,9 +26,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using gemstone.pqdif.Physical;
+using Gemstone.PQDIF.Physical;
 
-namespace gemstone.pqdif
+namespace Gemstone.PQDIF
 {
     /// <summary>
     /// Represents a tag as defined by the PQDIF standard.

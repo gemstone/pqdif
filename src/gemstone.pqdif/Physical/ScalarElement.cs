@@ -27,7 +27,7 @@ using System;
 using System.Numerics;
 using System.Text;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// Represents an <see cref="Element"/> which is a single value in a

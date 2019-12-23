@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// The high-level description of the type of

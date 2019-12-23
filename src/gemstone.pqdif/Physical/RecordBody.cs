@@ -25,7 +25,7 @@
 
 using System;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// The body of a PQDIF <see cref="Record"/>. The body is part of the

@@ -25,9 +25,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using gemstone.pqdif.Physical;
+using Gemstone.PQDIF.Physical;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// Represents an exception

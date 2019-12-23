@@ -23,7 +23,7 @@
 
 using System;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// Represents an <see cref="Element"/> that the parser

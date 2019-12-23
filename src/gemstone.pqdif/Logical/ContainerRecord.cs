@@ -26,9 +26,9 @@
 using System;
 using System.IO;
 using System.Text;
-using gemstone.pqdif.Physical;
+using Gemstone.PQDIF.Physical;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// Represents the container record in a PQDIF file. There can be only

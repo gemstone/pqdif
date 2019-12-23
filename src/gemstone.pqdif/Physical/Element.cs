@@ -25,7 +25,7 @@
 
 using System;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     #region [ Enumerations ]
 

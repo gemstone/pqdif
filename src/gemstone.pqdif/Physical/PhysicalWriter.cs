@@ -26,7 +26,7 @@ using System.IO;
 using System.Linq;
 using Ionic.Zlib;
 
-namespace gemstone.pqdif.Physical
+namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
     /// Represents a writer used to write the physical

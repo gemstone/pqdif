@@ -25,10 +25,10 @@
 
 using System;
 using System.IO;
-using gemstone.pqdif.Physical;
 using System.Collections.Generic;
+using Gemstone.PQDIF.Physical;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// Represents a parser which parses the logical structure of a PQDIF file.

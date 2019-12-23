@@ -24,9 +24,9 @@
 using System;
 using System.IO;
 using System.Linq;
-using gemstone.pqdif.Physical;
+using Gemstone.PQDIF.Physical;
 
-namespace gemstone.pqdif.Logical
+namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
     /// Represents a channel setting in a PQDIF file. A channel setting
