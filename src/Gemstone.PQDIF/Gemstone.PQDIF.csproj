@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <RootNamespace>gemstone.pqdif</RootNamespace>
-    <PackageId>gemstone.pqdif</PackageId>
+    <RootNamespace>Gemstone.PQDIF</RootNamespace>
+    <PackageId>Gemstone.PQDIF</PackageId>
     <Authors>Grid Protection Alliance</Authors>
     <Company>Grid Protection Alliance</Company>
-    <Product>gemstone</Product>
+    <Product>Gemstone</Product>
     <PackageDescription>GPA Gemstone PQDIF Library</PackageDescription>
     <Description>GPA Gemstone Power Quality Data Exchange File Format Parser Library</Description>
     <Copyright>Copyright © 2019</Copyright>
@@ -16,7 +16,7 @@
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>GPA;gemstone;library;pqdif</PackageTags>
+    <PackageTags>GPA;Gemstone;library;pqdif</PackageTags>
     <LangVersion>8</LangVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Nullable>enable</Nullable>
