@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\gemstone.pqdif\gemstone.pqdif.csproj" />
+    <ProjectReference Include="..\Gemstone.PQDIF\Gemstone.PQDIF.csproj" />
   </ItemGroup>
 
 </Project>
