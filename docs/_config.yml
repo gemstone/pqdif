@@ -1,8 +1,8 @@
 theme: jekyll-theme-cayman
-title: gemstone.pqdif
+title: Gemstone.PQDIF
 description: GPA Gemstone PQDIF Library
 github:
-  repository_name: gemstone.pqdif
+  repository_name: Gemstone.PQDIF
   owner_url: https://www.gridprotectionalliance.org
   owner_name: Grid Protection Alliance
 plugins:
