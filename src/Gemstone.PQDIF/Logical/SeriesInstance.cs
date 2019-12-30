@@ -153,7 +153,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? seriesShareChannelIndexScalar = PhysicalStructure
                     .GetScalarByTag(SeriesShareChannelIndexTag);
 
-                return (seriesShareChannelIndexScalar != null)
+                return seriesShareChannelIndexScalar != null
                     ? seriesShareChannelIndexScalar.GetUInt4()
                     : (uint?)null;
             }
@@ -184,7 +184,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? seriesShareSeriesIndexScalar = PhysicalStructure
                     .GetScalarByTag(SeriesShareSeriesIndexTag);
 
-                return (seriesShareSeriesIndexScalar != null)
+                return seriesShareSeriesIndexScalar != null
                     ? seriesShareSeriesIndexScalar.GetUInt4()
                     : (uint?)null;
             }
@@ -214,7 +214,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 uint? seriesShareChannelIndex = SeriesShareChannelIndex;
 
-                return (seriesShareChannelIndex != null)
+                return seriesShareChannelIndex != null
                     ? Channel.ObservationRecord.ChannelInstances[(int)seriesShareChannelIndex]
                     : null;
             }
@@ -302,7 +302,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => (obj is SeriesInstance other)
+        public override bool Equals(object obj) => obj is SeriesInstance other
             ? Equals(other)
             : false;
 
@@ -328,8 +328,8 @@ namespace Gemstone.PQDIF.Logical
             bool incremented = (storageMethods & StorageMethods.Increment) != 0;
 
             bool scaled = (storageMethods & StorageMethods.Scaled) != 0;
-            dynamic offset = (SeriesOffset != null) ? SeriesOffset.Get() : 0;
-            dynamic scale = (SeriesScale != null) ? SeriesScale.Get() : 1;
+            dynamic offset = SeriesOffset != null ? SeriesOffset.Get() : 0;
+            dynamic scale = SeriesScale != null ? SeriesScale.Get() : 1;
             dynamic value;
 
             if (!scaled)
@@ -350,8 +350,8 @@ namespace Gemstone.PQDIF.Logical
 
                     for (int i = 0; i < rateCount; i++)
                     {
-                        int countIndex = (i * 2) + 1;
-                        int incrementIndex = (i * 2) + 2;
+                        int countIndex = i * 2 + 1;
+                        int incrementIndex = i * 2 + 2;
                         dynamic count = valuesVector.Get(countIndex);
                         dynamic increment = valuesVector.Get(incrementIndex);
 
@@ -373,7 +373,7 @@ namespace Gemstone.PQDIF.Logical
                 for (int i = 0; i < values.Count; i++)
                 {
                     value = values[i];
-                    values[i] = offset + (value * scale);
+                    values[i] = offset + value * scale;
                 }
 
                 ApplyTransducerRatio(values);

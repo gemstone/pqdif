@@ -446,7 +446,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => (obj is SeriesDefinition other)
+        public override bool Equals(object obj) => obj is SeriesDefinition other
             ? Equals(other)
             : false;
 

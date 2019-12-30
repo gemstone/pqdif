@@ -38,7 +38,6 @@ namespace Gemstone.PQDIF
         #region [ Members ]
 
         // Fields
-        private Guid m_id;
         private readonly List<Identifier> m_validIdentifiers;
 
         #endregion
@@ -49,7 +48,7 @@ namespace Gemstone.PQDIF
         // defining them in the TagDefinitions.xml file.
         private Tag(XDocument doc, XElement element)
         {
-            m_id = Guid.Parse((string)element.Element("id"));
+            ID = Guid.Parse((string)element.Element("id"));
             Name = (string)element.Element("name");
             StandardName = (string)element.Element("standardName");
             Description = (string)element.Element("description");
@@ -67,7 +66,7 @@ namespace Gemstone.PQDIF
         /// <summary>
         /// Gets the globally unique identifier for the tag.
         /// </summary>
-        public Guid ID => m_id;
+        public Guid ID { get; }
 
         /// <summary>
         /// Gets the name of the tag as defined by the gemstone.pqdif library.
@@ -158,8 +157,7 @@ namespace Gemstone.PQDIF
         /// tags from the <see cref="GetTag(Guid)"/> method.
         /// </summary>
         /// <param name="doc">The XML document containing the tag definitions.</param>
-        public static void RefreshTags(XDocument doc) => 
-            TagLookup = GenerateTags(doc).ToDictionary(t => t.ID);
+        public static void RefreshTags(XDocument doc) => TagLookup = GenerateTags(doc).ToDictionary(t => t.ID);
 
         // Attempts to parse the element type via the ElementType enumeration.
         // Failing that, attempts to parse it as an integer instead.
@@ -169,7 +167,8 @@ namespace Gemstone.PQDIF
 
             if (Enum.TryParse(elementTypeName, out ElementType elementType))
                 return elementType;
-            else if (byte.TryParse(elementTypeName, out byte elementTypeID))
+
+            if (byte.TryParse(elementTypeName, out byte elementTypeID))
                 return (ElementType)elementTypeID;
 
             return 0;
@@ -183,7 +182,8 @@ namespace Gemstone.PQDIF
 
             if (Enum.TryParse(physicalTypeName, out PhysicalType physicalType))
                 return physicalType;
-            else if (byte.TryParse(physicalTypeName, out byte physicalTypeID))
+
+            if (byte.TryParse(physicalTypeName, out byte physicalTypeID))
                 return (PhysicalType)physicalTypeID;
 
             return 0;

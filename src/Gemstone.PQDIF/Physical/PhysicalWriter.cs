@@ -224,7 +224,7 @@ namespace Gemstone.PQDIF.Physical
 
         private void WriteCollection(BinaryWriter writer, CollectionElement collection)
         {
-            int linkPosition = (int)writer.BaseStream.Position + 4 + (28 * collection.Size);
+            int linkPosition = (int)writer.BaseStream.Position + 4 + 28 * collection.Size;
 
             writer.Write(collection.Size);
 
@@ -309,7 +309,7 @@ namespace Gemstone.PQDIF.Physical
         {
             int byteSize = GetByteSize(element);
             int padSize = byteSize + 3;
-            return (padSize / 4) * 4;
+            return padSize / 4 * 4;
         }
 
         private int GetByteSize(Element element)
@@ -345,11 +345,11 @@ namespace Gemstone.PQDIF.Physical
                 .Where(element => !IsEmbedded(element))
                 .Sum(GetPaddedByteSize);
 
-            return 4 + (28 * collection.Size) + sum;
+            return 4 + 28 * collection.Size + sum;
         }
 
         private int GetByteSize(VectorElement vector) =>
-            4 + (vector.Size * vector.TypeOfValue.GetByteSize());
+            4 + vector.Size * vector.TypeOfValue.GetByteSize();
 
         private int GetByteSize(ScalarElement scalar) =>
             scalar.TypeOfValue.GetByteSize();

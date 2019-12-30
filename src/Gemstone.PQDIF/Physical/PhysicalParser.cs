@@ -208,7 +208,7 @@ namespace Gemstone.PQDIF.Physical
         {
             get
             {
-                return (MaximumExceptionsAllowed >= 0) && (ExceptionList.Count > MaximumExceptionsAllowed);
+                return MaximumExceptionsAllowed >= 0 && ExceptionList.Count > MaximumExceptionsAllowed;
             }
         }
 

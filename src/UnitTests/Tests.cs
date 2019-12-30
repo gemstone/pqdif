@@ -21,12 +21,9 @@
 //
 //******************************************************************************************************
 
-using System;
-using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Gemstone.PQDIF;
 
-namespace UnitTests
+namespace Gemstone.PQDIF.UnitTests
 {
     [TestClass]
     public class Tests
