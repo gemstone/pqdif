@@ -35,6 +35,10 @@
     <DocumentationFile>..\..\build\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Development'">
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD20</DefineConstants>
   </PropertyGroup>
