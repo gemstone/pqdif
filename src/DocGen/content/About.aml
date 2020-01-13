@@ -3,7 +3,9 @@
   <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
     <introduction>
       <para>
-        The Gemstone PQDIF Library is a useful collection of open source classes and methods for parsing and generating PQDIF files.
+        The Gemstone PQDIF Library is a useful collection of open source classes and methods for parsing and generating
+        PQDIF(IEEE 1159.3-2003) files, used to exchange voltage, current, power, and energy measurements between software applications.
+        PQDIF is an acronym for Power Quality Data Interchange Format.
       </para>
       <para>
         Return to
