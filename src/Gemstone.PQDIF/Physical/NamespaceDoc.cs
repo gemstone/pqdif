@@ -26,8 +26,8 @@ using System.Runtime.CompilerServices;
 namespace Gemstone.PQDIF.Physical
 {
     /// <summary>
-    /// The <see cref="Gemstone.PQDIF.Physical"/> namespace organizes all Gemstone PQDIF library functionality
-    /// related to physical quantities.
+    /// The <see cref="Physical"/> namespace organizes all Gemstone PQDIF library functionality related
+    /// to the physical data structures in a PQDIF file.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc

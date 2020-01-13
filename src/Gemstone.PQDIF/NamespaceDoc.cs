@@ -26,9 +26,8 @@ using System.Runtime.CompilerServices;
 namespace Gemstone.PQDIF
 {
     /// <summary>
-    /// The <see cref="Gemstone.PQDIF"/> namespace organizes all Gemstone library functionality
-    /// related to pqdif. The root pqdif namespace also includes common pqdif classes,
-    /// e.g., <see cref="Tag"/>.
+    /// The <see cref="PQDIF"/> namespace organizes all Gemstone library functionality related to PQDIF
+    /// files. The root PQDIF namespace also includes common PQDIF classes, e.g., <see cref="Tag"/>.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc

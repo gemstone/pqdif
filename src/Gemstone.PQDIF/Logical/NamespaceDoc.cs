@@ -26,8 +26,8 @@ using System.Runtime.CompilerServices;
 namespace Gemstone.PQDIF.Logical
 {
     /// <summary>
-    /// The <see cref="Gemstone.PQDIF.Logical"/> namespace organizes all Gemstone PQDIF library functionality
-    /// related to logical quantities.
+    /// The <see cref="Logical"/> namespace organizes all Gemstone PQDIF library functionality related
+    /// to interpretation of the the physical data structures in a PQDIF file.
     /// </summary>
     [CompilerGenerated]
     class NamespaceDoc
