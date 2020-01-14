@@ -237,6 +237,7 @@ namespace Gemstone.PQDIF.Logical
         /// Adds a new series instance to the collection
         /// of series instances in this channel instance.
         /// </summary>
+        /// <returns>New series instance.</returns>
         public SeriesInstance AddNewSeriesInstance()
         {
             if (Definition.SeriesDefinitions.Count <= SeriesInstances.Count)

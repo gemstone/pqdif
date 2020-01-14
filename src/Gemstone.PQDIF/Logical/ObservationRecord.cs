@@ -304,6 +304,8 @@ namespace Gemstone.PQDIF.Logical
         /// Adds a new channel instance to the collection
         /// of channel instances in this observation record.
         /// </summary>
+        /// <param name="channelDefinition">Channel definition to use for looking up channel definition index of new channel instance.</param>
+        /// <returns>NEw channel instance.</returns>
         public ChannelInstance AddNewChannelInstance(ChannelDefinition channelDefinition)
         {
             CollectionElement channelInstanceElement = new CollectionElement() { TagOfElement = OneChannelInstanceTag };

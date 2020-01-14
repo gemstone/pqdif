@@ -509,6 +509,7 @@ namespace Gemstone.PQDIF.Logical
         /// Adds a new series definition to the collection
         /// of series definitions in this channel definition.
         /// </summary>
+        /// <returns>New series definition.</returns>
         public SeriesDefinition AddNewSeriesDefinition()
         {
             CollectionElement seriesDefinitionElement = new CollectionElement() { TagOfElement = OneSeriesDefinitionTag };

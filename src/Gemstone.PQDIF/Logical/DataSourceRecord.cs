@@ -377,6 +377,7 @@ namespace Gemstone.PQDIF.Logical
         /// Adds a new channel definition to the collection
         /// of channel definitions in this data source record.
         /// </summary>
+        /// <returns>New channel definition.</returns>
         public ChannelDefinition AddNewChannelDefinition()
         {
             CollectionElement channelDefinitionElement = new CollectionElement() { TagOfElement = OneChannelDefinitionTag };

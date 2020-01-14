@@ -209,6 +209,8 @@ namespace Gemstone.PQDIF.Logical
         /// Adds a new channel setting to the collection
         /// of channel settings in this monitor settings record.
         /// </summary>
+        /// <param name="channelDefinition">Channel definition to use for looking up channel definition index of new channel setting.</param>
+        /// <returns>New channel setting.</returns>
         public ChannelSetting AddNewChannelSetting(ChannelDefinition channelDefinition)
         {
             CollectionElement channelSettingElement = new CollectionElement() { TagOfElement = OneChannelSettingTag };

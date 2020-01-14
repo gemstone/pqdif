@@ -159,7 +159,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression style used by the PQDIF file.
         /// </summary>
-        /// <exception cref="NotSupportedException"><see cref="CompressionStyle.TotalFile"/> compression has been deprecated by the standard and is not supported by this parser.</exception>
+        /// <exception cref="NotSupportedException"><see cref="Physical.CompressionStyle.TotalFile"/> compression has been deprecated by the standard and is not supported by this parser.</exception>
         public CompressionStyle CompressionStyle
         {
             get
@@ -178,7 +178,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression algorithm used by the PQDIF file.
         /// </summary>
-        /// <exception cref="NotSupportedException"><see cref="CompressionAlgorithm.PKZIP"/> compression has been deprecated by the standard and is not supported by this parser.</exception>
+        /// <exception cref="NotSupportedException"><see cref="Physical.CompressionAlgorithm.PKZIP"/> compression has been deprecated by the standard and is not supported by this parser.</exception>
         public CompressionAlgorithm CompressionAlgorithm
         {
             get
