@@ -131,14 +131,7 @@
             Adds a new series definition to the collection
             of series definitions in this channel definition.
             </summary>
-      <returns>
-        <markup>
-          <include item="SMCMissingTag">
-            <parameter>returns</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.ChannelDefinition.AddNewSeriesDefinition</parameter>
-          </include>
-        </markup>
-      </returns>
+      <returns>New series definition.</returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ChannelDefinition.ChannelDefinitionIndexTag">
       <summary>
@@ -280,14 +273,7 @@
             Adds a new series instance to the collection
             of series instances in this channel instance.
             </summary>
-      <returns>
-        <markup>
-          <include item="SMCMissingTag">
-            <parameter>returns</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.ChannelInstance.AddNewSeriesInstance</parameter>
-          </include>
-        </markup>
-      </returns>
+      <returns>New series instance.</returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ChannelInstance.ChannelDefinitionIndex">
       <summary>
@@ -578,14 +564,7 @@
             Adds a new channel definition to the collection
             of channel definitions in this data source record.
             </summary>
-      <returns>
-        <markup>
-          <include item="SMCMissingTag">
-            <parameter>returns</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.DataSourceRecord.AddNewChannelDefinition</parameter>
-          </include>
-        </markup>
-      </returns>
+      <returns>New channel definition.</returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.DataSourceRecord.ChannelDefinitions">
       <summary>
@@ -1692,23 +1671,8 @@
             Adds a new channel setting to the collection
             of channel settings in this monitor settings record.
             </summary>
-      <param name="channelDefinition">
-        <markup>
-          <include item="SMCMissingParamTag">
-            <parameter>param</parameter>
-            <parameter>channelDefinition</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.MonitorSettingsRecord.AddNewChannelSetting(Gemstone.PQDIF.Logical.ChannelDefinition)</parameter>
-          </include>
-        </markup>
-      </param>
-      <returns>
-        <markup>
-          <include item="SMCMissingTag">
-            <parameter>returns</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.MonitorSettingsRecord.AddNewChannelSetting(Gemstone.PQDIF.Logical.ChannelDefinition)</parameter>
-          </include>
-        </markup>
-      </returns>
+      <param name="channelDefinition">Channel definition to use for looking up channel definition index of new channel setting.</param>
+      <returns>New channel setting.</returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.MonitorSettingsRecord.ChannelSettings">
       <summary>
@@ -1825,23 +1789,8 @@
             Adds a new channel instance to the collection
             of channel instances in this observation record.
             </summary>
-      <param name="channelDefinition">
-        <markup>
-          <include item="SMCMissingParamTag">
-            <parameter>param</parameter>
-            <parameter>channelDefinition</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.ObservationRecord.AddNewChannelInstance(Gemstone.PQDIF.Logical.ChannelDefinition)</parameter>
-          </include>
-        </markup>
-      </param>
-      <returns>
-        <markup>
-          <include item="SMCMissingTag">
-            <parameter>returns</parameter>
-            <parameter>M:Gemstone.PQDIF.Logical.ObservationRecord.AddNewChannelInstance(Gemstone.PQDIF.Logical.ChannelDefinition)</parameter>
-          </include>
-        </markup>
-      </returns>
+      <param name="channelDefinition">Channel definition to use for looking up channel definition index of new channel instance.</param>
+      <returns>NEw channel instance.</returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ObservationRecord.ChannelInstances">
       <summary>
