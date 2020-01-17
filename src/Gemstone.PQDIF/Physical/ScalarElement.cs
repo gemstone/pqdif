@@ -243,7 +243,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToUInt16(copy.ToArray(), 0);
         #else
             return BitConverter.ToUInt16(copy);
@@ -278,7 +278,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToInt16(copy.ToArray(), 0);
         #else
             return BitConverter.ToInt16(copy);
@@ -313,7 +313,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToUInt32(copy.ToArray(), 0);
         #else
             return BitConverter.ToUInt32(copy);
@@ -348,7 +348,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToInt32(copy.ToArray(), 0);
         #else
             return BitConverter.ToInt32(copy);
@@ -383,7 +383,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToInt32(copy.ToArray(), 0) != 0;
         #else
             return BitConverter.ToInt32(copy) != 0;
@@ -418,7 +418,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToSingle(copy.ToArray(), 0);
         #else
             return BitConverter.ToSingle(copy);
@@ -453,7 +453,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToDouble(copy.ToArray(), 0);
         #else
             return BitConverter.ToDouble(copy);
@@ -497,7 +497,7 @@ namespace Gemstone.PQDIF.Physical
                 imaginarySpan = imaginarySwap;
             }
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             double real = BitConverter.ToSingle(realSpan.ToArray(), 0);
             double imaginary = BitConverter.ToSingle(imaginarySpan.ToArray(), 0);
         #else
@@ -550,7 +550,7 @@ namespace Gemstone.PQDIF.Physical
                 imaginarySpan = imaginarySwap;
             }
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             double real = BitConverter.ToDouble(realSpan.ToArray(), 0);
             double imaginary = BitConverter.ToDouble(imaginarySpan.ToArray(), 0);
         #else
@@ -613,7 +613,7 @@ namespace Gemstone.PQDIF.Physical
                 secondSpan.Reverse();
             }
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             uint days = BitConverter.ToUInt32(daySpan.ToArray(), 0);
             double seconds = BitConverter.ToDouble(secondSpan.ToArray(), 0);
         #else

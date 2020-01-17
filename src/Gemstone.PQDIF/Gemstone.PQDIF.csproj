@@ -41,10 +41,6 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <DefineConstants>NETSTANDARD20</DefineConstants>
-  </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\..\docs\img\gemstone-square-128.png" Link="gemstone-square-128.png" Visible="false">
       <Pack>True</Pack>

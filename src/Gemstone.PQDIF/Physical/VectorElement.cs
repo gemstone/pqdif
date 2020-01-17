@@ -284,7 +284,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToUInt16(copy.ToArray(), 0);
         #else
             return BitConverter.ToUInt16(copy);
@@ -325,7 +325,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToUInt32(copy.ToArray(), 0);
         #else
             return BitConverter.ToUInt32(copy);
@@ -380,7 +380,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToInt16(copy.ToArray(), 0);
         #else
             return BitConverter.ToInt16(copy);
@@ -421,7 +421,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToInt32(copy.ToArray(), 0);
         #else
             return BitConverter.ToInt32(copy);
@@ -462,7 +462,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToSingle(copy.ToArray(), 0);
         #else
             return BitConverter.ToSingle(copy);
@@ -503,7 +503,7 @@ namespace Gemstone.PQDIF.Physical
             value.CopyTo(copy);
             copy.Reverse();
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return BitConverter.ToDouble(copy.ToArray(), 0);
         #else
             return BitConverter.ToDouble(copy);
@@ -556,7 +556,7 @@ namespace Gemstone.PQDIF.Physical
                 secondSpan = secondSwap;
             }
 
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             uint days = BitConverter.ToUInt32(daySpan.ToArray(), 0);
             double seconds = BitConverter.ToDouble(secondSpan.ToArray(), 0);
         #else
@@ -625,7 +625,7 @@ namespace Gemstone.PQDIF.Physical
             Span<byte> copy = new byte[size];
             int byteIndex = index * size;
             Values.AsSpan().Slice(byteIndex, size).CopyTo(copy);
-        #if NETSTANDARD20
+        #if NETSTANDARD2_0
             return new Guid(copy.ToArray());
         #else
             return new Guid(copy);
