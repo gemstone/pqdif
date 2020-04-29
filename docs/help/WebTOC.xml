@@ -2,20 +2,20 @@
 <HelpTOC>
 
   <HelpTOCNode Title="About" Url="html/About.htm" />
-  <HelpTOCNode Id="d5157203-72e1-4d40-a7ec-4d6e27d09e2a" Title="Gemstone.PQDIF" Url="html/N_Gemstone_PQDIF.htm">
-    <HelpTOCNode Id="e83d82d2-d3b2-4b9d-8f1c-058640233ebb" Title="Identifier Class" Url="html/T_Gemstone_PQDIF_Identifier.htm">
-      <HelpTOCNode Id="9257d254-06ba-4dbf-83f2-e7545075a54f" Title="Identifier Properties" Url="html/Properties_T_Gemstone_PQDIF_Identifier.htm">
+  <HelpTOCNode Id="ba8ead4b-cbd6-4875-91e6-aa78eb210768" Title="Gemstone.PQDIF" Url="html/N_Gemstone_PQDIF.htm">
+    <HelpTOCNode Id="44e984ff-b6e9-459e-9dfb-e10b78da64fd" Title="Identifier Class" Url="html/T_Gemstone_PQDIF_Identifier.htm">
+      <HelpTOCNode Id="fb1056bc-2c43-4c6a-a741-00cc9b6f28e9" Title="Identifier Properties" Url="html/Properties_T_Gemstone_PQDIF_Identifier.htm">
         <HelpTOCNode Title="Description Property " Url="html/P_Gemstone_PQDIF_Identifier_Description.htm" />
         <HelpTOCNode Title="Name Property " Url="html/P_Gemstone_PQDIF_Identifier_Name.htm" />
         <HelpTOCNode Title="StandardName Property " Url="html/P_Gemstone_PQDIF_Identifier_StandardName.htm" />
         <HelpTOCNode Title="Value Property " Url="html/P_Gemstone_PQDIF_Identifier_Value.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="cca8b12e-17fa-449a-ab03-ca22ef370124" Title="Identifier Methods" Url="html/Methods_T_Gemstone_PQDIF_Identifier.htm">
+      <HelpTOCNode Id="f43dfcd7-32bf-489e-ba8f-bcae77298cc5" Title="Identifier Methods" Url="html/Methods_T_Gemstone_PQDIF_Identifier.htm">
         <HelpTOCNode Title="GenerateIdentifiers Method " Url="html/M_Gemstone_PQDIF_Identifier_GenerateIdentifiers.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e310d28a-b989-424c-94a1-b448c588b5ec" Title="Tag Class" Url="html/T_Gemstone_PQDIF_Tag.htm">
-      <HelpTOCNode Id="f7d6b2f9-49c1-466b-978b-7cb5b40a4329" Title="Tag Properties" Url="html/Properties_T_Gemstone_PQDIF_Tag.htm">
+    <HelpTOCNode Id="b1e4468e-98fe-4299-93a8-4b9c5a626ae1" Title="Tag Class" Url="html/T_Gemstone_PQDIF_Tag.htm">
+      <HelpTOCNode Id="dbd466ea-8030-4111-8c8d-a641b881b10e" Title="Tag Properties" Url="html/Properties_T_Gemstone_PQDIF_Tag.htm">
         <HelpTOCNode Title="Description Property " Url="html/P_Gemstone_PQDIF_Tag_Description.htm" />
         <HelpTOCNode Title="ElementType Property " Url="html/P_Gemstone_PQDIF_Tag_ElementType.htm" />
         <HelpTOCNode Title="FormatString Property " Url="html/P_Gemstone_PQDIF_Tag_FormatString.htm" />
@@ -26,17 +26,17 @@
         <HelpTOCNode Title="StandardName Property " Url="html/P_Gemstone_PQDIF_Tag_StandardName.htm" />
         <HelpTOCNode Title="ValidIdentifiers Property " Url="html/P_Gemstone_PQDIF_Tag_ValidIdentifiers.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7904d0e9-d85a-45e9-abb1-6d69e7527fcc" Title="Tag Methods" Url="html/Methods_T_Gemstone_PQDIF_Tag.htm">
+      <HelpTOCNode Id="850641e5-743b-4793-a438-2468c2e2e21d" Title="Tag Methods" Url="html/Methods_T_Gemstone_PQDIF_Tag.htm">
         <HelpTOCNode Title="GenerateTags Method " Url="html/M_Gemstone_PQDIF_Tag_GenerateTags.htm" />
         <HelpTOCNode Title="GetTag Method " Url="html/M_Gemstone_PQDIF_Tag_GetTag.htm" />
         <HelpTOCNode Title="RefreshTags Method " Url="html/M_Gemstone_PQDIF_Tag_RefreshTags.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="0f32d9ad-102f-433f-a50b-a54a2918aca1" Title="Gemstone.PQDIF.Logical" Url="html/N_Gemstone_PQDIF_Logical.htm">
-    <HelpTOCNode Id="d9c4c18a-dac7-433a-90b5-30dc9fc6e27b" Title="ChannelDefinition Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
+  <HelpTOCNode Id="2ddbf0b9-05d9-4b54-87d8-a6547ea5a71d" Title="Gemstone.PQDIF.Logical" Url="html/N_Gemstone_PQDIF_Logical.htm">
+    <HelpTOCNode Id="94fbcd8d-2e79-464a-a4ee-c94ab3047d9e" Title="ChannelDefinition Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
       <HelpTOCNode Title="ChannelDefinition Constructor " Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition__ctor.htm" />
-      <HelpTOCNode Id="6d242387-6bd7-4339-a703-3ea8f32e5915" Title="ChannelDefinition Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
+      <HelpTOCNode Id="6136f461-0b4c-4451-b4c9-4ebcb77d5d74" Title="ChannelDefinition Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
         <HelpTOCNode Title="ChannelDefinitionIndexTag Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_ChannelDefinitionIndexTag.htm" />
         <HelpTOCNode Title="ChannelName Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_ChannelName.htm" />
         <HelpTOCNode Title="ChannelNameTag Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_ChannelNameTag.htm" />
@@ -54,10 +54,10 @@
         <HelpTOCNode Title="SeriesDefinitions Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_SeriesDefinitions.htm" />
         <HelpTOCNode Title="SeriesDefinitionsTag Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_SeriesDefinitionsTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9b4ef6b4-946b-4380-be71-0b12d19c2f1a" Title="ChannelDefinition Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
+      <HelpTOCNode Id="8703e3bb-3daa-4f75-adb1-f2ff1793af9e" Title="ChannelDefinition Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelDefinition.htm">
         <HelpTOCNode Title="AddNewSeriesDefinition Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition_AddNewSeriesDefinition.htm" />
         <HelpTOCNode Title="CreateChannelDefinition Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition_CreateChannelDefinition.htm" />
-        <HelpTOCNode Id="5152ba50-aff9-4ca1-9e8a-48bd8b34212c" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_ChannelDefinition_Equals.htm">
+        <HelpTOCNode Id="2f0b4dd3-1dcb-45d9-8bb7-d72eeecc2f4b" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_ChannelDefinition_Equals.htm">
           <HelpTOCNode Title="Equals Method (Object)" Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition_Equals_1.htm" />
           <HelpTOCNode Title="Equals Method (ChannelDefinition)" Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition_Equals.htm" />
         </HelpTOCNode>
@@ -65,9 +65,9 @@
         <HelpTOCNode Title="Remove Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelDefinition_Remove.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="67286cf2-249d-4c62-a98d-33363aac260a" Title="ChannelInstance Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
+    <HelpTOCNode Id="0033e42f-fc1b-4134-ac6d-c2caccb97bb7" Title="ChannelInstance Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
       <HelpTOCNode Title="ChannelInstance Constructor " Url="html/M_Gemstone_PQDIF_Logical_ChannelInstance__ctor.htm" />
-      <HelpTOCNode Id="93de02b0-2cf5-47e1-9a45-6f8ce57be227" Title="ChannelInstance Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
+      <HelpTOCNode Id="1e03cd0c-7ec2-4086-bb5e-f1704d276f57" Title="ChannelInstance Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
         <HelpTOCNode Title="ChannelDefinitionIndex Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_ChannelDefinitionIndex.htm" />
         <HelpTOCNode Title="ChannelGroupID Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_ChannelGroupID.htm" />
         <HelpTOCNode Title="ChannelGroupIDTag Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_ChannelGroupIDTag.htm" />
@@ -83,9 +83,9 @@
         <HelpTOCNode Title="Setting Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_Setting.htm" />
         <HelpTOCNode Title="TriggerModuleName Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_TriggerModuleName.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="78fba2e1-556f-456f-a55d-c4c0c045c739" Title="ChannelInstance Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
+      <HelpTOCNode Id="a152bd14-367b-4615-a85b-04130ed124d2" Title="ChannelInstance Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelInstance.htm">
         <HelpTOCNode Title="AddNewSeriesInstance Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelInstance_AddNewSeriesInstance.htm" />
-        <HelpTOCNode Id="4d1df22e-4a6e-40bc-8fe0-904fb5b08c31" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_ChannelInstance_Equals.htm">
+        <HelpTOCNode Id="e5b6234e-9bcb-49df-ab52-1d20eba17a65" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_ChannelInstance_Equals.htm">
           <HelpTOCNode Title="Equals Method (Object)" Url="html/M_Gemstone_PQDIF_Logical_ChannelInstance_Equals_1.htm" />
           <HelpTOCNode Title="Equals Method (ChannelInstance)" Url="html/M_Gemstone_PQDIF_Logical_ChannelInstance_Equals.htm" />
         </HelpTOCNode>
@@ -93,9 +93,9 @@
         <HelpTOCNode Title="Remove Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelInstance_Remove.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2ca4151d-1cfa-430a-ac23-575c959f4015" Title="ChannelSetting Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
+    <HelpTOCNode Id="7b0aa927-9768-4a08-99b1-523bcaf58577" Title="ChannelSetting Class" Url="html/T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
       <HelpTOCNode Title="ChannelSetting Constructor " Url="html/M_Gemstone_PQDIF_Logical_ChannelSetting__ctor.htm" />
-      <HelpTOCNode Id="8aafbd28-e7c7-41a0-9b55-eb98ec561cf7" Title="ChannelSetting Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
+      <HelpTOCNode Id="b1a79982-7506-40aa-be03-a55a1c58c9b6" Title="ChannelSetting Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
         <HelpTOCNode Title="ChannelDefinitionIndex Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelSetting_ChannelDefinitionIndex.htm" />
         <HelpTOCNode Title="MonitorSettingsRecord Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelSetting_MonitorSettingsRecord.htm" />
         <HelpTOCNode Title="PhysicalStructure Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelSetting_PhysicalStructure.htm" />
@@ -104,12 +104,12 @@
         <HelpTOCNode Title="XDSystemSideRatio Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelSetting_XDSystemSideRatio.htm" />
         <HelpTOCNode Title="XDSystemSideRatioTag Property " Url="html/P_Gemstone_PQDIF_Logical_ChannelSetting_XDSystemSideRatioTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7364a1bf-019e-4eaf-9037-0072b3abef63" Title="ChannelSetting Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
+      <HelpTOCNode Id="76d91686-2c35-4ddb-8464-d29cd728cfb4" Title="ChannelSetting Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ChannelSetting.htm">
         <HelpTOCNode Title="HasElement Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelSetting_HasElement.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5f48d8ad-1ea0-4bfe-921d-cd60c4e6c923" Title="ContainerRecord Class" Url="html/T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
-      <HelpTOCNode Id="0e501cc0-e51f-4950-b7c3-f83d7bee7bb2" Title="ContainerRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
+    <HelpTOCNode Id="9bce23f2-3ae4-4885-a5dd-07344b447e01" Title="ContainerRecord Class" Url="html/T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
+      <HelpTOCNode Id="af318e0a-5c5d-4146-a61d-dac8a2f6ec3d" Title="ContainerRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
         <HelpTOCNode Title="CompatibleMajorVersion Property " Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_CompatibleMajorVersion.htm" />
         <HelpTOCNode Title="CompatibleMinorVersion Property " Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_CompatibleMinorVersion.htm" />
         <HelpTOCNode Title="CompressionAlgorithm Property " Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_CompressionAlgorithm.htm" />
@@ -127,16 +127,16 @@
         <HelpTOCNode Title="WriterMajorVersion Property " Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMajorVersion.htm" />
         <HelpTOCNode Title="WriterMinorVersion Property " Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMinorVersion.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="097f0832-b169-4f4a-b203-9db322f6caad" Title="ContainerRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
-        <HelpTOCNode Id="759133bd-b7d2-4d2d-8a10-8b018546c9f8" Title="CreateContainerRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_ContainerRecord_CreateContainerRecord.htm">
+      <HelpTOCNode Id="ca8db654-f021-475e-998e-ab257a3ad9e4" Title="ContainerRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ContainerRecord.htm">
+        <HelpTOCNode Id="fddcdc5f-954c-4878-82ca-ffbc8a27ab91" Title="CreateContainerRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_ContainerRecord_CreateContainerRecord.htm">
           <HelpTOCNode Title="CreateContainerRecord Method " Url="html/M_Gemstone_PQDIF_Logical_ContainerRecord_CreateContainerRecord.htm" />
           <HelpTOCNode Title="CreateContainerRecord Method (Record)" Url="html/M_Gemstone_PQDIF_Logical_ContainerRecord_CreateContainerRecord_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="RemoveElement Method " Url="html/M_Gemstone_PQDIF_Logical_ContainerRecord_RemoveElement.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="29515423-2a81-4274-be41-f3c98ce9eeaa" Title="DataSourceRecord Class" Url="html/T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
-      <HelpTOCNode Id="c77d77a1-0f34-43bb-a604-fec0788d9287" Title="DataSourceRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
+    <HelpTOCNode Id="d11e5d0b-5b92-424d-9a76-e50a9e7cf416" Title="DataSourceRecord Class" Url="html/T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
+      <HelpTOCNode Id="1f663564-e25d-452c-9d5c-1b216612bf08" Title="DataSourceRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
         <HelpTOCNode Title="ChannelDefinitions Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_ChannelDefinitions.htm" />
         <HelpTOCNode Title="ChannelDefinitionsTag Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_ChannelDefinitionsTag.htm" />
         <HelpTOCNode Title="DataSourceCoordinatesTag Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_DataSourceCoordinatesTag.htm" />
@@ -159,9 +159,9 @@
         <HelpTOCNode Title="VendorID Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_VendorID.htm" />
         <HelpTOCNode Title="VendorIDTag Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_VendorIDTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2f4bc645-cd69-4c34-96e5-f6c072aa81dc" Title="DataSourceRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
+      <HelpTOCNode Id="21e8f64a-1cda-4f7b-9afa-ed5aafdfcb72" Title="DataSourceRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DataSourceRecord.htm">
         <HelpTOCNode Title="AddNewChannelDefinition Method " Url="html/M_Gemstone_PQDIF_Logical_DataSourceRecord_AddNewChannelDefinition.htm" />
-        <HelpTOCNode Id="d4b0e12c-3b90-4136-8694-4f5d2d94b8d8" Title="CreateDataSourceRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_DataSourceRecord_CreateDataSourceRecord.htm">
+        <HelpTOCNode Id="f749f16c-201b-4943-a0a9-5bb8a8cfb05d" Title="CreateDataSourceRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_DataSourceRecord_CreateDataSourceRecord.htm">
           <HelpTOCNode Title="CreateDataSourceRecord Method (String)" Url="html/M_Gemstone_PQDIF_Logical_DataSourceRecord_CreateDataSourceRecord_1.htm" />
           <HelpTOCNode Title="CreateDataSourceRecord Method (Record)" Url="html/M_Gemstone_PQDIF_Logical_DataSourceRecord_CreateDataSourceRecord.htm" />
         </HelpTOCNode>
@@ -169,21 +169,21 @@
         <HelpTOCNode Title="RemoveElement Method " Url="html/M_Gemstone_PQDIF_Logical_DataSourceRecord_RemoveElement.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ef5ee287-b604-4e25-948f-ac15c7677ace" Title="DataSourceType Class" Url="html/T_Gemstone_PQDIF_Logical_DataSourceType.htm">
-      <HelpTOCNode Id="336de1fb-6ddf-47da-86ae-43d89a0d5828" Title="DataSourceType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DataSourceType.htm">
+    <HelpTOCNode Id="77541481-52f8-4550-92cb-96aec65282d8" Title="DataSourceType Class" Url="html/T_Gemstone_PQDIF_Logical_DataSourceType.htm">
+      <HelpTOCNode Id="bd9f972b-39c1-460e-94c6-a31237bd1d52" Title="DataSourceType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DataSourceType.htm">
         <HelpTOCNode Title="Benchmark Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceType_Benchmark.htm" />
         <HelpTOCNode Title="Debug Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceType_Debug.htm" />
         <HelpTOCNode Title="Manual Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceType_Manual.htm" />
         <HelpTOCNode Title="Measure Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceType_Measure.htm" />
         <HelpTOCNode Title="Simulate Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceType_Simulate.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7abf65bc-83b5-4c9e-9256-29cac6fd2469" Title="DataSourceType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DataSourceType.htm">
+      <HelpTOCNode Id="fdeb2880-1df5-40bc-bdde-9f76df72ba19" Title="DataSourceType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DataSourceType.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_DataSourceType_GetInfo.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_DataSourceType_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="54bad1b3-84cb-4d87-b8cf-288baf471b1d" Title="DisturbanceCategory Class" Url="html/T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
-      <HelpTOCNode Id="e7131a3f-d622-419f-9077-dee3145eb55a" Title="DisturbanceCategory Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
+    <HelpTOCNode Id="7150ad21-3279-4784-b2d6-537536c547e5" Title="DisturbanceCategory Class" Url="html/T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
+      <HelpTOCNode Id="66e3b82e-35c4-426d-83fe-279c555c0bdf" Title="DisturbanceCategory Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
         <HelpTOCNode Title="DCoffset Property " Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_DCoffset.htm" />
         <HelpTOCNode Title="Imbalance Property " Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_Imbalance.htm" />
         <HelpTOCNode Title="ImpulsiveTransient Property " Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_ImpulsiveTransient.htm" />
@@ -220,13 +220,13 @@
         <HelpTOCNode Title="WaveformNoise Property " Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_WaveformNoise.htm" />
         <HelpTOCNode Title="WaveformNotching Property " Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_WaveformNotching.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="15757c3c-7796-436c-9f6b-6eb41919bfb0" Title="DisturbanceCategory Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
+      <HelpTOCNode Id="fa62f108-d617-4255-86dd-75674c92ee9a" Title="DisturbanceCategory Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_DisturbanceCategory_GetInfo.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_DisturbanceCategory_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ed0f1166-5ae4-4a79-9582-140fdd624ed5" Title="Equipment Class" Url="html/T_Gemstone_PQDIF_Logical_Equipment.htm">
-      <HelpTOCNode Id="5b2b27f4-8b4b-4709-ab15-868d80b67303" Title="Equipment Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_Equipment.htm">
+    <HelpTOCNode Id="220390d7-044c-4485-9b2b-995b82b87498" Title="Equipment Class" Url="html/T_Gemstone_PQDIF_Logical_Equipment.htm">
+      <HelpTOCNode Id="a4b1b14f-c673-4298-9e33-91fefacf21d8" Title="Equipment Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_Equipment.htm">
         <HelpTOCNode Title="AcumentricsControl Property " Url="html/P_Gemstone_PQDIF_Logical_Equipment_AcumentricsControl.htm" />
         <HelpTOCNode Title="AdvanTechADAM4017 Property " Url="html/P_Gemstone_PQDIF_Logical_Equipment_AdvanTechADAM4017.htm" />
         <HelpTOCNode Title="AdvanTechADAM4018 Property " Url="html/P_Gemstone_PQDIF_Logical_Equipment_AdvanTechADAM4018.htm" />
@@ -335,60 +335,60 @@
         <HelpTOCNode Title="WPT5590 Property " Url="html/P_Gemstone_PQDIF_Logical_Equipment_WPT5590.htm" />
         <HelpTOCNode Title="WPTDranView Property " Url="html/P_Gemstone_PQDIF_Logical_Equipment_WPTDranView.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ab92206d-6c0a-436d-be26-b0f9b5fbe029" Title="Equipment Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_Equipment.htm">
+      <HelpTOCNode Id="a36bd3ce-b6a6-46d1-92ef-651a57ffb7a2" Title="Equipment Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_Equipment.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_Equipment_GetInfo.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_Equipment_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d22efe80-47fb-4050-8d81-e08cdc5138c3" Title="LogicalParser Class" Url="html/T_Gemstone_PQDIF_Logical_LogicalParser.htm">
-      <HelpTOCNode Id="c77f5fde-fbd6-4352-8d59-41d2814cd3ec" Title="LogicalParser Constructor " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser__ctor.htm">
+    <HelpTOCNode Id="0db18b5c-b5cd-4bb8-8c16-4748a3498c40" Title="LogicalParser Class" Url="html/T_Gemstone_PQDIF_Logical_LogicalParser.htm">
+      <HelpTOCNode Id="dcb7cbd4-d614-41a7-ba1f-e3f2c774c038" Title="LogicalParser Constructor " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser__ctor.htm">
         <HelpTOCNode Title="LogicalParser Constructor (String)" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser__ctor_1.htm" />
         <HelpTOCNode Title="LogicalParser Constructor (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4cb1489d-5f32-4f98-bd70-625396304de8" Title="LogicalParser Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalParser.htm">
+      <HelpTOCNode Id="eb41fdd8-0649-4fbb-9937-757a069fb220" Title="LogicalParser Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalParser.htm">
         <HelpTOCNode Title="ContainerRecord Property " Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_ContainerRecord.htm" />
         <HelpTOCNode Title="DataSourceRecords Property " Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_DataSourceRecords.htm" />
         <HelpTOCNode Title="FileName Property " Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_FileName.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="59b11979-01c0-4c65-9f5c-780072a5a5e5" Title="LogicalParser Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_LogicalParser.htm">
+      <HelpTOCNode Id="c280d986-0b78-4adc-a58c-210eca905bed" Title="LogicalParser Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_LogicalParser.htm">
         <HelpTOCNode Title="Close Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Close.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Dispose.htm" />
         <HelpTOCNode Title="HasNextObservationRecord Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecord.htm" />
         <HelpTOCNode Title="NextObservationRecord Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecord.htm" />
-        <HelpTOCNode Id="a15cfe52-3459-4f77-98f6-da0a39bf27c3" Title="Open Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_Open.htm">
+        <HelpTOCNode Id="e42b936b-007e-4187-a99d-87987bc9946c" Title="Open Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_Open.htm">
           <HelpTOCNode Title="Open Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Open.htm" />
           <HelpTOCNode Title="Open Method (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Open_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Reset Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Reset.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="63f4b939-910f-4cfe-9dfb-4ed16f546a2a" Title="LogicalWriter Class" Url="html/T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
-      <HelpTOCNode Id="179044ae-9797-4bd5-85e6-d0ea90d2ba5d" Title="LogicalWriter Constructor " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter__ctor.htm">
+    <HelpTOCNode Id="94f54366-a26d-4cdb-8ded-d30ef2ef4539" Title="LogicalWriter Class" Url="html/T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
+      <HelpTOCNode Id="45f8ba76-727e-4e4a-a6ea-9814cf1c1145" Title="LogicalWriter Constructor " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter__ctor.htm">
         <HelpTOCNode Title="LogicalWriter Constructor (String)" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter__ctor_1.htm" />
         <HelpTOCNode Title="LogicalWriter Constructor (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2ddd271f-fea8-4bb1-9d23-347fd5ea8eff" Title="LogicalWriter Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
+      <HelpTOCNode Id="4dd41011-471a-48ce-97f0-78e96f099a0e" Title="LogicalWriter Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
         <HelpTOCNode Title="MissingTags Property " Url="html/P_Gemstone_PQDIF_Logical_LogicalWriter_MissingTags.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5e4fed6a-bb5a-4812-9857-fd9e4b55a613" Title="LogicalWriter Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
+      <HelpTOCNode Id="43b05e7a-6cd5-4b43-b526-39410244424b" Title="LogicalWriter Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_LogicalWriter.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_Dispose.htm" />
-        <HelpTOCNode Id="98646591-a185-4e1e-af5e-aedbb9d53c30" Title="Write Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_Write.htm">
+        <HelpTOCNode Id="614bd576-f841-4119-97db-b26de116f148" Title="Write Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_Write.htm">
           <HelpTOCNode Title="Write Method (ContainerRecord)" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_Write.htm" />
           <HelpTOCNode Title="Write Method (ObservationRecord, Boolean)" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_Write_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bf8ac11e-7052-4f3c-923e-47f7b94e1395" Title="MissingTag Class" Url="html/T_Gemstone_PQDIF_Logical_MissingTag.htm">
+    <HelpTOCNode Id="3d89df8e-51ae-4487-b131-09635d963c0c" Title="MissingTag Class" Url="html/T_Gemstone_PQDIF_Logical_MissingTag.htm">
       <HelpTOCNode Title="MissingTag Constructor " Url="html/M_Gemstone_PQDIF_Logical_MissingTag__ctor.htm" />
-      <HelpTOCNode Id="ec884a4c-cda1-41b8-a18f-4118f9939409" Title="MissingTag Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_MissingTag.htm">
+      <HelpTOCNode Id="28cf1786-9aa2-459f-ad6c-3ae61ddc2ced" Title="MissingTag Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_MissingTag.htm">
         <HelpTOCNode Title="RecordType Property " Url="html/P_Gemstone_PQDIF_Logical_MissingTag_RecordType.htm" />
         <HelpTOCNode Title="Tag Property " Url="html/P_Gemstone_PQDIF_Logical_MissingTag_Tag.htm" />
         <HelpTOCNode Title="TagName Property " Url="html/P_Gemstone_PQDIF_Logical_MissingTag_TagName.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="MissingTag Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_MissingTag.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="b1337ffd-ab98-4801-9034-3c63ca8726af" Title="MonitorSettingsRecord Class" Url="html/T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
-      <HelpTOCNode Id="01583cf3-d2e7-4490-be52-525effc73361" Title="MonitorSettingsRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
+    <HelpTOCNode Id="2a862670-e92f-42ca-b39d-447f32f87998" Title="MonitorSettingsRecord Class" Url="html/T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
+      <HelpTOCNode Id="b53f73c6-1056-4123-ac28-44f6d4d3ba69" Title="MonitorSettingsRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
         <HelpTOCNode Title="ChannelSettings Property " Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_ChannelSettings.htm" />
         <HelpTOCNode Title="ChannelSettingsArrayTag Property " Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_ChannelSettingsArrayTag.htm" />
         <HelpTOCNode Title="DefaultNominalFrequency Property " Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_DefaultNominalFrequency.htm" />
@@ -405,17 +405,17 @@
         <HelpTOCNode Title="UseTransducer Property " Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_UseTransducer.htm" />
         <HelpTOCNode Title="UseTransducerTag Property " Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_UseTransducerTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="bb3131a1-d4c0-45f5-8253-c83ec93325b0" Title="MonitorSettingsRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
+      <HelpTOCNode Id="98aaf760-966b-46c7-abb0-69ec9e011443" Title="MonitorSettingsRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_MonitorSettingsRecord.htm">
         <HelpTOCNode Title="AddNewChannelSetting Method " Url="html/M_Gemstone_PQDIF_Logical_MonitorSettingsRecord_AddNewChannelSetting.htm" />
-        <HelpTOCNode Id="b038ba76-ec60-486b-a894-8f23e3b89dcd" Title="CreateMonitorSettingsRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_MonitorSettingsRecord_CreateMonitorSettingsRecord.htm">
+        <HelpTOCNode Id="e7b3584b-36f2-4e50-9eda-4a05cd375a58" Title="CreateMonitorSettingsRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_MonitorSettingsRecord_CreateMonitorSettingsRecord.htm">
           <HelpTOCNode Title="CreateMonitorSettingsRecord Method " Url="html/M_Gemstone_PQDIF_Logical_MonitorSettingsRecord_CreateMonitorSettingsRecord.htm" />
           <HelpTOCNode Title="CreateMonitorSettingsRecord Method (Record)" Url="html/M_Gemstone_PQDIF_Logical_MonitorSettingsRecord_CreateMonitorSettingsRecord_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Remove Method " Url="html/M_Gemstone_PQDIF_Logical_MonitorSettingsRecord_Remove.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="cf892dd7-3998-49d6-8173-3de4d455e5e6" Title="ObservationRecord Class" Url="html/T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
-      <HelpTOCNode Id="f7e2bd80-d1c0-42a0-8020-e2f8688fd218" Title="ObservationRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
+    <HelpTOCNode Id="840f369f-65d5-4507-bbf2-a09ece1e6d92" Title="ObservationRecord Class" Url="html/T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
+      <HelpTOCNode Id="9a8cf45c-9483-4999-a0e2-2b1d4419366c" Title="ObservationRecord Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
         <HelpTOCNode Title="ChannelInstances Property " Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_ChannelInstances.htm" />
         <HelpTOCNode Title="ChannelInstancesTag Property " Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_ChannelInstancesTag.htm" />
         <HelpTOCNode Title="ChannelTriggerIndex Property " Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_ChannelTriggerIndex.htm" />
@@ -437,9 +437,9 @@
         <HelpTOCNode Title="TriggerMethod Property " Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_TriggerMethod.htm" />
         <HelpTOCNode Title="TriggerMethodTag Property " Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_TriggerMethodTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1087a1d2-72ac-4ed4-a40c-45a8e866e8df" Title="ObservationRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
+      <HelpTOCNode Id="4411593d-bc41-4295-9721-6dd047558a7f" Title="ObservationRecord Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ObservationRecord.htm">
         <HelpTOCNode Title="AddNewChannelInstance Method " Url="html/M_Gemstone_PQDIF_Logical_ObservationRecord_AddNewChannelInstance.htm" />
-        <HelpTOCNode Id="c753b9cf-61ae-4a2a-8003-bdd9bab2cd8d" Title="CreateObservationRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_ObservationRecord_CreateObservationRecord.htm">
+        <HelpTOCNode Id="fb54d761-0403-49fd-855b-23876c97eed3" Title="CreateObservationRecord Method " Url="html/Overload_Gemstone_PQDIF_Logical_ObservationRecord_CreateObservationRecord.htm">
           <HelpTOCNode Title="CreateObservationRecord Method (DataSourceRecord, MonitorSettingsRecord)" Url="html/M_Gemstone_PQDIF_Logical_ObservationRecord_CreateObservationRecord.htm" />
           <HelpTOCNode Title="CreateObservationRecord Method (Record, DataSourceRecord, MonitorSettingsRecord)" Url="html/M_Gemstone_PQDIF_Logical_ObservationRecord_CreateObservationRecord_1.htm" />
         </HelpTOCNode>
@@ -447,8 +447,8 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="Phase Enumeration" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
-    <HelpTOCNode Id="433e0afa-0c1a-4c5b-b2fa-996f1807f011" Title="QuantityCharacteristic Class" Url="html/T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
-      <HelpTOCNode Id="cf12f2a0-bd0c-4f33-930d-5808dcec4726" Title="QuantityCharacteristic Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
+    <HelpTOCNode Id="69ef5dbc-0113-4210-8392-7cce8d2bae73" Title="QuantityCharacteristic Class" Url="html/T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
+      <HelpTOCNode Id="3fe5df8d-3cc6-4f39-96dd-a7970a4ada93" Title="QuantityCharacteristic Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
         <HelpTOCNode Title="AngleFund Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_AngleFund.htm" />
         <HelpTOCNode Title="ANSITDF Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_ANSITDF.htm" />
         <HelpTOCNode Title="ArithSum Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_ArithSum.htm" />
@@ -569,15 +569,15 @@
         <HelpTOCNode Title="TotalTHDRMS Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_TotalTHDRMS.htm" />
         <HelpTOCNode Title="TransferFunc Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_TransferFunc.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9c46b30d-2539-46fe-920d-e18a9f8898e2" Title="QuantityCharacteristic Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
+      <HelpTOCNode Id="f7a072d5-6080-46d0-82bc-16632b145580" Title="QuantityCharacteristic Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_QuantityCharacteristic.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityCharacteristic_GetInfo.htm" />
         <HelpTOCNode Title="ToName Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityCharacteristic_ToName.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityCharacteristic_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="QuantityMeasured Enumeration" Url="html/T_Gemstone_PQDIF_Logical_QuantityMeasured.htm" />
-    <HelpTOCNode Id="78bd36e1-c71e-4fd9-9f9b-aa6c82281f01" Title="QuantityType Class" Url="html/T_Gemstone_PQDIF_Logical_QuantityType.htm">
-      <HelpTOCNode Id="d66a792a-2929-4a13-91ce-0049555e0453" Title="QuantityType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_QuantityType.htm">
+    <HelpTOCNode Id="c1a5332f-5777-41e9-bb15-7923b942b00f" Title="QuantityType Class" Url="html/T_Gemstone_PQDIF_Logical_QuantityType.htm">
+      <HelpTOCNode Id="5c7b4464-d0d1-49be-8290-9128c426869c" Title="QuantityType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_QuantityType.htm">
         <HelpTOCNode Title="CPF Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityType_CPF.htm" />
         <HelpTOCNode Title="Flash Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityType_Flash.htm" />
         <HelpTOCNode Title="Histogram Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityType_Histogram.htm" />
@@ -592,16 +592,16 @@
         <HelpTOCNode Title="XY Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityType_XY.htm" />
         <HelpTOCNode Title="XYZ Property " Url="html/P_Gemstone_PQDIF_Logical_QuantityType_XYZ.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5b4cc0d5-0cdb-4197-9bc2-c10fb45c56c1" Title="QuantityType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_QuantityType.htm">
+      <HelpTOCNode Id="2b45a6a1-5da9-412f-b5db-bbed45c9ec4a" Title="QuantityType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_QuantityType.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityType_GetInfo.htm" />
         <HelpTOCNode Title="IsQuantityTypeID Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityType_IsQuantityTypeID.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_QuantityType_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="QuantityUnits Enumeration" Url="html/T_Gemstone_PQDIF_Logical_QuantityUnits.htm" />
-    <HelpTOCNode Id="98b8a7fc-e188-4458-bf79-3f87883da976" Title="SeriesDefinition Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
+    <HelpTOCNode Id="15724e12-b2aa-4d19-8d51-3bb634918c2b" Title="SeriesDefinition Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
       <HelpTOCNode Title="SeriesDefinition Constructor " Url="html/M_Gemstone_PQDIF_Logical_SeriesDefinition__ctor.htm" />
-      <HelpTOCNode Id="446190ef-b104-42f9-91f3-07d532d42dcc" Title="SeriesDefinition Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
+      <HelpTOCNode Id="48785917-c004-4b30-bd75-10209c7f7fb3" Title="SeriesDefinition Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
         <HelpTOCNode Title="ChannelDefinition Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_ChannelDefinition.htm" />
         <HelpTOCNode Title="PhysicalStructure Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_PhysicalStructure.htm" />
         <HelpTOCNode Title="QuantityCharacteristicID Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_QuantityCharacteristicID.htm" />
@@ -617,8 +617,8 @@
         <HelpTOCNode Title="ValueTypeName Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_ValueTypeName.htm" />
         <HelpTOCNode Title="ValueTypeNameTag Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_ValueTypeNameTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4f9964b4-3232-4715-8ba3-63407ffa62cb" Title="SeriesDefinition Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
-        <HelpTOCNode Id="ebd4b670-3f92-4872-a968-cdfe7e8db2c9" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesDefinition_Equals.htm">
+      <HelpTOCNode Id="d02851d1-3457-4a7d-8b76-35ddda0e29cc" Title="SeriesDefinition Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesDefinition.htm">
+        <HelpTOCNode Id="bdff1b6c-5170-4722-863b-6663ecbedfdc" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesDefinition_Equals.htm">
           <HelpTOCNode Title="Equals Method (Object)" Url="html/M_Gemstone_PQDIF_Logical_SeriesDefinition_Equals_1.htm" />
           <HelpTOCNode Title="Equals Method (SeriesDefinition)" Url="html/M_Gemstone_PQDIF_Logical_SeriesDefinition_Equals.htm" />
         </HelpTOCNode>
@@ -626,9 +626,9 @@
         <HelpTOCNode Title="HasElement Method " Url="html/M_Gemstone_PQDIF_Logical_SeriesDefinition_HasElement.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="85ecfe9e-4fbf-43ef-8dbd-f2d3e4ee5a55" Title="SeriesInstance Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
+    <HelpTOCNode Id="baa42992-1703-4b58-b0eb-d06f3eb9c484" Title="SeriesInstance Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
       <HelpTOCNode Title="SeriesInstance Constructor " Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance__ctor.htm" />
-      <HelpTOCNode Id="01fae4d2-9441-4e15-bc25-036a5c2c8467" Title="SeriesInstance Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
+      <HelpTOCNode Id="33e1be2c-db3d-4c98-99da-093882a3f2a5" Title="SeriesInstance Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
         <HelpTOCNode Title="Channel Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_Channel.htm" />
         <HelpTOCNode Title="Definition Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_Definition.htm" />
         <HelpTOCNode Title="OriginalValues Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_OriginalValues.htm" />
@@ -646,20 +646,20 @@
         <HelpTOCNode Title="SeriesValues Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_SeriesValues.htm" />
         <HelpTOCNode Title="SeriesValuesTag Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_SeriesValuesTag.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1a1b544b-0f0d-465d-8981-aba652d7cd1e" Title="SeriesInstance Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
-        <HelpTOCNode Id="b6ebacce-0344-4649-9f88-20948f856949" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesInstance_Equals.htm">
+      <HelpTOCNode Id="aaa4b89b-158a-447a-8f4b-813dc579bb14" Title="SeriesInstance Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesInstance.htm">
+        <HelpTOCNode Id="a7a0edc4-35c7-48d1-b81e-0dfca64a4a20" Title="Equals Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesInstance_Equals.htm">
           <HelpTOCNode Title="Equals Method (Object)" Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance_Equals_1.htm" />
           <HelpTOCNode Title="Equals Method (SeriesInstance)" Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance_Equals.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetHashCode Method " Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance_GetHashCode.htm" />
-        <HelpTOCNode Id="06db0e69-0f18-49cd-8cbe-ee81e63c468c" Title="SetValues Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesInstance_SetValues.htm">
+        <HelpTOCNode Id="f1c2572a-860d-4224-9d69-105186304f66" Title="SetValues Method " Url="html/Overload_Gemstone_PQDIF_Logical_SeriesInstance_SetValues.htm">
           <HelpTOCNode Title="SetValues Method (IList(Object))" Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance_SetValues.htm" />
           <HelpTOCNode Title="SetValues Method (Object, Object, Object)" Url="html/M_Gemstone_PQDIF_Logical_SeriesInstance_SetValues_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="b391e5c5-fa18-45e5-9a44-0e724702bd5d" Title="SeriesValueType Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
-      <HelpTOCNode Id="2b63828b-cc2c-4095-ae68-c5ae6ae78e7b" Title="SeriesValueType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
+    <HelpTOCNode Id="1d584fa9-7e2c-4093-85e8-7b2c9a840d19" Title="SeriesValueType Class" Url="html/T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
+      <HelpTOCNode Id="07fc5be4-225a-4594-a21f-4177c02bbe36" Title="SeriesValueType Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
         <HelpTOCNode Title="Area Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_Area.htm" />
         <HelpTOCNode Title="Avg Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_Avg.htm" />
         <HelpTOCNode Title="BinHigh Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_BinHigh.htm" />
@@ -696,15 +696,15 @@
         <HelpTOCNode Title="YBinHigh Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_YBinHigh.htm" />
         <HelpTOCNode Title="YBinLow Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_YBinLow.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e01af7f8-256e-48ca-a4a9-9bd52520dbc7" Title="SeriesValueType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
+      <HelpTOCNode Id="f80329b8-4e68-4a94-9383-fde48cead360" Title="SeriesValueType Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_SeriesValueType.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_SeriesValueType_GetInfo.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_SeriesValueType_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="StorageMethods Enumeration" Url="html/T_Gemstone_PQDIF_Logical_StorageMethods.htm" />
     <HelpTOCNode Title="TriggerMethod Enumeration" Url="html/T_Gemstone_PQDIF_Logical_TriggerMethod.htm" />
-    <HelpTOCNode Id="9f32403d-133f-4649-aa10-5d84274c51df" Title="Vendor Class" Url="html/T_Gemstone_PQDIF_Logical_Vendor.htm">
-      <HelpTOCNode Id="f9efea6d-0e6c-4502-af67-1f38061dad10" Title="Vendor Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_Vendor.htm">
+    <HelpTOCNode Id="df06561a-bd13-4937-8f71-df6058bfedff" Title="Vendor Class" Url="html/T_Gemstone_PQDIF_Logical_Vendor.htm">
+      <HelpTOCNode Id="bad5884a-6158-49cb-9fe7-b17bdbe44c68" Title="Vendor Properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_Vendor.htm">
         <HelpTOCNode Title="ACTL Property " Url="html/P_Gemstone_PQDIF_Logical_Vendor_ACTL.htm" />
         <HelpTOCNode Title="AdvanTech Property " Url="html/P_Gemstone_PQDIF_Logical_Vendor_AdvanTech.htm" />
         <HelpTOCNode Title="BMI Property " Url="html/P_Gemstone_PQDIF_Logical_Vendor_BMI.htm" />
@@ -738,22 +738,22 @@
         <HelpTOCNode Title="Trinergi Property " Url="html/P_Gemstone_PQDIF_Logical_Vendor_Trinergi.htm" />
         <HelpTOCNode Title="WPT Property " Url="html/P_Gemstone_PQDIF_Logical_Vendor_WPT.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5881a0cb-bac9-448e-950d-8bbb85340c0a" Title="Vendor Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_Vendor.htm">
+      <HelpTOCNode Id="f98a3442-2f63-4bc4-922a-eabcf46e3ad4" Title="Vendor Methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_Vendor.htm">
         <HelpTOCNode Title="GetInfo Method " Url="html/M_Gemstone_PQDIF_Logical_Vendor_GetInfo.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Logical_Vendor_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="6b91b7ac-683f-45fb-96d1-4ace6977b796" Title="Gemstone.PQDIF.Physical" Url="html/N_Gemstone_PQDIF_Physical.htm">
-    <HelpTOCNode Id="c859b9bb-fbca-4727-bf03-c431c3bcc884" Title="CollectionElement Class" Url="html/T_Gemstone_PQDIF_Physical_CollectionElement.htm">
+  <HelpTOCNode Id="29d08bd5-7b2e-4d64-9408-0356b4b36bb8" Title="Gemstone.PQDIF.Physical" Url="html/N_Gemstone_PQDIF_Physical.htm">
+    <HelpTOCNode Id="c9f794d8-992b-431a-affa-14a633f586a6" Title="CollectionElement Class" Url="html/T_Gemstone_PQDIF_Physical_CollectionElement.htm">
       <HelpTOCNode Title="CollectionElement Constructor " Url="html/M_Gemstone_PQDIF_Physical_CollectionElement__ctor.htm" />
-      <HelpTOCNode Id="fc6c7ffa-6589-491e-b41e-c82086b91910" Title="CollectionElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_CollectionElement.htm">
+      <HelpTOCNode Id="006259f7-ea54-4759-9aca-5a91f4d770ee" Title="CollectionElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_CollectionElement.htm">
         <HelpTOCNode Title="Elements Property " Url="html/P_Gemstone_PQDIF_Physical_CollectionElement_Elements.htm" />
         <HelpTOCNode Title="ReadSize Property " Url="html/P_Gemstone_PQDIF_Physical_CollectionElement_ReadSize.htm" />
         <HelpTOCNode Title="Size Property " Url="html/P_Gemstone_PQDIF_Physical_CollectionElement_Size.htm" />
         <HelpTOCNode Title="TypeOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_CollectionElement_TypeOfElement.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5de6ba9d-f7cf-4cb2-8137-16de1f7c750b" Title="CollectionElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_CollectionElement.htm">
+      <HelpTOCNode Id="99f5aaee-f1bf-490f-bc28-c8863aa0291d" Title="CollectionElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_CollectionElement.htm">
         <HelpTOCNode Title="AddElement Method " Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddElement.htm" />
         <HelpTOCNode Title="AddOrUpdateScalar Method " Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddOrUpdateScalar.htm" />
         <HelpTOCNode Title="AddOrUpdateVector Method " Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddOrUpdateVector.htm" />
@@ -770,9 +770,9 @@
     </HelpTOCNode>
     <HelpTOCNode Title="CompressionAlgorithm Enumeration" Url="html/T_Gemstone_PQDIF_Physical_CompressionAlgorithm.htm" />
     <HelpTOCNode Title="CompressionStyle Enumeration" Url="html/T_Gemstone_PQDIF_Physical_CompressionStyle.htm" />
-    <HelpTOCNode Id="9dac0ca9-5a76-4fff-b641-13b4132b4dc4" Title="Element Class" Url="html/T_Gemstone_PQDIF_Physical_Element.htm">
+    <HelpTOCNode Id="1ca2041b-c5dc-4efe-95a3-9f8ccfc981b4" Title="Element Class" Url="html/T_Gemstone_PQDIF_Physical_Element.htm">
       <HelpTOCNode Title="Element Constructor " Url="html/M_Gemstone_PQDIF_Physical_Element__ctor.htm" />
-      <HelpTOCNode Id="6f8e37e8-f54c-494f-94be-edf013d1fd86" Title="Element Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_Element.htm">
+      <HelpTOCNode Id="ad37696f-d6d3-4f5b-90ec-dd81b4406334" Title="Element Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_Element.htm">
         <HelpTOCNode Title="TagOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_Element_TagOfElement.htm" />
         <HelpTOCNode Title="TypeOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_Element_TypeOfElement.htm" />
         <HelpTOCNode Title="TypeOfValue Property " Url="html/P_Gemstone_PQDIF_Physical_Element_TypeOfValue.htm" />
@@ -780,24 +780,24 @@
       <HelpTOCNode Title="Element Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_Element.htm" />
     </HelpTOCNode>
     <HelpTOCNode Title="ElementType Enumeration" Url="html/T_Gemstone_PQDIF_Physical_ElementType.htm" />
-    <HelpTOCNode Id="ae644067-384b-41a9-8f51-f895997d11ff" Title="ErrorElement Class" Url="html/T_Gemstone_PQDIF_Physical_ErrorElement.htm">
-      <HelpTOCNode Id="7e43ae02-90e1-4c02-a613-97ac39bbf0b4" Title="ErrorElement Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_ErrorElement__ctor.htm">
+    <HelpTOCNode Id="04f30990-8d83-4203-afab-dc6d68498d49" Title="ErrorElement Class" Url="html/T_Gemstone_PQDIF_Physical_ErrorElement.htm">
+      <HelpTOCNode Id="b54e66b5-26cc-4aa6-86f4-cf064f406568" Title="ErrorElement Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_ErrorElement__ctor.htm">
         <HelpTOCNode Title="ErrorElement Constructor (Exception)" Url="html/M_Gemstone_PQDIF_Physical_ErrorElement__ctor_1.htm" />
         <HelpTOCNode Title="ErrorElement Constructor (ElementType, Exception)" Url="html/M_Gemstone_PQDIF_Physical_ErrorElement__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5eac8b37-4b1a-4990-a1a5-52b6560221d8" Title="ErrorElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_ErrorElement.htm">
+      <HelpTOCNode Id="853b9dc8-3052-4bdc-a3e6-7334c30160ef" Title="ErrorElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_ErrorElement.htm">
         <HelpTOCNode Title="Exception Property " Url="html/P_Gemstone_PQDIF_Physical_ErrorElement_Exception.htm" />
         <HelpTOCNode Title="TypeOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_ErrorElement_TypeOfElement.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="ErrorElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_ErrorElement.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="43280c36-3864-4914-af96-38464269b8ca" Title="PhysicalParser Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
-      <HelpTOCNode Id="14c7dcb5-14c6-4660-a98a-130daedd197d" Title="PhysicalParser Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser__ctor.htm">
+    <HelpTOCNode Id="631b7934-b554-4e2d-af4f-6555f0793bc7" Title="PhysicalParser Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
+      <HelpTOCNode Id="6f302069-8080-40ac-9867-aff5263c9465" Title="PhysicalParser Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser__ctor.htm">
         <HelpTOCNode Title="PhysicalParser Constructor " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser__ctor.htm" />
         <HelpTOCNode Title="PhysicalParser Constructor (String)" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser__ctor_2.htm" />
         <HelpTOCNode Title="PhysicalParser Constructor (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="8b0ea112-f326-4e63-90e4-79c69134baad" Title="PhysicalParser Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
+      <HelpTOCNode Id="33a196b4-310c-4ab7-ab39-5f6e2a66769c" Title="PhysicalParser Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
         <HelpTOCNode Title="CompressionAlgorithm Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_CompressionAlgorithm.htm" />
         <HelpTOCNode Title="CompressionStyle Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_CompressionStyle.htm" />
         <HelpTOCNode Title="ExceptionList Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_ExceptionList.htm" />
@@ -805,12 +805,12 @@
         <HelpTOCNode Title="MaximumExceptionsAllowed Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_MaximumExceptionsAllowed.htm" />
         <HelpTOCNode Title="MaximumExceptionsReached Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_MaximumExceptionsReached.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3122a8ab-86b0-450c-b4cd-79d4dd0357aa" Title="PhysicalParser Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
+      <HelpTOCNode Id="cab8f9af-4eda-47ee-bf20-f45ec607c366" Title="PhysicalParser Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalParser.htm">
         <HelpTOCNode Title="Close Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Close.htm" />
         <HelpTOCNode Title="Dispose Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Dispose.htm" />
         <HelpTOCNode Title="HasNextRecord Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_HasNextRecord.htm" />
         <HelpTOCNode Title="NextRecord Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_NextRecord.htm" />
-        <HelpTOCNode Id="1cd994ec-eba7-4893-a694-993977669c0c" Title="Open Method " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_Open.htm">
+        <HelpTOCNode Id="0dd748b3-0397-46ae-b1f4-fa321dda57b4" Title="Open Method " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_Open.htm">
           <HelpTOCNode Title="Open Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Open.htm" />
           <HelpTOCNode Title="Open Method (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Open_1.htm" />
         </HelpTOCNode>
@@ -819,61 +819,61 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="PhysicalType Enumeration" Url="html/T_Gemstone_PQDIF_Physical_PhysicalType.htm" />
-    <HelpTOCNode Id="5ba52e2b-f1c5-49a8-a2fe-2a6e845c87d8" Title="PhysicalTypeExtensions Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalTypeExtensions.htm">
-      <HelpTOCNode Id="ab823dc3-6d1c-467a-82f1-fab5d2aa267a" Title="PhysicalTypeExtensions Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalTypeExtensions.htm">
+    <HelpTOCNode Id="5f5b74d1-097e-4e66-9d27-ad19470dc2b4" Title="PhysicalTypeExtensions Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalTypeExtensions.htm">
+      <HelpTOCNode Id="8ea56648-4b20-45a4-ad82-92a71c2eeece" Title="PhysicalTypeExtensions Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalTypeExtensions.htm">
         <HelpTOCNode Title="GetByteSize Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalTypeExtensions_GetByteSize.htm" />
         <HelpTOCNode Title="GetPhysicalType Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalTypeExtensions_GetPhysicalType.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="40a026a7-7ba7-4da8-9dff-e25f1fc0663f" Title="PhysicalWriter Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
-      <HelpTOCNode Id="b03c3a2d-89f4-41ed-9084-65f197d4e885" Title="PhysicalWriter Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalWriter__ctor.htm">
+    <HelpTOCNode Id="ceeb90be-a1b4-4613-9c1f-eb1f56fcc76f" Title="PhysicalWriter Class" Url="html/T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
+      <HelpTOCNode Id="689fa667-75ba-4e95-ad4e-785d69a8c5ad" Title="PhysicalWriter Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalWriter__ctor.htm">
         <HelpTOCNode Title="PhysicalWriter Constructor (String)" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter__ctor_1.htm" />
         <HelpTOCNode Title="PhysicalWriter Constructor (Stream, Boolean)" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="df5c1525-cdb0-4a48-b458-a22efd5f693f" Title="PhysicalWriter Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
+      <HelpTOCNode Id="c704c075-dcc2-4435-a4cf-2e16a0180691" Title="PhysicalWriter Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
         <HelpTOCNode Title="CompressionAlgorithm Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalWriter_CompressionAlgorithm.htm" />
         <HelpTOCNode Title="CompressionStyle Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalWriter_CompressionStyle.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="dadf3c25-5700-4ee0-ab95-5cb8c04e0add" Title="PhysicalWriter Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
+      <HelpTOCNode Id="ad87dc1b-7778-46f2-b4b9-54c6d16d6c99" Title="PhysicalWriter Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalWriter.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_Dispose.htm" />
         <HelpTOCNode Title="WriteRecord Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_WriteRecord.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2aacbe03-1b94-4f7b-95b7-5bb7a6989317" Title="Record Class" Url="html/T_Gemstone_PQDIF_Physical_Record.htm">
-      <HelpTOCNode Id="d3e269ce-4e28-4a01-b070-6176e53e0017" Title="Record Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_Record__ctor.htm">
+    <HelpTOCNode Id="763606fd-f52f-4202-8971-45ed1b11836e" Title="Record Class" Url="html/T_Gemstone_PQDIF_Physical_Record.htm">
+      <HelpTOCNode Id="bf234160-0fbe-4b52-8176-8386fec2ac5f" Title="Record Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_Record__ctor.htm">
         <HelpTOCNode Title="Record Constructor (Guid)" Url="html/M_Gemstone_PQDIF_Physical_Record__ctor_1.htm" />
         <HelpTOCNode Title="Record Constructor (RecordHeader, RecordBody)" Url="html/M_Gemstone_PQDIF_Physical_Record__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="643d155c-ad1c-4ddd-b3cb-947831487d37" Title="Record Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_Record.htm">
+      <HelpTOCNode Id="ce164a83-4ee2-477b-bb33-c9ba53387b62" Title="Record Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_Record.htm">
         <HelpTOCNode Title="Body Property " Url="html/P_Gemstone_PQDIF_Physical_Record_Body.htm" />
         <HelpTOCNode Title="Header Property " Url="html/P_Gemstone_PQDIF_Physical_Record_Header.htm" />
         <HelpTOCNode Title="Signature Property " Url="html/P_Gemstone_PQDIF_Physical_Record_Signature.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c791a5a8-7f89-41e6-93f0-d087ce068aef" Title="Record Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_Record.htm">
+      <HelpTOCNode Id="3adc68df-d1d2-4de9-8df2-49903b2c17e1" Title="Record Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_Record.htm">
         <HelpTOCNode Title="GetRecordType Method " Url="html/M_Gemstone_PQDIF_Physical_Record_GetRecordType.htm" />
         <HelpTOCNode Title="GetTypeAsTag Method " Url="html/M_Gemstone_PQDIF_Physical_Record_GetTypeAsTag.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Physical_Record_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0436b944-e442-4b0b-8fd3-a4384bcbb938" Title="RecordBody Class" Url="html/T_Gemstone_PQDIF_Physical_RecordBody.htm">
-      <HelpTOCNode Id="386e39c5-511d-40fa-8d32-055d2b1f45f6" Title="RecordBody Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_RecordBody__ctor.htm">
+    <HelpTOCNode Id="8d6792f8-1597-46fd-b260-5421e67d3e53" Title="RecordBody Class" Url="html/T_Gemstone_PQDIF_Physical_RecordBody.htm">
+      <HelpTOCNode Id="79a02834-d60a-4e3b-ada5-d2396a2eb06d" Title="RecordBody Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_RecordBody__ctor.htm">
         <HelpTOCNode Title="RecordBody Constructor (Guid)" Url="html/M_Gemstone_PQDIF_Physical_RecordBody__ctor_1.htm" />
         <HelpTOCNode Title="RecordBody Constructor (CollectionElement)" Url="html/M_Gemstone_PQDIF_Physical_RecordBody__ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="bce1c766-ae49-4d8e-afe5-6f94e947ed93" Title="RecordBody Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_RecordBody.htm">
+      <HelpTOCNode Id="60402710-a742-48d6-a1ee-776bd5137986" Title="RecordBody Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_RecordBody.htm">
         <HelpTOCNode Title="Checksum Property " Url="html/P_Gemstone_PQDIF_Physical_RecordBody_Checksum.htm" />
         <HelpTOCNode Title="Collection Property " Url="html/P_Gemstone_PQDIF_Physical_RecordBody_Collection.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9b8dc837-d614-4845-8fc7-330fa80280ef" Title="RecordBody Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_RecordBody.htm">
+      <HelpTOCNode Id="448056c1-5d34-4cbf-bf4d-59a92a408be5" Title="RecordBody Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_RecordBody.htm">
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Physical_RecordBody_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3539f2cb-12c0-4a4f-abf3-a94158e23136" Title="RecordHeader Class" Url="html/T_Gemstone_PQDIF_Physical_RecordHeader.htm">
-      <HelpTOCNode Id="363d96e3-8907-4da2-9146-af6871234560" Title="RecordHeader Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_RecordHeader__ctor.htm">
+    <HelpTOCNode Id="136d5b87-bcfb-4996-bfbc-d0f1ee6f8461" Title="RecordHeader Class" Url="html/T_Gemstone_PQDIF_Physical_RecordHeader.htm">
+      <HelpTOCNode Id="2aa98398-f618-4f0a-b7c5-1289ffe884fc" Title="RecordHeader Constructor " Url="html/Overload_Gemstone_PQDIF_Physical_RecordHeader__ctor.htm">
         <HelpTOCNode Title="RecordHeader Constructor " Url="html/M_Gemstone_PQDIF_Physical_RecordHeader__ctor.htm" />
         <HelpTOCNode Title="RecordHeader Constructor (Guid)" Url="html/M_Gemstone_PQDIF_Physical_RecordHeader__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1b9a6e0e-670a-4cd4-bf74-5f1b67d7e7a4" Title="RecordHeader Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_RecordHeader.htm">
+      <HelpTOCNode Id="9afc63da-14a2-4493-93d0-2f8dc6d4477e" Title="RecordHeader Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_RecordHeader.htm">
         <HelpTOCNode Title="BodySize Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_BodySize.htm" />
         <HelpTOCNode Title="Checksum Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_Checksum.htm" />
         <HelpTOCNode Title="HeaderSize Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_HeaderSize.htm" />
@@ -884,17 +884,17 @@
         <HelpTOCNode Title="Reserved Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_Reserved.htm" />
         <HelpTOCNode Title="TypeOfRecord Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_TypeOfRecord.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b918fcb3-ee7a-435f-8776-e941af83cfa2" Title="RecordHeader Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_RecordHeader.htm">
+      <HelpTOCNode Id="8c979ec9-abd4-4fd8-9139-6122025d157c" Title="RecordHeader Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_RecordHeader.htm">
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Physical_RecordHeader_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="RecordType Enumeration" Url="html/T_Gemstone_PQDIF_Physical_RecordType.htm" />
-    <HelpTOCNode Id="19a40d3f-34e7-441c-9946-64ed33549b60" Title="ScalarElement Class" Url="html/T_Gemstone_PQDIF_Physical_ScalarElement.htm">
+    <HelpTOCNode Id="15339a80-5f7a-47f6-8c11-960ff32dd9a8" Title="ScalarElement Class" Url="html/T_Gemstone_PQDIF_Physical_ScalarElement.htm">
       <HelpTOCNode Title="ScalarElement Constructor " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement__ctor.htm" />
-      <HelpTOCNode Id="7d767094-5c81-41f2-a931-2325659079c2" Title="ScalarElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_ScalarElement.htm">
+      <HelpTOCNode Id="3eeaa87a-cc53-4979-9ff5-c19c58d44228" Title="ScalarElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_ScalarElement.htm">
         <HelpTOCNode Title="TypeOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_ScalarElement_TypeOfElement.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e15b4c7e-eea0-4c31-a753-e8a431cc1f86" Title="ScalarElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_ScalarElement.htm">
+      <HelpTOCNode Id="1884f705-c4be-49bb-a10d-b6ea741b4890" Title="ScalarElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_ScalarElement.htm">
         <HelpTOCNode Title="Get Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_Get.htm" />
         <HelpTOCNode Title="GetBool4 Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_GetBool4.htm" />
         <HelpTOCNode Title="GetComplex16 Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_GetComplex16.htm" />
@@ -928,14 +928,14 @@
         <HelpTOCNode Title="ToString Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_ToString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="65f75283-34ab-4bce-b717-09d289ed223f" Title="VectorElement Class" Url="html/T_Gemstone_PQDIF_Physical_VectorElement.htm">
+    <HelpTOCNode Id="4630f87d-6275-44b2-b352-d2c60489e07c" Title="VectorElement Class" Url="html/T_Gemstone_PQDIF_Physical_VectorElement.htm">
       <HelpTOCNode Title="VectorElement Constructor " Url="html/M_Gemstone_PQDIF_Physical_VectorElement__ctor.htm" />
-      <HelpTOCNode Id="31dcefd7-3d29-4bb0-9536-15ca82371d4b" Title="VectorElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_VectorElement.htm">
+      <HelpTOCNode Id="78ad106e-321c-4e53-8e1e-9c94e7f4053d" Title="VectorElement Properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_VectorElement.htm">
         <HelpTOCNode Title="Size Property " Url="html/P_Gemstone_PQDIF_Physical_VectorElement_Size.htm" />
         <HelpTOCNode Title="TypeOfElement Property " Url="html/P_Gemstone_PQDIF_Physical_VectorElement_TypeOfElement.htm" />
         <HelpTOCNode Title="TypeOfValue Property " Url="html/P_Gemstone_PQDIF_Physical_VectorElement_TypeOfValue.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="8a0aeea1-fa55-429b-b65d-9a69047cccd3" Title="VectorElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_VectorElement.htm">
+      <HelpTOCNode Id="a737412f-f1b6-4012-9795-e6b0196346f2" Title="VectorElement Methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_VectorElement.htm">
         <HelpTOCNode Title="Get Method " Url="html/M_Gemstone_PQDIF_Physical_VectorElement_Get.htm" />
         <HelpTOCNode Title="GetGuid Method " Url="html/M_Gemstone_PQDIF_Physical_VectorElement_GetGuid.htm" />
         <HelpTOCNode Title="GetInt1 Method " Url="html/M_Gemstone_PQDIF_Physical_VectorElement_GetInt1.htm" />
