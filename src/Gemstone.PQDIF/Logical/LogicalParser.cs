@@ -24,8 +24,8 @@
 //******************************************************************************************************
 
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using Gemstone.PQDIF.Physical;
 
 namespace Gemstone.PQDIF.Logical
@@ -184,11 +184,6 @@ namespace Gemstone.PQDIF.Logical
                     case RecordType.Container:
                         // The container record is parsed when the file is opened; it should never be encountered here
                         throw new InvalidOperationException("Found more than one container record in PQDIF file.");
-
-                    default:
-                        // Ignore unrecognized record types as the rest of the file might be valid.
-                        //throw new ArgumentOutOfRangeException(string.Format("Unknown record type: {0}", physicalRecord.Header.RecordTypeTag));
-                        break;
                 }
             }
 

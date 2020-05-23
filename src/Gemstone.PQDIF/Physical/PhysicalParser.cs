@@ -24,10 +24,10 @@
 //******************************************************************************************************
 
 using System;
-using System.IO;
-using Ionic.Zlib;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using Ionic.Zlib;
 
 namespace Gemstone.PQDIF.Physical
 {
@@ -346,7 +346,7 @@ namespace Gemstone.PQDIF.Physical
             if (m_fileReader == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
-            return new RecordHeader()
+            return new RecordHeader
             {
                 Position = (int)m_fileReader.BaseStream.Position,
                 RecordSignature = new Guid(m_fileReader.ReadBytes(16)),
@@ -479,7 +479,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads a vector element from the PQDIF file.
         private VectorElement ReadVector(BinaryReader recordBodyReader, PhysicalType typeOfValue)
         {
-            VectorElement element = new VectorElement()
+            VectorElement element = new VectorElement
             {
                 Size = recordBodyReader.ReadInt32(),
                 TypeOfValue = typeOfValue
@@ -495,7 +495,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads a scalar element from the PQDIF file.
         private ScalarElement ReadScalar(BinaryReader recordBodyReader, PhysicalType typeOfValue)
         {
-            ScalarElement element = new ScalarElement()
+            ScalarElement element = new ScalarElement
             {
                 TypeOfValue = typeOfValue
             };

@@ -213,7 +213,7 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New channel setting.</returns>
         public ChannelSetting AddNewChannelSetting(ChannelDefinition channelDefinition)
         {
-            CollectionElement channelSettingElement = new CollectionElement() { TagOfElement = OneChannelSettingTag };
+            CollectionElement channelSettingElement = new CollectionElement { TagOfElement = OneChannelSettingTag };
             ChannelSetting channelSetting = new ChannelSetting(channelSettingElement, this);
             channelSetting.ChannelDefinitionIndex = (uint)channelDefinition.DataSource.ChannelDefinitions.IndexOf(channelDefinition);
 
@@ -221,7 +221,7 @@ namespace Gemstone.PQDIF.Logical
 
             if (channelSettingsElement == null)
             {
-                channelSettingsElement = new CollectionElement() { TagOfElement = OneChannelSettingTag };
+                channelSettingsElement = new CollectionElement { TagOfElement = OneChannelSettingTag };
                 PhysicalRecord.Body.Collection.AddElement(channelSettingsElement);
             }
 
@@ -320,7 +320,7 @@ namespace Gemstone.PQDIF.Logical
             monitorSettingsRecord.UseTransducer = false;
 
             CollectionElement bodyElement = physicalRecord.Body.Collection;
-            bodyElement.AddElement(new CollectionElement() { TagOfElement = ChannelSettingsArrayTag });
+            bodyElement.AddElement(new CollectionElement { TagOfElement = ChannelSettingsArrayTag });
 
             return monitorSettingsRecord;
         }

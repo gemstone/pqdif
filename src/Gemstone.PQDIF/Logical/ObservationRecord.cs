@@ -308,17 +308,17 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>NEw channel instance.</returns>
         public ChannelInstance AddNewChannelInstance(ChannelDefinition channelDefinition)
         {
-            CollectionElement channelInstanceElement = new CollectionElement() { TagOfElement = OneChannelInstanceTag };
+            CollectionElement channelInstanceElement = new CollectionElement { TagOfElement = OneChannelInstanceTag };
             ChannelInstance channelInstance = new ChannelInstance(channelInstanceElement, this);
 
             channelInstance.ChannelDefinitionIndex = (uint)channelDefinition.DataSource.ChannelDefinitions.IndexOf(channelDefinition);
-            channelInstanceElement.AddElement(new CollectionElement() { TagOfElement = ChannelInstance.SeriesInstancesTag });
+            channelInstanceElement.AddElement(new CollectionElement { TagOfElement = ChannelInstance.SeriesInstancesTag });
 
             CollectionElement? channelInstancesElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelInstancesTag);
 
             if (channelInstancesElement == null)
             {
-                channelInstancesElement = new CollectionElement() { TagOfElement = ChannelInstancesTag };
+                channelInstancesElement = new CollectionElement { TagOfElement = ChannelInstancesTag };
                 PhysicalRecord.Body.Collection.AddElement(channelInstancesElement);
             }
 
@@ -422,7 +422,7 @@ namespace Gemstone.PQDIF.Logical
             observationRecord.TriggerMethod = TriggerMethod.None;
 
             CollectionElement bodyElement = physicalRecord.Body.Collection;
-            bodyElement.AddElement(new CollectionElement() { TagOfElement = ChannelInstancesTag });
+            bodyElement.AddElement(new CollectionElement { TagOfElement = ChannelInstancesTag });
 
             return observationRecord;
         }

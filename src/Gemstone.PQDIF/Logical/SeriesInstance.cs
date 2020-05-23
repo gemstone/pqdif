@@ -250,7 +250,7 @@ namespace Gemstone.PQDIF.Logical
         {
             VectorElement seriesValuesElement;
 
-            seriesValuesElement = new VectorElement()
+            seriesValuesElement = new VectorElement
             {
                 Size = values.Count,
                 TagOfElement = SeriesValuesTag,
@@ -274,7 +274,7 @@ namespace Gemstone.PQDIF.Logical
         {
             VectorElement seriesValuesElement;
 
-            seriesValuesElement = new VectorElement()
+            seriesValuesElement = new VectorElement
             {
                 Size = 3,
                 TagOfElement = SeriesValuesTag,

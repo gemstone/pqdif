@@ -512,7 +512,7 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New series definition.</returns>
         public SeriesDefinition AddNewSeriesDefinition()
         {
-            CollectionElement seriesDefinitionElement = new CollectionElement() { TagOfElement = OneSeriesDefinitionTag };
+            CollectionElement seriesDefinitionElement = new CollectionElement { TagOfElement = OneSeriesDefinitionTag };
             SeriesDefinition seriesDefinition = new SeriesDefinition(seriesDefinitionElement, this);
 
             seriesDefinition.ValueTypeID = SeriesValueType.Val;
@@ -524,7 +524,7 @@ namespace Gemstone.PQDIF.Logical
 
             if (seriesDefinitionsElement == null)
             {
-                seriesDefinitionsElement = new CollectionElement() { TagOfElement = SeriesDefinitionsTag };
+                seriesDefinitionsElement = new CollectionElement { TagOfElement = SeriesDefinitionsTag };
                 m_physicalStructure.AddElement(seriesDefinitionsElement);
             }
 
@@ -641,7 +641,7 @@ namespace Gemstone.PQDIF.Logical
             channelDefinition.QuantityMeasured = QuantityMeasured.None;
 
             CollectionElement physicalStructure = channelDefinition.PhysicalStructure;
-            physicalStructure.AddElement(new CollectionElement() { TagOfElement = SeriesDefinitionsTag });
+            physicalStructure.AddElement(new CollectionElement { TagOfElement = SeriesDefinitionsTag });
 
             return channelDefinition;
         }

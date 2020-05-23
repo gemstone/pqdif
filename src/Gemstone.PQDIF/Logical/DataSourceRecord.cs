@@ -380,18 +380,18 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New channel definition.</returns>
         public ChannelDefinition AddNewChannelDefinition()
         {
-            CollectionElement channelDefinitionElement = new CollectionElement() { TagOfElement = OneChannelDefinitionTag };
+            CollectionElement channelDefinitionElement = new CollectionElement { TagOfElement = OneChannelDefinitionTag };
             ChannelDefinition channelDefinition = new ChannelDefinition(channelDefinitionElement, this);
 
             channelDefinition.Phase = Phase.None;
             channelDefinition.QuantityMeasured = QuantityMeasured.None;
-            channelDefinitionElement.AddElement(new CollectionElement() { TagOfElement = ChannelDefinition.SeriesDefinitionsTag });
+            channelDefinitionElement.AddElement(new CollectionElement { TagOfElement = ChannelDefinition.SeriesDefinitionsTag });
 
             CollectionElement? channelDefinitionsElement = m_physicalRecord.Body.Collection.GetCollectionByTag(ChannelDefinitionsTag);
 
             if (channelDefinitionsElement == null)
             {
-                channelDefinitionsElement = new CollectionElement() { TagOfElement = ChannelDefinitionsTag };
+                channelDefinitionsElement = new CollectionElement { TagOfElement = ChannelDefinitionsTag };
                 m_physicalRecord.Body.Collection.AddElement(channelDefinitionsElement);
             }
 
@@ -504,7 +504,7 @@ namespace Gemstone.PQDIF.Logical
             dataSourceRecord.Effective = now;
 
             CollectionElement bodyElement = physicalRecord.Body.Collection;
-            bodyElement.AddElement(new CollectionElement() { TagOfElement = ChannelDefinitionsTag });
+            bodyElement.AddElement(new CollectionElement { TagOfElement = ChannelDefinitionsTag });
 
             return dataSourceRecord;
         }

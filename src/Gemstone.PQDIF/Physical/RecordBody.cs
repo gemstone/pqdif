@@ -42,7 +42,7 @@ namespace Gemstone.PQDIF.Physical
         /// </summary>
         /// <param name="rootTag">Tag of the collection root element of the record.</param>
         public RecordBody(Guid rootTag)
-            : this(new CollectionElement() { TagOfElement = rootTag })
+            : this(new CollectionElement { TagOfElement = rootTag })
         {
         }
 

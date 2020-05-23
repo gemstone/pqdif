@@ -243,7 +243,7 @@ namespace Gemstone.PQDIF.Logical
             if (Definition.SeriesDefinitions.Count <= SeriesInstances.Count)
                 throw new InvalidOperationException("Cannot create a series instance without a corresponding series definition.");
 
-            CollectionElement seriesInstanceElement = new CollectionElement() { TagOfElement = OneSeriesInstanceTag };
+            CollectionElement seriesInstanceElement = new CollectionElement { TagOfElement = OneSeriesInstanceTag };
             SeriesDefinition seriesDefinition = Definition.SeriesDefinitions[SeriesInstances.Count];
             SeriesInstance seriesInstance = new SeriesInstance(seriesInstanceElement, this, seriesDefinition);
             seriesInstanceElement.AddOrUpdateVector(SeriesInstance.SeriesValuesTag, PhysicalType.UnsignedInteger1, new byte[0]);
@@ -252,7 +252,7 @@ namespace Gemstone.PQDIF.Logical
 
             if (seriesInstancesElement == null)
             {
-                seriesInstancesElement = new CollectionElement() { TagOfElement = SeriesInstancesTag };
+                seriesInstancesElement = new CollectionElement { TagOfElement = SeriesInstancesTag };
                 m_physicalStructure.AddElement(seriesInstancesElement);
             }
 

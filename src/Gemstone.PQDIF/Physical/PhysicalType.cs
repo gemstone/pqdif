@@ -196,7 +196,7 @@ namespace Gemstone.PQDIF.Physical
         /// <returns>The physical type that most closely maps to the given type.</returns>
         public static PhysicalType GetPhysicalType(Type type)
         {
-            Dictionary<Type, PhysicalType> physicalTypeLookup = new Dictionary<Type, PhysicalType>()
+            Dictionary<Type, PhysicalType> physicalTypeLookup = new Dictionary<Type, PhysicalType>
             {
                 { typeof(bool), PhysicalType.Boolean4 },
                 { typeof(sbyte), PhysicalType.Integer1 },
