@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Gemstone.PQDIF.Physical;
 
 namespace Gemstone.PQDIF.Logical
@@ -75,7 +76,7 @@ namespace Gemstone.PQDIF.Logical
     /// <summary>
     /// Represents a writer used to create files using the PQDIF file format.
     /// </summary>
-    public sealed class LogicalWriter : IDisposable
+    public sealed class LogicalWriter : IAsyncDisposable, IDisposable
     {
         #region [ Members ]
 
@@ -137,7 +138,16 @@ namespace Gemstone.PQDIF.Logical
         /// Writes the given container record to the file stream.
         /// </summary>
         /// <param name="containerRecord">The container record to be written to the PQDIF file.</param>
-        public void Write(ContainerRecord containerRecord)
+        /// <exception cref="ArgumentNullException"><paramref name="containerRecord"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">The writer was disposed.</exception>
+        /// <exception cref="InvalidOperationException">Attempt was made to write multiple container records to the file.</exception>
+        /// <exception cref="InvalidDataException">The PQDIF data is invalid.</exception>
+        /// <exception cref="NotSupportedException">
+        ///     <para>Attempt is made to use <see cref="CompressionStyle.TotalFile"/>.</para>
+        ///     <para>- OR -</para>
+        ///     <para>Attempt is made to use <see cref="CompressionAlgorithm.PKZIP"/>.</para>
+        /// </exception>
+        public async Task WriteAsync(ContainerRecord containerRecord)
         {
             if (containerRecord == null)
                 throw new ArgumentNullException("containerRecord");
@@ -151,7 +161,7 @@ namespace Gemstone.PQDIF.Logical
             ValidateContainerRecord(containerRecord);
 
             m_containerRecord = containerRecord;
-            m_physicalWriter.WriteRecord(containerRecord.PhysicalRecord);
+            await m_physicalWriter.WriteRecordAsync(containerRecord.PhysicalRecord);
             m_physicalWriter.CompressionAlgorithm = m_containerRecord.CompressionAlgorithm;
             m_physicalWriter.CompressionStyle = m_containerRecord.CompressionStyle;
         }
@@ -162,7 +172,15 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="observationRecord">The observation record to be written to the PQDIF file.</param>
         /// <param name="lastRecord">Indicates whether this observation record is the last record in the file.</param>
-        public void Write(ObservationRecord observationRecord, bool lastRecord = false)
+        /// <exception cref="ArgumentNullException"><paramref name="observationRecord"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">The writer was disposed.</exception>
+        /// <exception cref="InvalidOperationException">
+        ///     <para>File does not yet have a <see cref="ContainerRecord"/>.</para>
+        ///     <para>- OR -</para>
+        ///     <para><paramref name="observationRecord"/> does not have a data source.</para>
+        /// </exception>
+        /// <exception cref="InvalidDataException">The PQDIF data is invalid.</exception>
+        public async Task WriteAsync(ObservationRecord observationRecord, bool lastRecord = false)
         {
             if (observationRecord == null)
                 throw new ArgumentNullException("observationRecord");
@@ -188,33 +206,51 @@ namespace Gemstone.PQDIF.Logical
             {
                 m_currentMonitorSettings = null;
                 m_currentDataSource = observationRecord.DataSource;
-                m_physicalWriter.WriteRecord(observationRecord.DataSource.PhysicalRecord);
+                await m_physicalWriter.WriteRecordAsync(observationRecord.DataSource.PhysicalRecord);
             }
 
             if (observationRecord.Settings != null && !ReferenceEquals(m_currentMonitorSettings, observationRecord.Settings))
             {
                 m_currentMonitorSettings = observationRecord.Settings;
-                m_physicalWriter.WriteRecord(observationRecord.Settings.PhysicalRecord);
+                await m_physicalWriter.WriteRecordAsync(observationRecord.Settings.PhysicalRecord);
             }
 
-            m_physicalWriter.WriteRecord(observationRecord.PhysicalRecord, lastRecord);
+            await m_physicalWriter.WriteRecordAsync(observationRecord.PhysicalRecord, lastRecord);
         }
 
         /// <summary>
-        /// Releases the unmanaged resources used by the <see cref="LogicalWriter"/> object and optionally releases the managed resources.
+        /// Releases the unmanaged resources used by the <see cref="LogicalWriter"/> object.
+        /// </summary>
+        public async ValueTask DisposeAsync()
+        {
+            if (m_disposed)
+                return;
+
+            try
+            {
+                await m_physicalWriter.DisposeAsync();
+            }
+            finally
+            {
+                m_disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Releases the unmanaged resources used by the <see cref="LogicalWriter"/> object.
         /// </summary>
         public void Dispose()
         {
-            if (!m_disposed)
+            if (m_disposed)
+                return;
+
+            try
             {
-                try
-                {
-                    m_physicalWriter.Dispose();
-                }
-                finally
-                {
-                    m_disposed = true;
-                }
+                m_physicalWriter.Dispose();
+            }
+            finally
+            {
+                m_disposed = true;
             }
         }
 

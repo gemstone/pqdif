@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Threading.Tasks;
 using Ionic.Zlib;
 
 namespace Gemstone.PQDIF.Physical
@@ -85,7 +85,7 @@ namespace Gemstone.PQDIF.Physical
     /// <summary>
     /// Represents a parser which parses the physical structure of a PQDIF file.
     /// </summary>
-    public class PhysicalParser : IDisposable
+    public class PhysicalParser : IAsyncDisposable, IDisposable
     {
         #region [ Members ]
 
@@ -98,9 +98,10 @@ namespace Gemstone.PQDIF.Physical
             public override ElementType TypeOfElement { get; }
         }
 
-        private BinaryReader? m_fileReader;
+        private Stream? m_stream;
         private CompressionStyle m_compressionStyle;
         private CompressionAlgorithm m_compressionAlgorithm;
+        private bool m_leaveStreamOpen;
 
         private bool m_hasNextRecord;
         private readonly HashSet<long> m_headerAddresses;
@@ -127,19 +128,6 @@ namespace Gemstone.PQDIF.Physical
             : this()
         {
             FileName = fileName;
-        }
-
-        /// <summary>
-        /// Creates a new instance of the <see cref="PhysicalParser"/> class.
-        /// </summary>
-        /// <param name="stream">The stream containing the PQDIF file data.</param>
-        /// <param name="leaveOpen">True to leave the stream open when closing the parser; otherwise false.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="stream"/> is null.</exception>
-        /// <exception cref="InvalidOperationException"><paramref name="stream"/> is not both readable and seekable.</exception>
-        public PhysicalParser(Stream stream, bool leaveOpen = false)
-            : this()
-        {
-            Open(stream, leaveOpen);
         }
 
         #endregion
@@ -220,15 +208,16 @@ namespace Gemstone.PQDIF.Physical
         /// Opens the PQDIF file.
         /// </summary>
         /// <exception cref="InvalidOperationException"><see cref="FileName"/> has not been defined.</exception>
-        public void Open()
+        public Task OpenAsync()
         {
             if (FileName == null)
                 throw new InvalidOperationException("Unable to open PQDIF file when no file name has been defined.");
 
-            using (m_fileReader)
-                m_fileReader = new BinaryReader(File.OpenRead(FileName));
+            using (m_stream)
+                m_stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true);
 
             m_hasNextRecord = true;
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -237,7 +226,7 @@ namespace Gemstone.PQDIF.Physical
         /// <param name="stream">The stream from which to read the PQDIF file.</param>
         /// <param name="leaveOpen">True to leave the stream open when closing the parser; false otherwise.</param>
         /// <exception cref="InvalidOperationException"><paramref name="stream"/> is not both readable and seekable.</exception>
-        public void Open(Stream stream, bool leaveOpen = false)
+        public Task OpenAsync(Stream stream, bool leaveOpen = false)
         {
             if (!stream.CanRead)
                 throw new InvalidOperationException("Stream must be readable in order to parse PQDIF file data.");
@@ -245,10 +234,12 @@ namespace Gemstone.PQDIF.Physical
             if (!stream.CanSeek)
                 throw new InvalidOperationException("Stream must be seekable in order to parse PQDIF file data.");
 
-            using (m_fileReader)
-                m_fileReader = new BinaryReader(stream, Encoding.UTF8, leaveOpen);
+            using (m_stream)
+                m_stream = stream;
 
+            m_leaveStreamOpen = leaveOpen;
             m_hasNextRecord = true;
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -261,27 +252,29 @@ namespace Gemstone.PQDIF.Physical
         /// Reads the next record from the PQDIF file.
         /// </summary>
         /// <returns>The next record to be parsed from the PQDIF file.</returns>
-        public Record NextRecord()
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the next record.</exception>
+        public async Task<Record> GetNextRecordAsync()
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             if (!m_hasNextRecord)
                 Reset();
 
-            RecordHeader header = ReadRecordHeader();
-            RecordBody body = ReadRecordBody(header.BodySize);
+            RecordHeader header = await ReadRecordHeaderAsync();
+            RecordBody body = await ReadRecordBodyAsync(header.BodySize);
 
             if (body.Collection.TagOfElement == Guid.Empty)
                 body.Collection.TagOfElement = header.RecordTypeTag;
-            
+
             m_hasNextRecord =
                 header.NextRecordPosition > 0 &&
-                header.NextRecordPosition < m_fileReader.BaseStream.Length &&
+                header.NextRecordPosition < m_stream.Length &&
                 m_headerAddresses.Add(header.NextRecordPosition) &&
                 !MaximumExceptionsReached;
 
-            m_fileReader.BaseStream.Seek(header.NextRecordPosition, SeekOrigin.Begin);
+            m_stream.Seek(header.NextRecordPosition, SeekOrigin.Begin);
 
             return new Record(header, body);
         }
@@ -290,25 +283,27 @@ namespace Gemstone.PQDIF.Physical
         /// Jumps in the file to the location of the record with the given header.
         /// </summary>
         /// <param name="header">The header to seek to.</param>
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
         public void Seek(RecordHeader header)
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
-            m_fileReader.BaseStream.Seek(header.Position, SeekOrigin.Begin);
+            m_stream.Seek(header.Position, SeekOrigin.Begin);
         }
 
         /// <summary>
         /// Sets the parser back to the beginning of the file.
         /// </summary>
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
         public void Reset()
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             m_compressionAlgorithm = CompressionAlgorithm.None;
             m_compressionStyle = CompressionStyle.None;
-            m_fileReader.BaseStream.Seek(0, SeekOrigin.Begin);
+            m_stream.Seek(0, SeekOrigin.Begin);
             m_hasNextRecord = true;
             m_headerAddresses.Clear();
             ExceptionList.Clear();
@@ -317,12 +312,34 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Closes the PQDIF file.
         /// </summary>
-        public void Close()
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
+        public async Task CloseAsync()
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
-            m_fileReader.Close();
+            await m_stream.FlushAsync();
+            m_stream.Close();
+            m_hasNextRecord = false;
+        }
+
+        /// <summary>
+        /// Releases all resources held by this parser.
+        /// </summary>
+        public async ValueTask DisposeAsync()
+        {
+#if NETSTANDARD2_0
+            if (!m_leaveStreamOpen && m_stream != null)
+            {
+                await m_stream.FlushAsync();
+                m_stream.Dispose();
+            }
+#else
+            if (!m_leaveStreamOpen && m_stream != null)
+                await m_stream.DisposeAsync();
+#endif
+
+            m_stream = null;
             m_hasNextRecord = false;
         }
 
@@ -331,44 +348,72 @@ namespace Gemstone.PQDIF.Physical
         /// </summary>
         public void Dispose()
         {
-            if (m_fileReader != null)
-            {
-                m_fileReader.Dispose();
-                m_fileReader = null;
-            }
+            if (!m_leaveStreamOpen && m_stream != null)
+                m_stream.Dispose();
 
+            m_stream = null;
             m_hasNextRecord = false;
         }
 
-        // Reads the header of a record from the PQDIF file.
-        private RecordHeader ReadRecordHeader()
+        // Reads bytes from the stream into a byte array of the given size.
+        private async Task<byte[]> ReadBytesAsync(int size)
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
+
+            byte[] data = new byte[size];
+            int offset = 0;
+
+            while (offset < size)
+            {
+                int count = size - offset;
+                int bytesRead = await m_stream.ReadAsync(data, offset, count);
+
+                if (bytesRead == 0)
+                    throw new EndOfStreamException($"Unexpected end of stream encountered");
+
+                offset += bytesRead;
+            }
+
+            return data;
+        }
+
+        // Reads the header of a record from the PQDIF file.
+        private async Task<RecordHeader> ReadRecordHeaderAsync()
+        {
+            if (m_stream == null)
+                throw new InvalidOperationException("PQDIF file is not open.");
+
+            const int HeaderSize = 64;
+            int position = (int)m_stream.Position;
+            byte[] headerData = await ReadBytesAsync(HeaderSize);
+
+            using MemoryStream memoryStream = new MemoryStream(headerData);
+            using BinaryReader reader = new BinaryReader(memoryStream);
 
             return new RecordHeader
             {
-                Position = (int)m_fileReader.BaseStream.Position,
-                RecordSignature = new Guid(m_fileReader.ReadBytes(16)),
-                RecordTypeTag = new Guid(m_fileReader.ReadBytes(16)),
-                HeaderSize = m_fileReader.ReadInt32(),
-                BodySize = m_fileReader.ReadInt32(),
-                NextRecordPosition = m_fileReader.ReadInt32(),
-                Checksum = m_fileReader.ReadUInt32(),
-                Reserved = m_fileReader.ReadBytes(16)
+                Position = position,
+                RecordSignature = new Guid(reader.ReadBytes(16)),
+                RecordTypeTag = new Guid(reader.ReadBytes(16)),
+                HeaderSize = reader.ReadInt32(),
+                BodySize = reader.ReadInt32(),
+                NextRecordPosition = reader.ReadInt32(),
+                Checksum = reader.ReadUInt32(),
+                Reserved = reader.ReadBytes(16)
             };
         }
 
         // Reads the body of a record from the PQDIF file.
-        private RecordBody ReadRecordBody(int byteSize)
+        private async Task<RecordBody> ReadRecordBodyAsync(int byteSize)
         {
-            if (m_fileReader == null)
+            if (m_stream == null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             if (byteSize == 0)
                 return new RecordBody(Guid.Empty);
 
-            byte[] bytes = m_fileReader.ReadBytes(byteSize);
+            byte[] bytes = await ReadBytesAsync(byteSize);
             uint adler = Adler.Adler32(0u, null, 0, 0);
             uint checksum = Adler.Adler32(adler, bytes, 0, bytes.Length);
 
@@ -409,7 +454,7 @@ namespace Gemstone.PQDIF.Physical
                     long link = recordBodyReader.ReadInt32();
 
                     if (link < 0 || link >= recordBodyReader.BaseStream.Length)
-                        throw new InvalidOperationException("Element link is outside the bounds of the file");
+                        throw new EndOfStreamException("Element link is outside the bounds of the file");
 
                     recordBodyReader.BaseStream.Seek(link, SeekOrigin.Begin);
                 }
@@ -507,6 +552,6 @@ namespace Gemstone.PQDIF.Physical
             return element;
         }
 
-        #endregion
+#endregion
     }
 }

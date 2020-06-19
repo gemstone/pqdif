@@ -26,6 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using Gemstone.PQDIF.Physical;
 
 namespace Gemstone.PQDIF.Logical
@@ -33,7 +34,7 @@ namespace Gemstone.PQDIF.Logical
     /// <summary>
     /// Represents a parser which parses the logical structure of a PQDIF file.
     /// </summary>
-    public class LogicalParser : IDisposable
+    public class LogicalParser : IAsyncDisposable, IDisposable
     {
         #region [ Members ]
 
@@ -50,25 +51,20 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Creates a new instance of the <see cref="LogicalParser"/> class.
         /// </summary>
-        /// <param name="fileName">Name of the PQDIF file to be parsed.</param>
-        public LogicalParser(string fileName)
+        public LogicalParser()
         {
-            m_physicalParser = new PhysicalParser(fileName);
+            m_physicalParser = new PhysicalParser();
             DataSourceRecords = new List<DataSourceRecord>();
         }
 
         /// <summary>
         /// Creates a new instance of the <see cref="LogicalParser"/> class.
         /// </summary>
-        /// <param name="stream">The stream containing the PQDIF file data.</param>
-        /// <param name="leaveOpen">True if the stream should be closed when the parser is closed; false otherwise.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="stream"/> is null.</exception>
-        /// <exception cref="InvalidOperationException"><paramref name="stream"/> is not both readable and seekable.</exception>
-        public LogicalParser(Stream stream, bool leaveOpen = false)
+        /// <param name="fileName">Name of the PQDIF file to be parsed.</param>
+        public LogicalParser(string fileName)
         {
-            m_physicalParser = new PhysicalParser();
+            m_physicalParser = new PhysicalParser(fileName);
             DataSourceRecords = new List<DataSourceRecord>();
-            Open(stream, leaveOpen);
         }
 
         #endregion
@@ -85,14 +81,14 @@ namespace Gemstone.PQDIF.Logical
         }
 
         /// <summary>
-        /// Gets the container record from the PQDIF file. This is
-        /// parsed as soon as the parser is <see cref="Open()"/>ed.
+        /// Gets the container record from the PQDIF file.
+        /// This is parsed as soon as the parser is opened.
         /// </summary>
         public ContainerRecord? ContainerRecord { get; private set; }
 
         /// <summary>
-        /// Gets a list of all DataSource records from the PQDIF file. This is
-        /// parsed when passing throug the observation records <see cref="NextObservationRecord()"/>ed.
+        /// Gets a list of all DataSource records from the PQDIF file.
+        /// This is parsed when scanning through the observation records.
         /// </summary>
         public List<DataSourceRecord> DataSourceRecords { get; private set; }
 
@@ -106,16 +102,11 @@ namespace Gemstone.PQDIF.Logical
         /// <exception cref="InvalidOperationException"><see cref="FileName"/> has not been defined.</exception>
         /// <exception cref="InvalidDataException">First record of PQDIF file is not the container record.</exception>
         /// <exception cref="NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
-        public void Open()
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the container record.</exception>
+        public async Task OpenAsync()
         {
-            m_physicalParser.Open();
-            ContainerRecord = ContainerRecord.CreateContainerRecord(m_physicalParser.NextRecord());
-
-            if (ContainerRecord == null)
-                throw new InvalidDataException("The first record in a PQDIF file must be a container record.");
-
-            m_physicalParser.CompressionAlgorithm = ContainerRecord.CompressionAlgorithm;
-            m_physicalParser.CompressionStyle = ContainerRecord.CompressionStyle;
+            await m_physicalParser.OpenAsync();
+            await ReadContainerRecordAsync();
         }
 
         /// <summary>
@@ -127,27 +118,25 @@ namespace Gemstone.PQDIF.Logical
         /// <exception cref="InvalidOperationException"><paramref name="stream"/> is not both readable and seekable.</exception>
         /// <exception cref="InvalidDataException">First record of PQDIF file is not the container record.</exception>
         /// <exception cref="NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
-        public void Open(Stream stream, bool leaveOpen = false)
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the container record.</exception>
+        public async Task OpenAsync(Stream stream, bool leaveOpen = false)
         {
-            m_physicalParser.Open(stream, leaveOpen);
-            ContainerRecord = ContainerRecord.CreateContainerRecord(m_physicalParser.NextRecord());
-
-            if (ContainerRecord == null)
-                throw new InvalidDataException("The first record in a PQDIF file must be a container record.");
-
-            m_physicalParser.CompressionAlgorithm = ContainerRecord.CompressionAlgorithm;
-            m_physicalParser.CompressionStyle = ContainerRecord.CompressionStyle;
+            await m_physicalParser.OpenAsync(stream, leaveOpen);
+            await ReadContainerRecordAsync();
         }
 
         /// <summary>
-        /// Determines whether there are any more
-        /// <see cref="ObservationRecord"/>s to be
-        /// read from the PQDIF file.
+        /// Determines whether there are any more <see cref="ObservationRecord"/>s to be read from the PQDIF file.
         /// </summary>
         /// <returns>true if there is another observation record to be read from PQDIF file; false otherwise</returns>
-        /// <exception cref="InvalidOperationException">PQDIF file has more than one container record.</exception>
+        /// <exception cref="InvalidOperationException">
+        ///     <para>The PQDIF file is not open.</para>
+        ///     <para>- OR -</para>
+        ///     <para>PQDIF file has more than one container record.</para>
+        /// </exception>
         /// <exception cref="InvalidDataException">Observation record found with no corresponding data source record.</exception>
-        public bool HasNextObservationRecord()
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the next observation record.</exception>
+        public async Task<bool> HasNextObservationRecordAsync()
         {
             Record physicalRecord;
             RecordType recordType;
@@ -155,7 +144,7 @@ namespace Gemstone.PQDIF.Logical
             // Read records from the file until we encounter an observation record or end of file
             while (m_nextObservationRecord == null && m_physicalParser.HasNextRecord())
             {
-                physicalRecord = m_physicalParser.NextRecord();
+                physicalRecord = await m_physicalParser.GetNextRecordAsync();
                 recordType = physicalRecord.Header.TypeOfRecord;
 
                 switch (recordType)
@@ -194,11 +183,20 @@ namespace Gemstone.PQDIF.Logical
         /// Gets the next observation record from the PQDIF file.
         /// </summary>
         /// <returns>The next observation record.</returns>
-        public ObservationRecord NextObservationRecord()
+        /// <exception cref="InvalidOperationException">
+        ///     <para>The PQDIF file is not open.</para>
+        ///     <para>- OR -</para>
+        ///     <para>PQDIF file has more than one container record.</para>
+        ///     <para>- OR -</para>
+        ///     <para>There are no more observation records in the PQDIF file.</para>
+        /// </exception>
+        /// <exception cref="InvalidDataException">Observation record found with no corresponding data source record.</exception>
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the next observation record.</exception>
+        public async Task<ObservationRecord> NextObservationRecordAsync()
         {
             // Call this first to read ahead to the next
             // observation record if we haven't already
-            HasNextObservationRecord();
+            await HasNextObservationRecordAsync();
 
             // We need to set m_nextObservationRecord to null so that
             // subsequent calls to HasNextObservationRecord() will
@@ -215,7 +213,10 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Resets the parser to the beginning of the PQDIF file.
         /// </summary>
-        public void Reset()
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
+        /// <exception cref="InvalidDataException">First record of PQDIF file is not the container record.</exception>
+        /// <exception cref="EndOfStreamException">End of stream encountered while reading the container record.</exception>
+        public async Task ResetAsync()
         {
             m_currentDataSourceRecord = null;
             m_currentMonitorSettingsRecord = null;
@@ -223,20 +224,41 @@ namespace Gemstone.PQDIF.Logical
             DataSourceRecords = new List<DataSourceRecord>();
 
             m_physicalParser.Reset();
-            m_physicalParser.NextRecord(); // skip container record
+            await ReadContainerRecordAsync();
         }
 
         /// <summary>
         /// Closes the PQDIF file.
         /// </summary>
-        public void Close() =>
-            m_physicalParser.Close();
+        /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
+        public Task CloseAsync() =>
+            m_physicalParser.CloseAsync();
+
+        /// <summary>
+        /// Releases resources held by the parser.
+        /// </summary>
+        public ValueTask DisposeAsync() =>
+            m_physicalParser.DisposeAsync();
 
         /// <summary>
         /// Releases resources held by the parser.
         /// </summary>
         public void Dispose() =>
             m_physicalParser.Dispose();
+
+        // Attempts to read the container record and update
+        // the compression settings of the physical parser.
+        private async Task ReadContainerRecordAsync()
+        {
+            Record firstRecord = await m_physicalParser.GetNextRecordAsync();
+            ContainerRecord = ContainerRecord.CreateContainerRecord(firstRecord);
+
+            if (ContainerRecord == null)
+                throw new InvalidDataException("The first record in a PQDIF file must be a container record.");
+
+            m_physicalParser.CompressionAlgorithm = ContainerRecord.CompressionAlgorithm;
+            m_physicalParser.CompressionStyle = ContainerRecord.CompressionStyle;
+        }
 
         #endregion
     }

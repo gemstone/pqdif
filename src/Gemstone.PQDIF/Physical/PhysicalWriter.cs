@@ -24,6 +24,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Ionic.Zlib;
 
 namespace Gemstone.PQDIF.Physical
@@ -32,18 +33,16 @@ namespace Gemstone.PQDIF.Physical
     /// Represents a writer used to write the physical
     /// structure of a PQDIF file to a byte stream.
     /// </summary>
-    public class PhysicalWriter : IDisposable
+    public class PhysicalWriter : IAsyncDisposable, IDisposable
     {
         #region [ Members ]
 
         // Fields
         private readonly Stream m_stream;
-        private readonly BinaryWriter m_writer;
-
         private CompressionStyle m_compressionStyle;
         private CompressionAlgorithm m_compressionAlgorithm;
-
         private readonly bool m_leaveOpen;
+
         private bool m_disposed;
 
         #endregion
@@ -55,7 +54,7 @@ namespace Gemstone.PQDIF.Physical
         /// </summary>
         /// <param name="filePath">The path to the file where the PQDIF data is to be written.</param>
         public PhysicalWriter(string filePath)
-            : this(File.Create(filePath))
+            : this(new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))
         {
         }
 
@@ -71,7 +70,6 @@ namespace Gemstone.PQDIF.Physical
                 throw new InvalidOperationException("Cannot write to the given stream.");
 
             m_stream = stream;
-            m_writer = new BinaryWriter(m_stream);
             m_leaveOpen = leaveOpen;
         }
 
@@ -82,6 +80,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression style used by the PQDIF file.
         /// </summary>
+        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="CompressionStyle.TotalFile"/>.</exception>
         public CompressionStyle CompressionStyle
         {
             get
@@ -91,7 +90,7 @@ namespace Gemstone.PQDIF.Physical
             set
             {
                 if (value == CompressionStyle.TotalFile)
-                    throw new ArgumentException("Total file compression has been deprecated and is not supported", "value");
+                    throw new NotSupportedException("Total file compression has been deprecated and is not supported");
 
                 m_compressionStyle = value;
             }
@@ -100,6 +99,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression algorithm used by the PQDIF file.
         /// </summary>
+        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="CompressionAlgorithm.PKZIP"/>.</exception>
         public CompressionAlgorithm CompressionAlgorithm
         {
             get
@@ -109,7 +109,7 @@ namespace Gemstone.PQDIF.Physical
             set
             {
                 if (value == CompressionAlgorithm.PKZIP)
-                    throw new ArgumentException("PKZIP compression has been deprecated and is not supported", "value");
+                    throw new NotSupportedException("PKZIP compression has been deprecated and is not supported");
 
                 m_compressionAlgorithm = value;
             }
@@ -126,13 +126,13 @@ namespace Gemstone.PQDIF.Physical
         /// <param name="lastRecord">Indicates whether this record is the last record in the file.</param>
         /// <exception cref="InvalidDataException">The PQDIF data is invalid.</exception>
         /// <exception cref="ObjectDisposedException">The writer was disposed.</exception>
-        public void WriteRecord(Record record, bool lastRecord = false)
+        public async Task WriteRecordAsync(Record record, bool lastRecord = false)
         {
-            byte[] bodyImage;
-            uint checksum;
-
             if (m_disposed)
                 throw new ObjectDisposedException(GetType().Name);
+
+            byte[] bodyImage;
+            uint checksum;
 
             using (MemoryStream bodyStream = new MemoryStream())
             using (BinaryWriter bodyWriter = new BinaryWriter(bodyStream))
@@ -151,17 +151,9 @@ namespace Gemstone.PQDIF.Physical
                 uint adler = Adler.Adler32(0u, null, 0, 0);
                 checksum = Adler.Adler32(adler, bodyImage, 0, bodyImage.Length);
 
-                // Write the record body to the memory stream
+                // Save the checksum in the record body
                 if (record.Body != null)
                     record.Body.Checksum = checksum;
-            }
-
-            // Fix the pointer to the next
-            // record before writing this record
-            if (m_stream.CanSeek && m_stream.Length > 0)
-            {
-                m_writer.Write((int)m_stream.Length);
-                m_stream.Seek(0L, SeekOrigin.End);
             }
 
             // Make sure the header points to the correct location based on the size of the body
@@ -170,33 +162,63 @@ namespace Gemstone.PQDIF.Physical
             record.Header.NextRecordPosition = (int)m_stream.Length + record.Header.HeaderSize + record.Header.BodySize;
             record.Header.Checksum = checksum;
 
-            // Write up to the next record position
-            m_writer.Write(record.Header.RecordSignature.ToByteArray());
-            m_writer.Write(record.Header.RecordTypeTag.ToByteArray());
-            m_writer.Write(record.Header.HeaderSize);
-            m_writer.Write(record.Header.BodySize);
+            using (MemoryStream headerStream = new MemoryStream())
+            using (BinaryWriter headerWriter = new BinaryWriter(headerStream))
+            {
+                // Write up to the next record position
+                headerWriter.Write(record.Header.RecordSignature.ToByteArray());
+                headerWriter.Write(record.Header.RecordTypeTag.ToByteArray());
+                headerWriter.Write(record.Header.HeaderSize);
+                headerWriter.Write(record.Header.BodySize);
 
-            // The PQDIF standard defines the NextRecordPosition to be 0 for the last record in the file
-            // We treat seekable streams differently because we can go back and fix the pointers later
-            if (m_stream.CanSeek || lastRecord)
-                m_writer.Write(0);
-            else
-                m_writer.Write(record.Header.NextRecordPosition);
+                // The PQDIF standard defines the NextRecordPosition to be 0 for the last record in the file
+                // We treat seekable streams differently because we can go back and fix the pointers later
+                if (m_stream.CanSeek || lastRecord)
+                    headerWriter.Write(0);
+                else
+                    headerWriter.Write(record.Header.NextRecordPosition);
 
-            // Write the rest of the header as well as the body
-            m_writer.Write(record.Header.Checksum);
-            m_writer.Write(record.Header.Reserved);
-            m_writer.Write(bodyImage);
+                // Write the rest of the header as well as the body
+                headerWriter.Write(record.Header.Checksum);
+                headerWriter.Write(record.Header.Reserved);
+                headerWriter.Write(bodyImage);
 
-            // If the stream is seekable, seek to the next record
-            // position so we can fix the pointer if we end up
-            // writing another record to the file
-            if (m_stream.CanSeek)
-                m_stream.Seek(-(24 + record.Header.BodySize), SeekOrigin.Current);
+                byte[] headerImage = headerStream.ToArray();
+                await m_stream.WriteAsync(headerImage, 0, headerImage.Length);
+            }
+
+            await m_stream.WriteAsync(bodyImage, 0, bodyImage.Length);
 
             // Dispose of the writer if this is the last record
             if (!m_stream.CanSeek && lastRecord)
-                Dispose();
+                await DisposeAsync();
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public async ValueTask DisposeAsync()
+        {
+            if (m_disposed)
+                return;
+
+            try
+            {
+#if NETSTANDARD2_0
+                if (!m_leaveOpen)
+                {
+                    await m_stream.FlushAsync();
+                    m_stream.Dispose();
+                }
+#else
+                if (!m_leaveOpen)
+                    await m_stream.DisposeAsync();
+#endif
+            }
+            finally
+            {
+                m_disposed = true;
+            }
         }
 
         /// <summary>
@@ -205,20 +227,17 @@ namespace Gemstone.PQDIF.Physical
         /// <filterpriority>2</filterpriority>
         public void Dispose()
         {
-            if (!m_disposed)
+            if (m_disposed)
+                return;
+
+            try
             {
-                try
-                {
-                    if (!m_leaveOpen)
-                    {
-                        m_writer.Dispose();
-                        m_stream.Dispose();
-                    }
-                }
-                finally
-                {
-                    m_disposed = true;
-                }
+                if (!m_leaveOpen)
+                    m_stream.Dispose();
+            }
+            finally
+            {
+                m_disposed = true;
             }
         }
 
@@ -357,6 +376,6 @@ namespace Gemstone.PQDIF.Physical
         private bool IsEmbedded(Element element) =>
             element.TypeOfElement == ElementType.Scalar && element.TypeOfValue.GetByteSize() < 8;
 
-        #endregion
+#endregion
     }
 }
