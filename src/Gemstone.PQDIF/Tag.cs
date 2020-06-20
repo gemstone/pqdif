@@ -130,6 +130,22 @@ namespace Gemstone.PQDIF
         /// <summary>
         /// Gets the definitions of PQDIF tags as defined by the tag definitions file.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// This property first tries to load definitions from the TagDefinitions.xml
+        /// file in the working directory of the application. If the file doesn't exist
+        /// or cannot be parsed as a valid XML file, then this property falls back on
+        /// the version hosted inside this assembly as an embedded resource.
+        /// </para>
+        ///
+        /// <para>
+        /// Applications that need to customize the set of tags supported by this library
+        /// can use this property to generate the default TagDefinitions.xml file, edit
+        /// the file as necessary, and then place the edited version into the working
+        /// directory of the application. Alternatively, the default TagDefinitions.xml
+        /// file can be obtained directly from the source code for this library.
+        /// </para>
+        /// </remarks>
         public static XDocument TagDefinitions
         {
             get
