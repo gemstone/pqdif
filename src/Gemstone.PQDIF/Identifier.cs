@@ -80,7 +80,7 @@ namespace Gemstone.PQDIF
         /// <param name="doc">The XML document containing tag definitions.</param>
         /// <param name="tag">The tag for which valid identifier values are to be generated.</param>
         /// <returns>The list of identifiers valid for the given tag.</returns>
-        public static List<Identifier> GenerateIdentifiers(XDocument doc, Tag tag)
+        internal static IReadOnlyList<Identifier> GenerateIdentifiers(XDocument doc, Tag tag)
         {
             XElement tagValues = doc.Descendants("tagValues").Single();
             XElement? tagElement = tagValues.Element(tag.StandardName);
@@ -98,7 +98,8 @@ namespace Gemstone.PQDIF
                     string description = (string)element.Element("description");
                     return new Identifier(name, standardName, value, description);
                 })
-                .ToList();
+                .ToList()
+                .AsReadOnly();
         }
 
         #endregion

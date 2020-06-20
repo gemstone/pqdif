@@ -25,6 +25,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Xml;
 using System.Xml.Linq;
 using Gemstone.PQDIF.Physical;
 
@@ -37,8 +39,12 @@ namespace Gemstone.PQDIF
     {
         #region [ Members ]
 
-        // Fields
-        private readonly List<Identifier> m_validIdentifiers;
+        // Constants
+
+        /// <summary>
+        /// Name of the file from which to retrieve the <see cref="TagDefinitions"/>.
+        /// </summary>
+        public const string TagDefinitionsFileName = "TagDefinitions.xml";
 
         #endregion
 
@@ -56,7 +62,7 @@ namespace Gemstone.PQDIF
             PhysicalType = GetPhysicalType(element);
             Required = Convert.ToBoolean((string)element.Element("required") ?? "False");
             FormatString = (string)element.Element("formatString");
-            m_validIdentifiers = Identifier.GenerateIdentifiers(doc, this);
+            ValidIdentifiers = Identifier.GenerateIdentifiers(doc, this);
         }
 
         #endregion
@@ -110,7 +116,7 @@ namespace Gemstone.PQDIF
         /// <summary>
         /// Gets the collection of valid identifiers for this tag.
         /// </summary>
-        public IReadOnlyCollection<Identifier> ValidIdentifiers => m_validIdentifiers.AsReadOnly();
+        public IReadOnlyList<Identifier> ValidIdentifiers { get; }
 
         #endregion
 
@@ -119,6 +125,28 @@ namespace Gemstone.PQDIF
         // Static Fields
         private static Dictionary<Guid, Tag>? TagLookup { get; set; }
 
+        // Static Properties
+
+        /// <summary>
+        /// Gets the definitions of PQDIF tags as defined by the tag definitions file.
+        /// </summary>
+        public static XDocument TagDefinitions
+        {
+            get
+            {
+                try
+                {
+                    return XDocument.Load(TagDefinitionsFileName);
+                }
+                catch
+                {
+                    Assembly pqdifAssembly = Assembly.GetExecutingAssembly();
+                    using Stream resourceStream = pqdifAssembly.GetManifestResourceStream(TagDefinitionsFileName);
+                    return XDocument.Load(resourceStream);
+                }
+            }
+        }
+
         // Static Methods
 
         /// <summary>
@@ -126,13 +154,14 @@ namespace Gemstone.PQDIF
         /// </summary>
         /// <param name="id">The globally unique identifier for the tag to be retrieved.</param>
         /// <returns>The tag, if defined, or null if the tag is not found.</returns>
+        /// <exception cref="InvalidDataException">Unable to refresh tags from TagDefinitions.xml.</exception>
         public static Tag? GetTag(Guid id)
         {
             if (TagLookup == null)
-                RefreshTags(XDocument.Load("TagDefinitions.xml"));
+                RefreshTags(TagDefinitions);
 
             if (TagLookup == null)
-                throw new InvalidDataException("Unable to refresh tags from TagDefinitions.xml.");
+                throw new InvalidDataException($"Unable to refresh tags from {TagDefinitionsFileName}.");
 
             if (!TagLookup.TryGetValue(id, out Tag tag))
                 return null;

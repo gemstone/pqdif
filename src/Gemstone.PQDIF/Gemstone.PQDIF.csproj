@@ -42,6 +42,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TagDefinitions.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TagDefinitions.xml">
+      <LogicalName>TagDefinitions.xml</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\docs\img\gemstone-square-128.png" Link="gemstone-square-128.png" Visible="false">
       <Pack>True</Pack>
       <PackagePath />
@@ -53,12 +63,6 @@
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Memory" Version="4.5.3" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="TagDefinitions.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
