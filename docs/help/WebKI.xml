@@ -156,9 +156,9 @@
     <HelpKINode Title="RecordBody.Checksum Property " Url="html/P_Gemstone_PQDIF_Physical_RecordBody_Checksum.htm" />
     <HelpKINode Title="RecordHeader.Checksum Property " Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_Checksum.htm" />
   </HelpKINode>
-  <HelpKINode Title="Close method">
-    <HelpKINode Title="LogicalParser.Close Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Close.htm" />
-    <HelpKINode Title="PhysicalParser.Close Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Close.htm" />
+  <HelpKINode Title="CloseAsync method">
+    <HelpKINode Title="LogicalParser.CloseAsync Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_CloseAsync.htm" />
+    <HelpKINode Title="PhysicalParser.CloseAsync Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_CloseAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="CN enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="Collection enumeration member" Url="html/T_Gemstone_PQDIF_Physical_ElementType.htm" />
@@ -331,6 +331,12 @@
     <HelpKINode Title="LogicalWriter.Dispose Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_Dispose.htm" />
     <HelpKINode Title="PhysicalParser.Dispose Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Dispose.htm" />
     <HelpKINode Title="PhysicalWriter.Dispose Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_Dispose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DisposeAsync method">
+    <HelpKINode Title="LogicalParser.DisposeAsync Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_DisposeAsync.htm" />
+    <HelpKINode Title="LogicalWriter.DisposeAsync Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_DisposeAsync.htm" />
+    <HelpKINode Title="PhysicalParser.DisposeAsync Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_DisposeAsync.htm" />
+    <HelpKINode Title="PhysicalWriter.DisposeAsync Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_DisposeAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="DisturbanceCategory class">
     <HelpKINode Title="DisturbanceCategory Class" Url="html/T_Gemstone_PQDIF_Logical_DisturbanceCategory.htm" />
@@ -655,7 +661,6 @@
   <HelpKINode Title="General7 enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="General8 enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="General9 enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
-  <HelpKINode Title="GenerateIdentifiers method" Url="html/M_Gemstone_PQDIF_Identifier_GenerateIdentifiers.htm" />
   <HelpKINode Title="GenerateTags method" Url="html/M_Gemstone_PQDIF_Tag_GenerateTags.htm" />
   <HelpKINode Title="Get method">
     <HelpKINode Title="ScalarElement.Get Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_Get.htm" />
@@ -698,6 +703,7 @@
     <HelpKINode Title="ScalarElement.GetInt4 Method " Url="html/M_Gemstone_PQDIF_Physical_ScalarElement_GetInt4.htm" />
     <HelpKINode Title="VectorElement.GetInt4 Method " Url="html/M_Gemstone_PQDIF_Physical_VectorElement_GetInt4.htm" />
   </HelpKINode>
+  <HelpKINode Title="GetNextRecordAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_GetNextRecordAsync.htm" />
   <HelpKINode Title="GetOrAddScalar method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_GetOrAddScalar.htm" />
   <HelpKINode Title="GetOrAddVector method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_GetOrAddVector.htm" />
   <HelpKINode Title="GetPhysicalType method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalTypeExtensions_GetPhysicalType.htm" />
@@ -737,7 +743,7 @@
     <HelpKINode Title="ChannelSetting.HasElement Method " Url="html/M_Gemstone_PQDIF_Logical_ChannelSetting_HasElement.htm" />
     <HelpKINode Title="SeriesDefinition.HasElement Method " Url="html/M_Gemstone_PQDIF_Logical_SeriesDefinition_HasElement.htm" />
   </HelpKINode>
-  <HelpKINode Title="HasNextObservationRecord method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecord.htm" />
+  <HelpKINode Title="HasNextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecordAsync.htm" />
   <HelpKINode Title="HasNextRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_HasNextRecord.htm" />
   <HelpKINode Title="Header property" Url="html/P_Gemstone_PQDIF_Physical_Record_Header.htm" />
   <HelpKINode Title="HeaderSize property" Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_HeaderSize.htm" />
@@ -753,7 +759,6 @@
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Identifier.htm" />
   </HelpKINode>
   <HelpKINode Title="Identifier.Description property" Url="html/P_Gemstone_PQDIF_Identifier_Description.htm" />
-  <HelpKINode Title="Identifier.GenerateIdentifiers method" Url="html/M_Gemstone_PQDIF_Identifier_GenerateIdentifiers.htm" />
   <HelpKINode Title="Identifier.Name property" Url="html/P_Gemstone_PQDIF_Identifier_Name.htm" />
   <HelpKINode Title="Identifier.StandardName property" Url="html/P_Gemstone_PQDIF_Identifier_StandardName.htm" />
   <HelpKINode Title="Identifier.Value property" Url="html/P_Gemstone_PQDIF_Identifier_Value.htm" />
@@ -822,16 +827,17 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_LogicalParser.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalParser.htm" />
   </HelpKINode>
-  <HelpKINode Title="LogicalParser.Close method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Close.htm" />
+  <HelpKINode Title="LogicalParser.CloseAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_CloseAsync.htm" />
   <HelpKINode Title="LogicalParser.ContainerRecord property" Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_ContainerRecord.htm" />
   <HelpKINode Title="LogicalParser.DataSourceRecords property" Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_DataSourceRecords.htm" />
   <HelpKINode Title="LogicalParser.Dispose method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Dispose.htm" />
+  <HelpKINode Title="LogicalParser.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_DisposeAsync.htm" />
   <HelpKINode Title="LogicalParser.FileName property" Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_FileName.htm" />
-  <HelpKINode Title="LogicalParser.HasNextObservationRecord method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecord.htm" />
+  <HelpKINode Title="LogicalParser.HasNextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecordAsync.htm" />
   <HelpKINode Title="LogicalParser.LogicalParser constructor" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser__ctor.htm" />
-  <HelpKINode Title="LogicalParser.NextObservationRecord method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecord.htm" />
-  <HelpKINode Title="LogicalParser.Open method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_Open.htm" />
-  <HelpKINode Title="LogicalParser.Reset method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Reset.htm" />
+  <HelpKINode Title="LogicalParser.NextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecordAsync.htm" />
+  <HelpKINode Title="LogicalParser.OpenAsync method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_OpenAsync.htm" />
+  <HelpKINode Title="LogicalParser.ResetAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_ResetAsync.htm" />
   <HelpKINode Title="LogicalWriter class">
     <HelpKINode Title="LogicalWriter Class" Url="html/T_Gemstone_PQDIF_Logical_LogicalWriter.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter__ctor.htm" />
@@ -839,9 +845,10 @@
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_LogicalWriter.htm" />
   </HelpKINode>
   <HelpKINode Title="LogicalWriter.Dispose method" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_Dispose.htm" />
+  <HelpKINode Title="LogicalWriter.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalWriter_DisposeAsync.htm" />
   <HelpKINode Title="LogicalWriter.LogicalWriter constructor" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter__ctor.htm" />
   <HelpKINode Title="LogicalWriter.MissingTags property" Url="html/P_Gemstone_PQDIF_Logical_LogicalWriter_MissingTags.htm" />
-  <HelpKINode Title="LogicalWriter.Write method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_Write.htm" />
+  <HelpKINode Title="LogicalWriter.WriteAsync method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_WriteAsync.htm" />
   <HelpKINode Title="Longitude property">
     <HelpKINode Title="DataSourceRecord.Longitude Property " Url="html/P_Gemstone_PQDIF_Logical_DataSourceRecord_Longitude.htm" />
     <HelpKINode Title="SeriesValueType.Longitude Property " Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_Longitude.htm" />
@@ -910,8 +917,7 @@
   <HelpKINode Title="Net enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="NewtonMeters enumeration member" Url="html/T_Gemstone_PQDIF_Logical_QuantityUnits.htm" />
   <HelpKINode Title="Newtons enumeration member" Url="html/T_Gemstone_PQDIF_Logical_QuantityUnits.htm" />
-  <HelpKINode Title="NextObservationRecord method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecord.htm" />
-  <HelpKINode Title="NextRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_NextRecord.htm" />
+  <HelpKINode Title="NextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecordAsync.htm" />
   <HelpKINode Title="NextRecordPosition property" Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_NextRecordPosition.htm" />
   <HelpKINode Title="NG enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="NominalFrequency property" Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_NominalFrequency.htm" />
@@ -970,9 +976,9 @@
   <HelpKINode Title="OneChannelSettingTag property" Url="html/P_Gemstone_PQDIF_Logical_MonitorSettingsRecord_OneChannelSettingTag.htm" />
   <HelpKINode Title="OneSeriesDefinitionTag property" Url="html/P_Gemstone_PQDIF_Logical_ChannelDefinition_OneSeriesDefinitionTag.htm" />
   <HelpKINode Title="OneSeriesInstanceTag property" Url="html/P_Gemstone_PQDIF_Logical_ChannelInstance_OneSeriesInstanceTag.htm" />
-  <HelpKINode Title="Open method">
-    <HelpKINode Title="LogicalParser.Open Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_Open.htm" />
-    <HelpKINode Title="PhysicalParser.Open Method " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_Open.htm" />
+  <HelpKINode Title="OpenAsync method">
+    <HelpKINode Title="LogicalParser.OpenAsync Method " Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser_OpenAsync.htm" />
+    <HelpKINode Title="PhysicalParser.OpenAsync Method " Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_OpenAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="OriginalValues property" Url="html/P_Gemstone_PQDIF_Logical_SeriesInstance_OriginalValues.htm" />
   <HelpKINode Title="OscillatoryTransient property" Url="html/P_Gemstone_PQDIF_Logical_DisturbanceCategory_OscillatoryTransient.htm" />
@@ -1019,17 +1025,18 @@
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_PhysicalParser.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_PhysicalParser.htm" />
   </HelpKINode>
-  <HelpKINode Title="PhysicalParser.Close method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Close.htm" />
+  <HelpKINode Title="PhysicalParser.CloseAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_CloseAsync.htm" />
   <HelpKINode Title="PhysicalParser.CompressionAlgorithm property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_CompressionAlgorithm.htm" />
   <HelpKINode Title="PhysicalParser.CompressionStyle property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_CompressionStyle.htm" />
   <HelpKINode Title="PhysicalParser.Dispose method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Dispose.htm" />
+  <HelpKINode Title="PhysicalParser.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_DisposeAsync.htm" />
   <HelpKINode Title="PhysicalParser.ExceptionList property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_ExceptionList.htm" />
   <HelpKINode Title="PhysicalParser.FileName property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_FileName.htm" />
+  <HelpKINode Title="PhysicalParser.GetNextRecordAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_GetNextRecordAsync.htm" />
   <HelpKINode Title="PhysicalParser.HasNextRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_HasNextRecord.htm" />
   <HelpKINode Title="PhysicalParser.MaximumExceptionsAllowed property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_MaximumExceptionsAllowed.htm" />
   <HelpKINode Title="PhysicalParser.MaximumExceptionsReached property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_MaximumExceptionsReached.htm" />
-  <HelpKINode Title="PhysicalParser.NextRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_NextRecord.htm" />
-  <HelpKINode Title="PhysicalParser.Open method" Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_Open.htm" />
+  <HelpKINode Title="PhysicalParser.OpenAsync method" Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser_OpenAsync.htm" />
   <HelpKINode Title="PhysicalParser.PhysicalParser constructor" Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalParser__ctor.htm" />
   <HelpKINode Title="PhysicalParser.Reset method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Reset.htm" />
   <HelpKINode Title="PhysicalParser.Seek method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Seek.htm" />
@@ -1063,8 +1070,9 @@
   <HelpKINode Title="PhysicalWriter.CompressionAlgorithm property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalWriter_CompressionAlgorithm.htm" />
   <HelpKINode Title="PhysicalWriter.CompressionStyle property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalWriter_CompressionStyle.htm" />
   <HelpKINode Title="PhysicalWriter.Dispose method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_Dispose.htm" />
+  <HelpKINode Title="PhysicalWriter.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_DisposeAsync.htm" />
   <HelpKINode Title="PhysicalWriter.PhysicalWriter constructor" Url="html/Overload_Gemstone_PQDIF_Physical_PhysicalWriter__ctor.htm" />
-  <HelpKINode Title="PhysicalWriter.WriteRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_WriteRecord.htm" />
+  <HelpKINode Title="PhysicalWriter.WriteRecordAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_WriteRecordAsync.htm" />
   <HelpKINode Title="PIntg property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_PIntg.htm" />
   <HelpKINode Title="PIntgNeg property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_PIntgNeg.htm" />
   <HelpKINode Title="PIntgNegFund property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_PIntgNegFund.htm" />
@@ -1352,10 +1360,8 @@
   <HelpKINode Title="RemoveElementsByTag method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_RemoveElementsByTag.htm" />
   <HelpKINode Title="Required property" Url="html/P_Gemstone_PQDIF_Tag_Required.htm" />
   <HelpKINode Title="Reserved property" Url="html/P_Gemstone_PQDIF_Physical_RecordHeader_Reserved.htm" />
-  <HelpKINode Title="Reset method">
-    <HelpKINode Title="LogicalParser.Reset Method " Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Reset.htm" />
-    <HelpKINode Title="PhysicalParser.Reset Method " Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Reset.htm" />
-  </HelpKINode>
+  <HelpKINode Title="Reset method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_Reset.htm" />
+  <HelpKINode Title="ResetAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_ResetAsync.htm" />
   <HelpKINode Title="Residual enumeration member" Url="html/T_Gemstone_PQDIF_Logical_Phase.htm" />
   <HelpKINode Title="Response property" Url="html/P_Gemstone_PQDIF_Logical_QuantityType_Response.htm" />
   <HelpKINode Title="RevolutionsPerMinute enumeration member" Url="html/T_Gemstone_PQDIF_Logical_QuantityUnits.htm" />
@@ -1636,6 +1642,7 @@
   <HelpKINode Title="SZero property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_SZero.htm" />
   <HelpKINode Title="Tag class">
     <HelpKINode Title="Tag Class" Url="html/T_Gemstone_PQDIF_Tag.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Gemstone_PQDIF_Tag.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDIF_Tag.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Tag.htm" />
   </HelpKINode>
@@ -1651,7 +1658,11 @@
   <HelpKINode Title="Tag.RefreshTags method" Url="html/M_Gemstone_PQDIF_Tag_RefreshTags.htm" />
   <HelpKINode Title="Tag.Required property" Url="html/P_Gemstone_PQDIF_Tag_Required.htm" />
   <HelpKINode Title="Tag.StandardName property" Url="html/P_Gemstone_PQDIF_Tag_StandardName.htm" />
+  <HelpKINode Title="Tag.TagDefinitions property" Url="html/P_Gemstone_PQDIF_Tag_TagDefinitions.htm" />
+  <HelpKINode Title="Tag.TagDefinitionsFileName field" Url="html/F_Gemstone_PQDIF_Tag_TagDefinitionsFileName.htm" />
   <HelpKINode Title="Tag.ValidIdentifiers property" Url="html/P_Gemstone_PQDIF_Tag_ValidIdentifiers.htm" />
+  <HelpKINode Title="TagDefinitions property" Url="html/P_Gemstone_PQDIF_Tag_TagDefinitions.htm" />
+  <HelpKINode Title="TagDefinitionsFileName field" Url="html/F_Gemstone_PQDIF_Tag_TagDefinitionsFileName.htm" />
   <HelpKINode Title="TagName property" Url="html/P_Gemstone_PQDIF_Logical_MissingTag_TagName.htm" />
   <HelpKINode Title="TagOfElement property" Url="html/P_Gemstone_PQDIF_Physical_Element_TagOfElement.htm" />
   <HelpKINode Title="TDD property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_TDD.htm" />
@@ -1844,8 +1855,8 @@
   <HelpKINode Title="WPT5560 property" Url="html/P_Gemstone_PQDIF_Logical_Equipment_WPT5560.htm" />
   <HelpKINode Title="WPT5590 property" Url="html/P_Gemstone_PQDIF_Logical_Equipment_WPT5590.htm" />
   <HelpKINode Title="WPTDranView property" Url="html/P_Gemstone_PQDIF_Logical_Equipment_WPTDranView.htm" />
-  <HelpKINode Title="Write method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_Write.htm" />
-  <HelpKINode Title="WriteRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_WriteRecord.htm" />
+  <HelpKINode Title="WriteAsync method" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalWriter_WriteAsync.htm" />
+  <HelpKINode Title="WriteRecordAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalWriter_WriteRecordAsync.htm" />
   <HelpKINode Title="WriterMajorVersion property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMajorVersion.htm" />
   <HelpKINode Title="WriterMinorVersion property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMinorVersion.htm" />
   <HelpKINode Title="XBinHigh property" Url="html/P_Gemstone_PQDIF_Logical_SeriesValueType_XBinHigh.htm" />

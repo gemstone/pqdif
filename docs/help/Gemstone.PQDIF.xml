@@ -14,14 +14,6 @@
             Gets a description of the identifier.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Identifier.GenerateIdentifiers(System.Xml.Linq.XDocument,Gemstone.PQDIF.Tag)">
-      <summary>
-            Generates a list of identifiers valid for the given tag from the given XML document.
-            </summary>
-      <param name="doc">The XML document containing tag definitions.</param>
-      <param name="tag">The tag for which valid identifier values are to be generated.</param>
-      <returns>The list of identifiers valid for the given tag.</returns>
-    </member>
     <member name="P:Gemstone.PQDIF.Identifier.Name">
       <summary>
             Gets the name of the identifier as defined by the gemstone.pqdif library.
@@ -72,6 +64,7 @@
             </summary>
       <param name="id">The globally unique identifier for the tag to be retrieved.</param>
       <returns>The tag, if defined, or null if the tag is not found.</returns>
+      <exception cref="T:System.IO.InvalidDataException">Unable to refresh tags from TagDefinitions.xml.</exception>
     </member>
     <member name="P:Gemstone.PQDIF.Tag.ID">
       <summary>
@@ -105,6 +98,16 @@
     <member name="P:Gemstone.PQDIF.Tag.StandardName">
       <summary>
             Gets the name of the tag as defined by the standard.
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDIF.Tag.TagDefinitions">
+      <summary>
+             Gets the definitions of PQDIF tags as defined by the tag definitions file.
+             </summary>
+    </member>
+    <member name="F:Gemstone.PQDIF.Tag.TagDefinitionsFileName">
+      <summary>
+            Name of the file from which to retrieve the <see cref="P:Gemstone.PQDIF.Tag.TagDefinitions" />.
             </summary>
     </member>
     <member name="P:Gemstone.PQDIF.Tag.ValidIdentifiers">
@@ -1502,16 +1505,10 @@
             Represents a parser which parses the logical structure of a PQDIF file.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor(System.IO.Stream,System.Boolean)">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor">
       <summary>
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Logical.LogicalParser" /> class.
             </summary>
-      <param name="stream">The stream containing the PQDIF file data.</param>
-      <param name="leaveOpen">True if the stream should be closed when the parser is closed; false otherwise.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="stream" /> is null.</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <paramref name="stream" /> is not both readable and seekable.</exception>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor(System.String)">
       <summary>
@@ -1519,21 +1516,30 @@
             </summary>
       <param name="fileName">Name of the PQDIF file to be parsed.</param>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.Close">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.CloseAsync">
       <summary>
             Closes the PQDIF file.
             </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalParser.CloseAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.LogicalParser.ContainerRecord">
       <summary>
-            Gets the container record from the PQDIF file. This is
-            parsed as soon as the parser is <see cref="M:Gemstone.PQDIF.Logical.LogicalParser.Open" />ed.
+            Gets the container record from the PQDIF file.
+            This is parsed as soon as the parser is opened.
             </summary>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.LogicalParser.DataSourceRecords">
       <summary>
-            Gets a list of all DataSource records from the PQDIF file. This is
-            parsed when passing throug the observation records <see cref="M:Gemstone.PQDIF.Logical.LogicalParser.NextObservationRecord" />ed.
+            Gets a list of all DataSource records from the PQDIF file.
+            This is parsed when scanning through the observation records.
             </summary>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.Dispose">
@@ -1541,53 +1547,107 @@
             Releases resources held by the parser.
             </summary>
     </member>
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.DisposeAsync">
+      <summary>
+            Releases resources held by the parser.
+            </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalParser.DisposeAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+    </member>
     <member name="P:Gemstone.PQDIF.Logical.LogicalParser.FileName">
       <summary>
             Gets or sets the file name of the PQDIF file to be parsed.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.HasNextObservationRecord">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.HasNextObservationRecordAsync">
       <summary>
-            Determines whether there are any more
-            <see cref="T:Gemstone.PQDIF.Logical.ObservationRecord" />s to be
-            read from the PQDIF file.
+            Determines whether there are any more <see cref="T:Gemstone.PQDIF.Logical.ObservationRecord" />s to be read from the PQDIF file.
             </summary>
       <returns>true if there is another observation record to be read from PQDIF file; false otherwise</returns>
-      <exception cref="T:System.InvalidOperationException">PQDIF file has more than one container record.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <para>The PQDIF file is not open.</para>
+        <para>- OR -</para>
+        <para>PQDIF file has more than one container record.</para>
+      </exception>
       <exception cref="T:System.IO.InvalidDataException">Observation record found with no corresponding data source record.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the next observation record.</exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.NextObservationRecord">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.NextObservationRecordAsync">
       <summary>
             Gets the next observation record from the PQDIF file.
             </summary>
       <returns>The next observation record.</returns>
+      <exception cref="T:System.InvalidOperationException">
+        <para>The PQDIF file is not open.</para>
+        <para>- OR -</para>
+        <para>PQDIF file has more than one container record.</para>
+        <para>- OR -</para>
+        <para>There are no more observation records in the PQDIF file.</para>
+      </exception>
+      <exception cref="T:System.IO.InvalidDataException">Observation record found with no corresponding data source record.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the next observation record.</exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.Open">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.OpenAsync">
       <summary>
             Opens the parser and parses the <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.ContainerRecord" />.
             </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalParser.OpenAsync</parameter>
+          </include>
+        </markup>
+      </returns>
       <exception cref="T:System.InvalidOperationException">
         <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.FileName" /> has not been defined.</exception>
       <exception cref="T:System.IO.InvalidDataException">First record of PQDIF file is not the container record.</exception>
       <exception cref="T:System.NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the container record.</exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.Open(System.IO.Stream,System.Boolean)">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.OpenAsync(System.IO.Stream,System.Boolean)">
       <summary>
             Opens the parser and parses the <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.ContainerRecord" />.
             </summary>
       <param name="stream">The stream containing the PQDIF file data.</param>
       <param name="leaveOpen">True if the stream should be closed when the parser is closed; false otherwise.</param>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalParser.OpenAsync(System.IO.Stream,System.Boolean)</parameter>
+          </include>
+        </markup>
+      </returns>
       <exception cref="T:System.ArgumentNullException">
         <paramref name="stream" /> is null.</exception>
       <exception cref="T:System.InvalidOperationException">
         <paramref name="stream" /> is not both readable and seekable.</exception>
       <exception cref="T:System.IO.InvalidDataException">First record of PQDIF file is not the container record.</exception>
       <exception cref="T:System.NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the container record.</exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.Reset">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalParser.ResetAsync">
       <summary>
             Resets the parser to the beginning of the PQDIF file.
             </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalParser.ResetAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
+      <exception cref="T:System.IO.InvalidDataException">First record of PQDIF file is not the container record.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the container record.</exception>
     </member>
     <member name="T:Gemstone.PQDIF.Logical.LogicalWriter">
       <summary>
@@ -1609,8 +1669,21 @@
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.Dispose">
       <summary>
-            Releases the unmanaged resources used by the <see cref="T:Gemstone.PQDIF.Logical.LogicalWriter" /> object and optionally releases the managed resources.
+            Releases the unmanaged resources used by the <see cref="T:Gemstone.PQDIF.Logical.LogicalWriter" /> object.
             </summary>
+    </member>
+    <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.DisposeAsync">
+      <summary>
+            Releases the unmanaged resources used by the <see cref="T:Gemstone.PQDIF.Logical.LogicalWriter" /> object.
+            </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalWriter.DisposeAsync</parameter>
+          </include>
+        </markup>
+      </returns>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.LogicalWriter.MissingTags">
       <summary>
@@ -1618,19 +1691,55 @@
             missing from the records written to this PQDIF file.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.Write(Gemstone.PQDIF.Logical.ContainerRecord)">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.WriteAsync(Gemstone.PQDIF.Logical.ContainerRecord)">
       <summary>
             Writes the given container record to the file stream.
             </summary>
       <param name="containerRecord">The container record to be written to the PQDIF file.</param>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalWriter.WriteAsync(Gemstone.PQDIF.Logical.ContainerRecord)</parameter>
+          </include>
+        </markup>
+      </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="containerRecord" /> is null.</exception>
+      <exception cref="T:System.ObjectDisposedException">The writer was disposed.</exception>
+      <exception cref="T:System.InvalidOperationException">Attempt was made to write multiple container records to the file.</exception>
+      <exception cref="T:System.IO.InvalidDataException">The PQDIF data is invalid.</exception>
+      <exception cref="T:System.NotSupportedException">
+        <para>Attempt is made to use <see cref="F:Gemstone.PQDIF.Physical.CompressionStyle.TotalFile" />.</para>
+        <para>- OR -</para>
+        <para>Attempt is made to use <see cref="F:Gemstone.PQDIF.Physical.CompressionAlgorithm.PKZIP" />.</para>
+      </exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.Write(Gemstone.PQDIF.Logical.ObservationRecord,System.Boolean)">
+    <member name="M:Gemstone.PQDIF.Logical.LogicalWriter.WriteAsync(Gemstone.PQDIF.Logical.ObservationRecord,System.Boolean)">
       <summary>
             Writes the given observation record, as well as its data source
             and monitor settings records if necessary, to the file stream.
             </summary>
       <param name="observationRecord">The observation record to be written to the PQDIF file.</param>
       <param name="lastRecord">Indicates whether this observation record is the last record in the file.</param>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Logical.LogicalWriter.WriteAsync(Gemstone.PQDIF.Logical.ObservationRecord,System.Boolean)</parameter>
+          </include>
+        </markup>
+      </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="observationRecord" /> is null.</exception>
+      <exception cref="T:System.ObjectDisposedException">The writer was disposed.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <para>File does not yet have a <see cref="T:Gemstone.PQDIF.Logical.ContainerRecord" />.</para>
+        <para>- OR -</para>
+        <para>
+          <paramref name="observationRecord" /> does not have a data source.</para>
+      </exception>
+      <exception cref="T:System.IO.InvalidDataException">The PQDIF data is invalid.</exception>
     </member>
     <member name="T:Gemstone.PQDIF.Logical.MissingTag">
       <summary>
@@ -4073,27 +4182,25 @@
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.PhysicalParser" /> class.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor(System.IO.Stream,System.Boolean)">
-      <summary>
-            Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.PhysicalParser" /> class.
-            </summary>
-      <param name="stream">The stream containing the PQDIF file data.</param>
-      <param name="leaveOpen">True to leave the stream open when closing the parser; otherwise false.</param>
-      <exception cref="T:System.ArgumentNullException">
-        <paramref name="stream" /> is null.</exception>
-      <exception cref="T:System.InvalidOperationException">
-        <paramref name="stream" /> is not both readable and seekable.</exception>
-    </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor(System.String)">
       <summary>
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.PhysicalParser" /> class.
             </summary>
       <param name="fileName">Name of the PQDIF file to be parsed.</param>
     </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.Close">
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.CloseAsync">
       <summary>
             Closes the PQDIF file.
             </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalParser.CloseAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
     </member>
     <member name="P:Gemstone.PQDIF.Physical.PhysicalParser.CompressionAlgorithm">
       <summary>
@@ -4114,6 +4221,19 @@
             Releases all resources held by this parser.
             </summary>
     </member>
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.DisposeAsync">
+      <summary>
+            Releases all resources held by this parser.
+            </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalParser.DisposeAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+    </member>
     <member name="P:Gemstone.PQDIF.Physical.PhysicalParser.ExceptionList">
       <summary>
             Gets all the exceptions encountered while parsing.
@@ -4123,6 +4243,14 @@
       <summary>
             Gets or sets the file name of the PQDIF file to be parsed.
             </summary>
+    </member>
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.GetNextRecordAsync">
+      <summary>
+            Reads the next record from the PQDIF file.
+            </summary>
+      <returns>The next record to be parsed from the PQDIF file.</returns>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
+      <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the next record.</exception>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.HasNextRecord">
       <summary>
@@ -4142,25 +4270,35 @@
             Gets a value that indicates whether the maximum number of exceptions has been reached.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.NextRecord">
-      <summary>
-            Reads the next record from the PQDIF file.
-            </summary>
-      <returns>The next record to be parsed from the PQDIF file.</returns>
-    </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.Open">
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.OpenAsync">
       <summary>
             Opens the PQDIF file.
             </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalParser.OpenAsync</parameter>
+          </include>
+        </markup>
+      </returns>
       <exception cref="T:System.InvalidOperationException">
         <see cref="P:Gemstone.PQDIF.Physical.PhysicalParser.FileName" /> has not been defined.</exception>
     </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.Open(System.IO.Stream,System.Boolean)">
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.OpenAsync(System.IO.Stream,System.Boolean)">
       <summary>
             Opens a PQDIF file from a stream of data.
             </summary>
       <param name="stream">The stream from which to read the PQDIF file.</param>
       <param name="leaveOpen">True to leave the stream open when closing the parser; false otherwise.</param>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalParser.OpenAsync(System.IO.Stream,System.Boolean)</parameter>
+          </include>
+        </markup>
+      </returns>
       <exception cref="T:System.InvalidOperationException">
         <paramref name="stream" /> is not both readable and seekable.</exception>
     </member>
@@ -4168,12 +4306,14 @@
       <summary>
             Sets the parser back to the beginning of the file.
             </summary>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.Seek(Gemstone.PQDIF.Physical.RecordHeader)">
       <summary>
             Jumps in the file to the location of the record with the given header.
             </summary>
       <param name="header">The header to seek to.</param>
+      <exception cref="T:System.InvalidOperationException">The PQDIF file is not open.</exception>
     </member>
     <member name="T:Gemstone.PQDIF.Physical.PhysicalType">
       <summary>
@@ -4310,23 +4450,46 @@
       <summary>
             Gets or sets the compression algorithm used by the PQDIF file.
             </summary>
+      <exception cref="T:System.NotSupportedException">Attempt is made to set <see cref="F:Gemstone.PQDIF.Physical.CompressionAlgorithm.PKZIP" />.</exception>
     </member>
     <member name="P:Gemstone.PQDIF.Physical.PhysicalWriter.CompressionStyle">
       <summary>
             Gets or sets the compression style used by the PQDIF file.
             </summary>
+      <exception cref="T:System.NotSupportedException">Attempt is made to set <see cref="F:Gemstone.PQDIF.Physical.CompressionStyle.TotalFile" />.</exception>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalWriter.Dispose">
       <summary>
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
     </member>
-    <member name="M:Gemstone.PQDIF.Physical.PhysicalWriter.WriteRecord(Gemstone.PQDIF.Physical.Record,System.Boolean)">
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalWriter.DisposeAsync">
+      <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalWriter.DisposeAsync</parameter>
+          </include>
+        </markup>
+      </returns>
+    </member>
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalWriter.WriteRecordAsync(Gemstone.PQDIF.Physical.Record,System.Boolean)">
       <summary>
             Writes the given record to the PQDIF file.
             </summary>
       <param name="record">The record to be written to the file.</param>
       <param name="lastRecord">Indicates whether this record is the last record in the file.</param>
+      <returns>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>returns</parameter>
+            <parameter>M:Gemstone.PQDIF.Physical.PhysicalWriter.WriteRecordAsync(Gemstone.PQDIF.Physical.Record,System.Boolean)</parameter>
+          </include>
+        </markup>
+      </returns>
       <exception cref="T:System.IO.InvalidDataException">The PQDIF data is invalid.</exception>
       <exception cref="T:System.ObjectDisposedException">The writer was disposed.</exception>
     </member>
