@@ -172,16 +172,14 @@ namespace Gemstone.PQDIF.Physical
                 headerWriter.Write(record.Header.BodySize);
 
                 // The PQDIF standard defines the NextRecordPosition to be 0 for the last record in the file
-                // We treat seekable streams differently because we can go back and fix the pointers later
-                if (m_stream.CanSeek || lastRecord)
-                    headerWriter.Write(0);
-                else
+                if (!lastRecord)
                     headerWriter.Write(record.Header.NextRecordPosition);
+                else
+                    headerWriter.Write(0);
 
                 // Write the rest of the header as well as the body
                 headerWriter.Write(record.Header.Checksum);
                 headerWriter.Write(record.Header.Reserved);
-                headerWriter.Write(bodyImage);
 
                 byte[] headerImage = headerStream.ToArray();
                 await m_stream.WriteAsync(headerImage, 0, headerImage.Length);
