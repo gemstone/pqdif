@@ -57,6 +57,16 @@ namespace Gemstone.PQDIF.Physical
             m_elements = new List<Element>();
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="CollectionElement"/> class.
+        /// </summary>
+        /// <param name="readSize">The size of the collection as read from the PQDIF file.</param>
+        public CollectionElement(int readSize)
+        {
+            m_elements = new List<Element>(readSize);
+            ReadSize = readSize;
+        }
+
         #endregion
 
         #region [ Properties ]

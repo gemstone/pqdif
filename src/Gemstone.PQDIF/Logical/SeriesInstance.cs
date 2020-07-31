@@ -321,7 +321,8 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>A list of the original data values.</returns>
         private IList<object> GetOriginalValues()
         {
-            IList<object> values = new List<object>();
+            int size = Math.Min(SeriesValues.Size, 200);
+            IList<object> values = new List<object>(size);
             VectorElement valuesVector = SeriesValues;
             StorageMethods storageMethods = Definition.StorageMethodID;
 

@@ -507,8 +507,7 @@ namespace Gemstone.PQDIF.Physical
         private CollectionElement ReadCollection(BinaryReader recordBodyReader)
         {
             int size = recordBodyReader.ReadInt32();
-            CollectionElement collection = new CollectionElement();
-            collection.ReadSize = size;
+            CollectionElement collection = new CollectionElement(size);
             
             for (int i = 0; i < size; i++)
             {
