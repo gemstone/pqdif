@@ -195,6 +195,52 @@ namespace Gemstone.PQDIF.Logical
         }
 
         /// <summary>
+        /// Gets the title applied to the file.
+        /// </summary>
+        public string? Title
+        {
+            get
+            {
+                CollectionElement collectionElement = PhysicalRecord.Body.Collection;
+                VectorElement? titleElement = collectionElement.GetVectorByTag(TitleTag);
+
+                if (titleElement is null)
+                    return null;
+
+                return Encoding.ASCII.GetString(titleElement.GetValues()).Trim((char)0);
+            }
+            set
+            {
+                CollectionElement collectionElement = PhysicalRecord.Body.Collection;
+                byte[] bytes = Encoding.ASCII.GetBytes(value + (char)0);
+                collectionElement.AddOrUpdateVector(TitleTag, PhysicalType.Char1, bytes);
+            }
+        }
+
+        /// <summary>
+        /// Gets the subject applied to the file.
+        /// </summary>
+        public string? Subject
+        {
+            get
+            {
+                CollectionElement collectionElement = PhysicalRecord.Body.Collection;
+                VectorElement? subjectElement = collectionElement.GetVectorByTag(SubjectTag);
+
+                if (subjectElement is null)
+                    return null;
+
+                return Encoding.ASCII.GetString(subjectElement.GetValues()).Trim((char)0);
+            }
+            set
+            {
+                CollectionElement collectionElement = PhysicalRecord.Body.Collection;
+                byte[] bytes = Encoding.ASCII.GetBytes(value + (char)0);
+                collectionElement.AddOrUpdateVector(SubjectTag, PhysicalType.Char1, bytes);
+            }
+        }
+
+        /// <summary>
         /// Gets the notes stored in the file.
         /// </summary>
         public string? Notes
@@ -204,7 +250,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = PhysicalRecord.Body.Collection;
                 VectorElement? notesElement = collectionElement.GetVectorByTag(NotesTag);
 
-                if (notesElement == null)
+                if (notesElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(notesElement.GetValues()).Trim((char)0);
@@ -298,6 +344,16 @@ namespace Gemstone.PQDIF.Logical
         /// Tag that identifies the date and time of creation.
         /// </summary>
         public static Guid CreationTag { get; } = new Guid("89738609-f1c3-11cf-9d89-0080c72e70a3");
+
+        /// <summary>
+        /// Tag that identifies the notes stored in the PQDIF file.
+        /// </summary>
+        public static readonly Guid TitleTag = new Guid("8973860d-f1c3-11cf-9d89-0080c72e70a3");
+
+        /// <summary>
+        /// Tag that identifies the notes stored in the PQDIF file.
+        /// </summary>
+        public static readonly Guid SubjectTag = new Guid("8973860e-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the notes stored in the PQDIF file.
