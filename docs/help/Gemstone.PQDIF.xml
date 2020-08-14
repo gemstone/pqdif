@@ -538,6 +538,26 @@
             </summary>
       <param name="tag">The tag of the element to be removed.</param>
     </member>
+    <member name="P:Gemstone.PQDIF.Logical.ContainerRecord.Subject">
+      <summary>
+            Gets the subject applied to the file.
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDIF.Logical.ContainerRecord.SubjectTag">
+      <summary>
+            Tag that identifies the subject applied to the PQDIF file.
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDIF.Logical.ContainerRecord.Title">
+      <summary>
+            Gets the title applied to the file.
+            </summary>
+    </member>
+    <member name="F:Gemstone.PQDIF.Logical.ContainerRecord.TitleTag">
+      <summary>
+            Tag that identifies the title applied to the PQDIF file.
+            </summary>
+    </member>
     <member name="P:Gemstone.PQDIF.Logical.ContainerRecord.VersionInfoTag">
       <summary>
             Tag that identifies the version info.
@@ -3922,6 +3942,12 @@
       <summary>
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.CollectionElement" /> class.
             </summary>
+    </member>
+    <member name="M:Gemstone.PQDIF.Physical.CollectionElement.#ctor(System.Int32)">
+      <summary>
+            Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.CollectionElement" /> class.
+            </summary>
+      <param name="readSize">The size of the collection as read from the PQDIF file.</param>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.CollectionElement.AddElement(Gemstone.PQDIF.Physical.Element)">
       <summary>

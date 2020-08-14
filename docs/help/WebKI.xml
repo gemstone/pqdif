@@ -165,14 +165,14 @@
   <HelpKINode Title="Collection property" Url="html/P_Gemstone_PQDIF_Physical_RecordBody_Collection.htm" />
   <HelpKINode Title="CollectionElement class">
     <HelpKINode Title="CollectionElement Class" Url="html/T_Gemstone_PQDIF_Physical_CollectionElement.htm" />
-    <HelpKINode Title="constructor" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement__ctor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_Gemstone_PQDIF_Physical_CollectionElement__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDIF_Physical_CollectionElement.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Physical_CollectionElement.htm" />
   </HelpKINode>
   <HelpKINode Title="CollectionElement.AddElement method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddElement.htm" />
   <HelpKINode Title="CollectionElement.AddOrUpdateScalar method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddOrUpdateScalar.htm" />
   <HelpKINode Title="CollectionElement.AddOrUpdateVector method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_AddOrUpdateVector.htm" />
-  <HelpKINode Title="CollectionElement.CollectionElement constructor" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement__ctor.htm" />
+  <HelpKINode Title="CollectionElement.CollectionElement constructor" Url="html/Overload_Gemstone_PQDIF_Physical_CollectionElement__ctor.htm" />
   <HelpKINode Title="CollectionElement.Elements property" Url="html/P_Gemstone_PQDIF_Physical_CollectionElement_Elements.htm" />
   <HelpKINode Title="CollectionElement.GetCollectionByTag method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_GetCollectionByTag.htm" />
   <HelpKINode Title="CollectionElement.GetElementsByTag method" Url="html/M_Gemstone_PQDIF_Physical_CollectionElement_GetElementsByTag.htm" />
@@ -207,6 +207,7 @@
   <HelpKINode Title="Container enumeration member" Url="html/T_Gemstone_PQDIF_Physical_RecordType.htm" />
   <HelpKINode Title="ContainerRecord class">
     <HelpKINode Title="ContainerRecord Class" Url="html/T_Gemstone_PQDIF_Logical_ContainerRecord.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Gemstone_PQDIF_Logical_ContainerRecord.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Gemstone_PQDIF_Logical_ContainerRecord.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_Gemstone_PQDIF_Logical_ContainerRecord.htm" />
   </HelpKINode>
@@ -226,6 +227,10 @@
   <HelpKINode Title="ContainerRecord.NotesTag property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_NotesTag.htm" />
   <HelpKINode Title="ContainerRecord.PhysicalRecord property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_PhysicalRecord.htm" />
   <HelpKINode Title="ContainerRecord.RemoveElement method" Url="html/M_Gemstone_PQDIF_Logical_ContainerRecord_RemoveElement.htm" />
+  <HelpKINode Title="ContainerRecord.Subject property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_Subject.htm" />
+  <HelpKINode Title="ContainerRecord.SubjectTag field" Url="html/F_Gemstone_PQDIF_Logical_ContainerRecord_SubjectTag.htm" />
+  <HelpKINode Title="ContainerRecord.Title property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_Title.htm" />
+  <HelpKINode Title="ContainerRecord.TitleTag field" Url="html/F_Gemstone_PQDIF_Logical_ContainerRecord_TitleTag.htm" />
   <HelpKINode Title="ContainerRecord.VersionInfoTag property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_VersionInfoTag.htm" />
   <HelpKINode Title="ContainerRecord.WriterMajorVersion property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMajorVersion.htm" />
   <HelpKINode Title="ContainerRecord.WriterMinorVersion property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_WriterMinorVersion.htm" />
@@ -1637,6 +1642,8 @@
   <HelpKINode Title="StorageMethodID property" Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_StorageMethodID.htm" />
   <HelpKINode Title="StorageMethodIDTag property" Url="html/P_Gemstone_PQDIF_Logical_SeriesDefinition_StorageMethodIDTag.htm" />
   <HelpKINode Title="StorageMethods enumeration" Url="html/T_Gemstone_PQDIF_Logical_StorageMethods.htm" />
+  <HelpKINode Title="Subject property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_Subject.htm" />
+  <HelpKINode Title="SubjectTag field" Url="html/F_Gemstone_PQDIF_Logical_ContainerRecord_SubjectTag.htm" />
   <HelpKINode Title="SVector property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_SVector.htm" />
   <HelpKINode Title="SVectorFund property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_SVectorFund.htm" />
   <HelpKINode Title="SZero property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_SZero.htm" />
@@ -1685,6 +1692,8 @@
   <HelpKINode Title="TimeStartTag property" Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_TimeStartTag.htm" />
   <HelpKINode Title="TimeTriggered property" Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_TimeTriggered.htm" />
   <HelpKINode Title="TimeTriggeredTag property" Url="html/P_Gemstone_PQDIF_Logical_ObservationRecord_TimeTriggeredTag.htm" />
+  <HelpKINode Title="Title property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_Title.htm" />
+  <HelpKINode Title="TitleTag field" Url="html/F_Gemstone_PQDIF_Logical_ContainerRecord_TitleTag.htm" />
   <HelpKINode Title="ToName method" Url="html/M_Gemstone_PQDIF_Logical_QuantityCharacteristic_ToName.htm" />
   <HelpKINode Title="Torque enumeration member" Url="html/T_Gemstone_PQDIF_Logical_QuantityMeasured.htm" />
   <HelpKINode Title="ToString method">
