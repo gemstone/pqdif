@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using Gemstone.PQDIF.Physical;
@@ -67,9 +68,9 @@ namespace Gemstone.PQDIF.Logical
     /// <code><![CDATA[
     /// ContainerRecord containerRecord;
     /// List<ObservationRecord> observationRecords = new List<ObservationRecord>();
-    /// string fileName = args[0];
+    /// string filePath = args[0];
     ///
-    /// await using LogicalParser parser = new LogicalParser(fileName);
+    /// await using LogicalParser parser = new LogicalParser(filePath);
     /// await parser.OpenAsync();
     /// containerRecord = parser.ContainerRecord;
     ///
@@ -103,10 +104,10 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Creates a new instance of the <see cref="LogicalParser"/> class.
         /// </summary>
-        /// <param name="fileName">Name of the PQDIF file to be parsed.</param>
-        public LogicalParser(string fileName)
+        /// <param name="filePath">Path to the PQDIF file to be parsed.</param>
+        public LogicalParser(string filePath)
         {
-            m_physicalParser = new PhysicalParser(fileName);
+            m_physicalParser = new PhysicalParser(filePath);
             DataSourceRecords = new List<DataSourceRecord>();
         }
 
@@ -115,12 +116,24 @@ namespace Gemstone.PQDIF.Logical
         #region [ Properties ]
 
         /// <summary>
-        /// Gets or sets the file name of the PQDIF file to be parsed.
+        /// Gets or sets the file path (not just the name) of the PQDIF file to be parsed.
+        /// Obsolete in favor of <see cref="FilePath"/>.
         /// </summary>
+        [Obsolete("Property is deprecated. Please use FilePath instead.")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public string? FileName
         {
-            get => m_physicalParser.FileName;
-            set => m_physicalParser.FileName = value;
+            get => m_physicalParser.FilePath;
+            set => m_physicalParser.FilePath = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the file path of the PQDIF file to be parsed.
+        /// </summary>
+        public string? FilePath
+        {
+            get => m_physicalParser.FilePath;
+            set => m_physicalParser.FilePath = value;
         }
 
         /// <summary>
@@ -142,7 +155,7 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Opens the parser and parses the <see cref="ContainerRecord"/>.
         /// </summary>
-        /// <exception cref="InvalidOperationException"><see cref="FileName"/> has not been defined.</exception>
+        /// <exception cref="InvalidOperationException"><see cref="FilePath"/> has not been defined.</exception>
         /// <exception cref="InvalidDataException">First record of PQDIF file is not the container record.</exception>
         /// <exception cref="NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
         /// <exception cref="EndOfStreamException">End of stream encountered while reading the container record.</exception>

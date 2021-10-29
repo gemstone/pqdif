@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using Ionic.Zlib;
@@ -101,8 +102,8 @@ namespace Gemstone.PQDIF.Physical
     /// </para>
     ///
     /// <code>
-    /// string fileName = args[0];
-    /// await using PhysicalParser parser = new PhysicalParser(fileName);
+    /// string filePath = args[0];
+    /// await using PhysicalParser parser = new PhysicalParser(filePath);
     /// await parser.OpenAsync();
     ///
     /// while (parser.HasNextRecord())
@@ -151,11 +152,11 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Creates a new instance of the <see cref="PhysicalParser"/> class.
         /// </summary>
-        /// <param name="fileName">Name of the PQDIF file to be parsed.</param>
-        public PhysicalParser(string fileName)
+        /// <param name="filePath">Path to the PQDIF file to be parsed.</param>
+        public PhysicalParser(string filePath)
             : this()
         {
-            FileName = fileName;
+            FilePath = filePath;
         }
 
         #endregion
@@ -163,9 +164,21 @@ namespace Gemstone.PQDIF.Physical
         #region [ Properties ]
 
         /// <summary>
-        /// Gets or sets the file name of the PQDIF file to be parsed.
+        /// Gets or sets the file path (not just the name) of the PQDIF file to be parsed.
+        /// Obsolete in favor of <see cref="FilePath"/>.
         /// </summary>
-        public string? FileName { get; set; }
+        [Obsolete("Property is deprecated. Please use FilePath instead.")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public string? FileName
+        {
+            get => FilePath;
+            set => FilePath = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the file path of the PQDIF file to be parsed.
+        /// </summary>
+        public string? FilePath { get; set; }
 
         /// <summary>
         /// Gets all the exceptions encountered while parsing.
@@ -235,14 +248,14 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Opens the PQDIF file.
         /// </summary>
-        /// <exception cref="InvalidOperationException"><see cref="FileName"/> has not been defined.</exception>
+        /// <exception cref="InvalidOperationException"><see cref="FilePath"/> has not been defined.</exception>
         public Task OpenAsync()
         {
-            if (FileName == null)
+            if (FilePath == null)
                 throw new InvalidOperationException("Unable to open PQDIF file when no file name has been defined.");
 
             using (m_stream)
-                m_stream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true);
+                m_stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true);
 
             m_hasNextRecord = true;
             return Task.CompletedTask;
