@@ -576,6 +576,10 @@
     <HelpKINode Title="PhysicalParser.FileName Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_FileName.htm" />
   </HelpKINode>
   <HelpKINode Title="FileNameTag property" Url="html/P_Gemstone_PQDIF_Logical_ContainerRecord_FileNameTag.htm" />
+  <HelpKINode Title="FilePath property">
+    <HelpKINode Title="LogicalParser.FilePath Property " Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_FilePath.htm" />
+    <HelpKINode Title="PhysicalParser.FilePath Property " Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_FilePath.htm" />
+  </HelpKINode>
   <HelpKINode Title="Flash property" Url="html/P_Gemstone_PQDIF_Logical_QuantityType_Flash.htm" />
   <HelpKINode Title="FlkrFreqMax property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_FlkrFreqMax.htm" />
   <HelpKINode Title="FlkrMagAvg property" Url="html/P_Gemstone_PQDIF_Logical_QuantityCharacteristic_FlkrMagAvg.htm" />
@@ -838,6 +842,7 @@
   <HelpKINode Title="LogicalParser.Dispose method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_Dispose.htm" />
   <HelpKINode Title="LogicalParser.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_DisposeAsync.htm" />
   <HelpKINode Title="LogicalParser.FileName property" Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_FileName.htm" />
+  <HelpKINode Title="LogicalParser.FilePath property" Url="html/P_Gemstone_PQDIF_Logical_LogicalParser_FilePath.htm" />
   <HelpKINode Title="LogicalParser.HasNextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_HasNextObservationRecordAsync.htm" />
   <HelpKINode Title="LogicalParser.LogicalParser constructor" Url="html/Overload_Gemstone_PQDIF_Logical_LogicalParser__ctor.htm" />
   <HelpKINode Title="LogicalParser.NextObservationRecordAsync method" Url="html/M_Gemstone_PQDIF_Logical_LogicalParser_NextObservationRecordAsync.htm" />
@@ -1037,6 +1042,7 @@
   <HelpKINode Title="PhysicalParser.DisposeAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_DisposeAsync.htm" />
   <HelpKINode Title="PhysicalParser.ExceptionList property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_ExceptionList.htm" />
   <HelpKINode Title="PhysicalParser.FileName property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_FileName.htm" />
+  <HelpKINode Title="PhysicalParser.FilePath property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_FilePath.htm" />
   <HelpKINode Title="PhysicalParser.GetNextRecordAsync method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_GetNextRecordAsync.htm" />
   <HelpKINode Title="PhysicalParser.HasNextRecord method" Url="html/M_Gemstone_PQDIF_Physical_PhysicalParser_HasNextRecord.htm" />
   <HelpKINode Title="PhysicalParser.MaximumExceptionsAllowed property" Url="html/P_Gemstone_PQDIF_Physical_PhysicalParser_MaximumExceptionsAllowed.htm" />

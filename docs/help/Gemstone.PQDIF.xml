@@ -258,9 +258,9 @@
     </member>
     <member name="T:Gemstone.PQDIF.Logical.ChannelInstance">
       <summary>
-            Represents a channel instance in a PQDIF file. A channel instance
-            resides in an <see cref="P:Gemstone.PQDIF.Logical.ChannelInstance.ObservationRecord" />, and is defined by
-            a <see cref="T:Gemstone.PQDIF.Logical.ChannelDefinition" /> inside the observation record's
+            Represents a channel instance in a PQDIF file. See IEEE 1159.3-2019 section 5.4.3
+            for details. A channel instance resides in an <see cref="P:Gemstone.PQDIF.Logical.ChannelInstance.ObservationRecord" />, and
+            is defined by a <see cref="T:Gemstone.PQDIF.Logical.ChannelDefinition" /> inside the observation record's
             <see cref="T:Gemstone.PQDIF.Logical.DataSourceRecord" />.
             </summary>
     </member>
@@ -1522,8 +1522,8 @@
     </member>
     <member name="T:Gemstone.PQDIF.Logical.LogicalParser">
       <summary>
-            Represents a parser which parses the logical structure of a PQDIF file.
-            </summary>
+             Represents a parser which parses the logical structure of a PQDIF file.
+             </summary>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor">
       <summary>
@@ -1534,7 +1534,7 @@
       <summary>
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Logical.LogicalParser" /> class.
             </summary>
-      <param name="fileName">Name of the PQDIF file to be parsed.</param>
+      <param name="filePath">Path to the PQDIF file to be parsed.</param>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.CloseAsync">
       <summary>
@@ -1582,7 +1582,13 @@
     </member>
     <member name="P:Gemstone.PQDIF.Logical.LogicalParser.FileName">
       <summary>
-            Gets or sets the file name of the PQDIF file to be parsed.
+            Gets or sets the file path (not just the name) of the PQDIF file to be parsed.
+            Obsolete in favor of <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.FilePath" />.
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDIF.Logical.LogicalParser.FilePath">
+      <summary>
+            Gets or sets the file path of the PQDIF file to be parsed.
             </summary>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.HasNextObservationRecordAsync">
@@ -1626,7 +1632,7 @@
         </markup>
       </returns>
       <exception cref="T:System.InvalidOperationException">
-        <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.FileName" /> has not been defined.</exception>
+        <see cref="P:Gemstone.PQDIF.Logical.LogicalParser.FilePath" /> has not been defined.</exception>
       <exception cref="T:System.IO.InvalidDataException">First record of PQDIF file is not the container record.</exception>
       <exception cref="T:System.NotSupportedException">An unsupported compression mode was defined in the PQDIF file.</exception>
       <exception cref="T:System.IO.EndOfStreamException">End of stream encountered while reading the container record.</exception>
@@ -2018,7 +2024,8 @@
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ObservationRecord.StartTime">
       <summary>
-            Gets the starting time of the data in the observation record.
+            Gets the starting time of the data in the observation record. This time should
+            be used as the base time for all relative seconds recorded in the series instances.
             </summary>
       <exception cref="T:System.IO.InvalidDataException">StartTime element not found in observation record.</exception>
     </member>
@@ -2034,7 +2041,8 @@
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ObservationRecord.TimeTriggered">
       <summary>
-            Gets the time the observation was triggered.
+            Gets the time the observation was triggered. For more information regarding recording
+            time in PQD files, see <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.StartTime" />.
             </summary>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ObservationRecord.TimeTriggeredTag">
@@ -4200,8 +4208,8 @@
     </member>
     <member name="T:Gemstone.PQDIF.Physical.PhysicalParser">
       <summary>
-            Represents a parser which parses the physical structure of a PQDIF file.
-            </summary>
+             Represents a parser which parses the physical structure of a PQDIF file.
+             </summary>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor">
       <summary>
@@ -4212,7 +4220,7 @@
       <summary>
             Creates a new instance of the <see cref="T:Gemstone.PQDIF.Physical.PhysicalParser" /> class.
             </summary>
-      <param name="fileName">Name of the PQDIF file to be parsed.</param>
+      <param name="filePath">Path to the PQDIF file to be parsed.</param>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.CloseAsync">
       <summary>
@@ -4267,7 +4275,13 @@
     </member>
     <member name="P:Gemstone.PQDIF.Physical.PhysicalParser.FileName">
       <summary>
-            Gets or sets the file name of the PQDIF file to be parsed.
+            Gets or sets the file path (not just the name) of the PQDIF file to be parsed.
+            Obsolete in favor of <see cref="P:Gemstone.PQDIF.Physical.PhysicalParser.FilePath" />.
+            </summary>
+    </member>
+    <member name="P:Gemstone.PQDIF.Physical.PhysicalParser.FilePath">
+      <summary>
+            Gets or sets the file path of the PQDIF file to be parsed.
             </summary>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.GetNextRecordAsync">
@@ -4309,7 +4323,7 @@
         </markup>
       </returns>
       <exception cref="T:System.InvalidOperationException">
-        <see cref="P:Gemstone.PQDIF.Physical.PhysicalParser.FileName" /> has not been defined.</exception>
+        <see cref="P:Gemstone.PQDIF.Physical.PhysicalParser.FilePath" /> has not been defined.</exception>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.OpenAsync(System.IO.Stream,System.Boolean)">
       <summary>
