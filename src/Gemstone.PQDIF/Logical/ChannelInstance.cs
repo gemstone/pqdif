@@ -243,9 +243,9 @@ namespace Gemstone.PQDIF.Logical
             if (Definition.SeriesDefinitions.Count <= SeriesInstances.Count)
                 throw new InvalidOperationException("Cannot create a series instance without a corresponding series definition.");
 
-            CollectionElement seriesInstanceElement = new CollectionElement { TagOfElement = OneSeriesInstanceTag };
+            CollectionElement seriesInstanceElement = new() { TagOfElement = OneSeriesInstanceTag };
             SeriesDefinition seriesDefinition = Definition.SeriesDefinitions[SeriesInstances.Count];
-            SeriesInstance seriesInstance = new SeriesInstance(seriesInstanceElement, this, seriesDefinition);
+            SeriesInstance seriesInstance = new(seriesInstanceElement, this, seriesDefinition);
             seriesInstanceElement.AddOrUpdateVector(SeriesInstance.SeriesValuesTag, PhysicalType.UnsignedInteger1, new byte[0]);
 
             CollectionElement? seriesInstancesElement = m_physicalStructure.GetCollectionByTag(SeriesInstancesTag);
@@ -277,7 +277,7 @@ namespace Gemstone.PQDIF.Logical
 
             for (int i = seriesInstanceElements.Count; i >= 0; i--)
             {
-                SeriesInstance instance = new SeriesInstance(seriesInstanceElements[i], this, seriesDefinitions[i]);
+                SeriesInstance instance = new(seriesInstanceElements[i], this, seriesDefinitions[i]);
 
                 if (Equals(seriesInstance, instance))
                     seriesInstancesElement.RemoveElement(seriesInstancesElement);
@@ -298,7 +298,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => obj is ChannelInstance other
+        public override bool Equals(object? obj) => obj is ChannelInstance other
             ? Equals(other)
             : false;
 
@@ -319,27 +319,27 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the channel group ID.
         /// </summary>
-        public static Guid ChannelGroupIDTag { get; } = new Guid("f90de218-e67b-4cf1-a295-b021a2d46767");
+        public static Guid ChannelGroupIDTag { get; } = new("f90de218-e67b-4cf1-a295-b021a2d46767");
 
         /// <summary>
         /// Tag that identifies the series instances collection.
         /// </summary>
-        public static Guid SeriesInstancesTag { get; } = new Guid("3d786f93-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesInstancesTag { get; } = new("3d786f93-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies a single series instance in the collection.
         /// </summary>
-        public static Guid OneSeriesInstanceTag { get; } = new Guid("3d786f94-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid OneSeriesInstanceTag { get; } = new("3d786f94-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the channel trigger module name.
         /// </summary>
-        public static Guid ChannelTriggerModuleNameTag { get; } = new Guid("0fa118c6-cb4a-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelTriggerModuleNameTag { get; } = new("0fa118c6-cb4a-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the cross trigger device name.
         /// </summary>
-        public static Guid CrossTriggerDeviceNameTag { get; } = new Guid("0fa118c5-cb4a-11cf-9d89-0080c72e70a3");
+        public static Guid CrossTriggerDeviceNameTag { get; } = new("0fa118c5-cb4a-11cf-9d89-0080c72e70a3");
 
         #endregion
     }

@@ -126,7 +126,7 @@ namespace Gemstone.PQDIF.Physical
         /// <returns>A string representation of the record.</returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new();
 
             builder.Append(Header);
             builder.AppendLine();
@@ -145,7 +145,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// The standard signature used for all PQDIF records.
         /// </summary>
-        public static Guid Signature { get; } = new Guid("4a111440-e49f-11cf-9900-505144494600");
+        public static Guid Signature { get; } = new("4a111440-e49f-11cf-9900-505144494600");
 
         private static Dictionary<Guid, RecordType> RecordTypeTagMap { get; } = CreateRecordTypeTagMap();
 

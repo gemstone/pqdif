@@ -333,42 +333,42 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the version info.
         /// </summary>
-        public static Guid VersionInfoTag { get; } = new Guid("89738607-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid VersionInfoTag { get; } = new("89738607-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the file name.
         /// </summary>
-        public static Guid FileNameTag { get; } = new Guid("89738608-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid FileNameTag { get; } = new("89738608-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the date and time of creation.
         /// </summary>
-        public static Guid CreationTag { get; } = new Guid("89738609-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid CreationTag { get; } = new("89738609-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the title applied to the PQDIF file.
         /// </summary>
-        public static readonly Guid TitleTag = new Guid("8973860d-f1c3-11cf-9d89-0080c72e70a3");
+        public static readonly Guid TitleTag = new("8973860d-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the subject applied to the PQDIF file.
         /// </summary>
-        public static readonly Guid SubjectTag = new Guid("8973860e-f1c3-11cf-9d89-0080c72e70a3");
+        public static readonly Guid SubjectTag = new("8973860e-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the notes stored in the PQDIF file.
         /// </summary>
-        public static Guid NotesTag { get; } = new Guid("89738617-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid NotesTag { get; } = new("89738617-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the compression style of the PQDIF file.
         /// </summary>
-        public static Guid CompressionStyleTag { get; } = new Guid("8973861b-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid CompressionStyleTag { get; } = new("8973861b-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the compression algorithm used when writing the PQDIF file.
         /// </summary>
-        public static Guid CompressionAlgorithmTag { get; } = new Guid("8973861c-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid CompressionAlgorithmTag { get; } = new("8973861c-f1c3-11cf-9d89-0080c72e70a3");
 
         // Static Methods
 
@@ -379,8 +379,8 @@ namespace Gemstone.PQDIF.Logical
         public static ContainerRecord CreateContainerRecord()
         {
             Guid recordTypeTag = Record.GetTypeAsTag(RecordType.Container);
-            Record physicalRecord = new Record(recordTypeTag);
-            ContainerRecord containerRecord = new ContainerRecord(physicalRecord);
+            Record physicalRecord = new(recordTypeTag);
+            ContainerRecord containerRecord = new(physicalRecord);
 
             DateTime now = DateTime.UtcNow;
             containerRecord.WriterMajorVersion = 1;

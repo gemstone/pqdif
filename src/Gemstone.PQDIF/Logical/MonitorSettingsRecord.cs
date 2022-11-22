@@ -213,8 +213,8 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New channel setting.</returns>
         public ChannelSetting AddNewChannelSetting(ChannelDefinition channelDefinition)
         {
-            CollectionElement channelSettingElement = new CollectionElement { TagOfElement = OneChannelSettingTag };
-            ChannelSetting channelSetting = new ChannelSetting(channelSettingElement, this);
+            CollectionElement channelSettingElement = new() { TagOfElement = OneChannelSettingTag };
+            ChannelSetting channelSetting = new(channelSettingElement, this);
             channelSetting.ChannelDefinitionIndex = (uint)channelDefinition.DataSource.ChannelDefinitions.IndexOf(channelDefinition);
 
             CollectionElement? channelSettingsElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelSettingsArrayTag);
@@ -245,7 +245,7 @@ namespace Gemstone.PQDIF.Logical
 
             foreach (CollectionElement channelSettingElement in channelSettingElements)
             {
-                ChannelSetting setting = new ChannelSetting(channelSettingElement, this);
+                ChannelSetting setting = new(channelSettingElement, this);
 
                 if (Equals(channelSetting, setting))
                     channelSettingsElement.RemoveElement(channelSettingElement);
@@ -261,37 +261,37 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the time that these settings become effective.
         /// </summary>
-        public static Guid EffectiveTag { get; } = new Guid("62f28183-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid EffectiveTag { get; } = new("62f28183-f9c4-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the install time.
         /// </summary>
-        public static Guid TimeInstalledTag { get; } = new Guid("3d786f85-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid TimeInstalledTag { get; } = new("3d786f85-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the flag which determines whether to apply calibration to the series.
         /// </summary>
-        public static Guid UseCalibrationTag { get; } = new Guid("62f28180-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid UseCalibrationTag { get; } = new("62f28180-f9c4-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the flag which determines whether to apply transducer adjustments to the series.
         /// </summary>
-        public static Guid UseTransducerTag { get; } = new Guid("62f28181-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid UseTransducerTag { get; } = new("62f28181-f9c4-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the collection of channel settings.
         /// </summary>
-        public static Guid ChannelSettingsArrayTag { get; } = new Guid("62f28182-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelSettingsArrayTag { get; } = new("62f28182-f9c4-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies one channel setting in the collection.
         /// </summary>
-        public static Guid OneChannelSettingTag { get; } = new Guid("3d786f9a-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid OneChannelSettingTag { get; } = new("3d786f9a-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the nominal frequency.
         /// </summary>
-        public static Guid NominalFrequencyTag { get; } = new Guid("0fa118c3-cb4a-11d2-b30b-fe25cb9a1760");
+        public static Guid NominalFrequencyTag { get; } = new("0fa118c3-cb4a-11d2-b30b-fe25cb9a1760");
 
         // Static Properties
 
@@ -310,8 +310,8 @@ namespace Gemstone.PQDIF.Logical
         public static MonitorSettingsRecord CreateMonitorSettingsRecord()
         {
             Guid recordTypeTag = Record.GetTypeAsTag(RecordType.MonitorSettings);
-            Record physicalRecord = new Record(recordTypeTag);
-            MonitorSettingsRecord monitorSettingsRecord = new MonitorSettingsRecord(physicalRecord);
+            Record physicalRecord = new(recordTypeTag);
+            MonitorSettingsRecord monitorSettingsRecord = new(physicalRecord);
 
             DateTime now = DateTime.UtcNow;
             monitorSettingsRecord.Effective = now;

@@ -302,7 +302,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => obj is SeriesInstance other
+        public override bool Equals(object? obj) => obj is SeriesInstance other
             ? Equals(other)
             : false;
 
@@ -421,27 +421,27 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the scale value to apply to the series.
         /// </summary>
-        public static Guid SeriesScaleTag { get; } = new Guid("3d786f96-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesScaleTag { get; } = new("3d786f96-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the offset value to apply to the series.
         /// </summary>
-        public static Guid SeriesOffsetTag { get; } = new Guid("3d786f97-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesOffsetTag { get; } = new("3d786f97-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the values contained in the series.
         /// </summary>
-        public static Guid SeriesValuesTag { get; } = new Guid("3d786f99-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesValuesTag { get; } = new("3d786f99-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the index of the channel that owns the series to be shared.
         /// </summary>
-        public static Guid SeriesShareChannelIndexTag { get; } = new Guid("8973861f-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesShareChannelIndexTag { get; } = new("8973861f-f1c3-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the index of the series to be shared.
         /// </summary>
-        public static Guid SeriesShareSeriesIndexTag { get; } = new Guid("89738620-f1c3-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesShareSeriesIndexTag { get; } = new("89738620-f1c3-11cf-9d89-0080c72e70a3");
 
         #endregion
     }

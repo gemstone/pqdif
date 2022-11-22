@@ -80,7 +80,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression style used by the PQDIF file.
         /// </summary>
-        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="CompressionStyle.TotalFile"/>.</exception>
+        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="Physical.CompressionStyle.TotalFile"/>.</exception>
         public CompressionStyle CompressionStyle
         {
             get
@@ -99,7 +99,7 @@ namespace Gemstone.PQDIF.Physical
         /// <summary>
         /// Gets or sets the compression algorithm used by the PQDIF file.
         /// </summary>
-        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="CompressionAlgorithm.PKZIP"/>.</exception>
+        /// <exception cref="NotSupportedException">Attempt is made to set <see cref="Physical.CompressionAlgorithm.PKZIP"/>.</exception>
         public CompressionAlgorithm CompressionAlgorithm
         {
             get
@@ -134,8 +134,8 @@ namespace Gemstone.PQDIF.Physical
             byte[] bodyImage;
             uint checksum;
 
-            using (MemoryStream bodyStream = new MemoryStream())
-            using (BinaryWriter bodyWriter = new BinaryWriter(bodyStream))
+            using (MemoryStream bodyStream = new())
+            await using (BinaryWriter bodyWriter = new(bodyStream))
             {
                 // Write the record body to the memory stream
                 if (record.Body != null)
@@ -162,8 +162,8 @@ namespace Gemstone.PQDIF.Physical
             record.Header.NextRecordPosition = (int)m_stream.Length + record.Header.HeaderSize + record.Header.BodySize;
             record.Header.Checksum = checksum;
 
-            using (MemoryStream headerStream = new MemoryStream())
-            using (BinaryWriter headerWriter = new BinaryWriter(headerStream))
+            using (MemoryStream headerStream = new())
+            await using (BinaryWriter headerWriter = new(headerStream))
             {
                 // Write up to the next record position
                 headerWriter.Write(record.Header.RecordSignature.ToByteArray());

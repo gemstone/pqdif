@@ -38,69 +38,69 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Point-on-wave measurements.
         /// </summary>
-        public static Guid WaveForm { get; } = new Guid("67f6af80-f753-11cf-9d89-0080c72e70a3");
+        public static Guid WaveForm { get; } = new("67f6af80-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Time-based logged entries.
         /// </summary>
-        public static Guid ValueLog { get; } = new Guid("67f6af82-f753-11cf-9d89-0080c72e70a3");
+        public static Guid ValueLog { get; } = new("67f6af82-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Time-domain measurements including
         /// magnitudes and (optionally) phase angle.
         /// </summary>
-        public static Guid Phasor { get; } = new Guid("67f6af81-f753-11cf-9d89-0080c72e70a3");
+        public static Guid Phasor { get; } = new("67f6af81-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Frequency-domain measurements including
         /// magnitude and (optionally) phase angle.
         /// </summary>
-        public static Guid Response { get; } = new Guid("67f6af85-f753-11cf-9d89-0080c72e70a3");
+        public static Guid Response { get; } = new("67f6af85-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Time, latitude, longitude, value, polarity, ellipse.
         /// </summary>
-        public static Guid Flash { get; } = new Guid("67f6af83-f753-11cf-9d89-0080c72e70a3");
+        public static Guid Flash { get; } = new("67f6af83-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// BinLow, BinHigh, BinID, count.
         /// </summary>
-        public static Guid Histogram { get; } = new Guid("67f6af87-f753-11cf-9d89-0080c72e70a3");
+        public static Guid Histogram { get; } = new("67f6af87-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// XBinLow, XBinHigh, YBinLow, YBinHigh, BinID, count.
         /// </summary>
-        public static Guid Histogram3D { get; } = new Guid("67f6af88-f753-11cf-9d89-0080c72e70a3");
+        public static Guid Histogram3D { get; } = new("67f6af88-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Probability, value.
         /// </summary>
-        public static Guid CPF { get; } = new Guid("67f6af89-f753-11cf-9d89-0080c72e70a3");
+        public static Guid CPF { get; } = new("67f6af89-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// X-values and y-values.
         /// </summary>
-        public static Guid XY { get; } = new Guid("67f6af8a-f753-11cf-9d89-0080c72e70a3");
+        public static Guid XY { get; } = new("67f6af8a-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Magnitude and duration.
         /// </summary>
-        public static Guid MagDur { get; } = new Guid("67f6af8b-f753-11cf-9d89-0080c72e70a3");
+        public static Guid MagDur { get; } = new("67f6af8b-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// X-values, y-values, and z-values.
         /// </summary>
-        public static Guid XYZ { get; } = new Guid("67f6af8c-f753-11cf-9d89-0080c72e70a3");
+        public static Guid XYZ { get; } = new("67f6af8c-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Time, magnitude, and duration.
         /// </summary>
-        public static Guid MagDurTime { get; } = new Guid("67f6af8d-f753-11cf-9d89-0080c72e70a3");
+        public static Guid MagDurTime { get; } = new("67f6af8d-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Time, magnitude, duration, and count.
         /// </summary>
-        public static Guid MagDurCount { get; } = new Guid("67f6af8e-f753-11cf-9d89-0080c72e70a3");
+        public static Guid MagDurCount { get; } = new("67f6af8e-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Gets the information about the quantity

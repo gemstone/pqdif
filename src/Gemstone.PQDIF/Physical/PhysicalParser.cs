@@ -429,8 +429,8 @@ namespace Gemstone.PQDIF.Physical
             int position = (int)m_stream.Position;
             byte[] headerData = await ReadBytesAsync(HeaderSize);
 
-            using MemoryStream memoryStream = new MemoryStream(headerData);
-            using BinaryReader reader = new BinaryReader(memoryStream);
+            using MemoryStream memoryStream = new(headerData);
+            using BinaryReader reader = new(memoryStream);
 
             return new RecordHeader
             {
@@ -461,8 +461,8 @@ namespace Gemstone.PQDIF.Physical
             if (m_compressionAlgorithm == CompressionAlgorithm.Zlib && m_compressionStyle != CompressionStyle.None)
                 bytes = ZlibStream.UncompressBuffer(bytes);
 
-            using MemoryStream stream = new MemoryStream(bytes);
-            using BinaryReader reader = new BinaryReader(stream);
+            using MemoryStream stream = new(bytes);
+            using BinaryReader reader = new(stream);
             CollectionElement root = ReadCollection(reader);
             return new RecordBody(root) { Checksum = checksum };
         }
@@ -548,7 +548,7 @@ namespace Gemstone.PQDIF.Physical
         private CollectionElement ReadCollection(BinaryReader recordBodyReader)
         {
             int size = recordBodyReader.ReadInt32();
-            CollectionElement collection = new CollectionElement(size);
+            CollectionElement collection = new(size);
             
             for (int i = 0; i < size; i++)
             {
@@ -564,7 +564,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads a vector element from the PQDIF file.
         private VectorElement ReadVector(BinaryReader recordBodyReader, PhysicalType typeOfValue)
         {
-            VectorElement element = new VectorElement
+            VectorElement element = new()
             {
                 Size = recordBodyReader.ReadInt32(),
                 TypeOfValue = typeOfValue
@@ -580,7 +580,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads a scalar element from the PQDIF file.
         private ScalarElement ReadScalar(BinaryReader recordBodyReader, PhysicalType typeOfValue)
         {
-            ScalarElement element = new ScalarElement
+            ScalarElement element = new()
             {
                 TypeOfValue = typeOfValue
             };

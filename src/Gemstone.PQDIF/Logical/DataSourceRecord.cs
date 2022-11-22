@@ -40,27 +40,27 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// The ID for data source type Measure.
         /// </summary>
-        public static Guid Measure { get; } = new Guid("e6b51730-f747-11cf-9d89-0080c72e70a3");
+        public static Guid Measure { get; } = new("e6b51730-f747-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for data source type Manual.
         /// </summary>
-        public static Guid Manual { get; } = new Guid("e6b51731-f747-11cf-9d89-0080c72e70a3");
+        public static Guid Manual { get; } = new("e6b51731-f747-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for data source type Simulate.
         /// </summary>
-        public static Guid Simulate { get; } = new Guid("e6b51732-f747-11cf-9d89-0080c72e70a3");
+        public static Guid Simulate { get; } = new("e6b51732-f747-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for data source type Benchmark.
         /// </summary>
-        public static Guid Benchmark { get; } = new Guid("e6b51733-f747-11cf-9d89-0080c72e70a3");
+        public static Guid Benchmark { get; } = new("e6b51733-f747-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for data source type Debug.
         /// </summary>
-        public static Guid Debug { get; } = new Guid("e6b51734-f747-11cf-9d89-0080c72e70a3");
+        public static Guid Debug { get; } = new("e6b51734-f747-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Gets information about the data source type identified by the given ID.
@@ -380,8 +380,8 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New channel definition.</returns>
         public ChannelDefinition AddNewChannelDefinition()
         {
-            CollectionElement channelDefinitionElement = new CollectionElement { TagOfElement = OneChannelDefinitionTag };
-            ChannelDefinition channelDefinition = new ChannelDefinition(channelDefinitionElement, this);
+            CollectionElement channelDefinitionElement = new() { TagOfElement = OneChannelDefinitionTag };
+            ChannelDefinition channelDefinition = new(channelDefinitionElement, this);
 
             channelDefinition.Phase = Phase.None;
             channelDefinition.QuantityMeasured = QuantityMeasured.None;
@@ -415,7 +415,7 @@ namespace Gemstone.PQDIF.Logical
 
             foreach (CollectionElement channelDefinitionElement in channelDefinitionElements)
             {
-                ChannelDefinition definition = new ChannelDefinition(channelDefinitionElement, this);
+                ChannelDefinition definition = new(channelDefinitionElement, this);
 
                 if (Equals(channelDefinition, definition))
                     channelDefinitionsElement.RemoveElement(channelDefinitionElement);
@@ -438,52 +438,52 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the data source type.
         /// </summary>
-        public static Guid DataSourceTypeIDTag { get; } = new Guid("b48d8581-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DataSourceTypeIDTag { get; } = new("b48d8581-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the vendor ID.
         /// </summary>
-        public static Guid VendorIDTag { get; } = new Guid("b48d8582-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid VendorIDTag { get; } = new("b48d8582-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the equipment ID.
         /// </summary>
-        public static Guid EquipmentIDTag { get; } = new Guid("b48d8583-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid EquipmentIDTag { get; } = new("b48d8583-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the data source name.
         /// </summary>
-        public static Guid DataSourceNameTag { get; } = new Guid("b48d8587-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DataSourceNameTag { get; } = new("b48d8587-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the data source owner.
         /// </summary>
-        public static Guid DataSourceOwnerTag { get; } = new Guid("b48d8588-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DataSourceOwnerTag { get; } = new("b48d8588-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the data source owner.
         /// </summary>
-        public static Guid DataSourceLocationTag { get; } = new Guid("b48d8589-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DataSourceLocationTag { get; } = new("b48d8589-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the physical location of the data source.
         /// </summary>
-        public static Guid DataSourceCoordinatesTag { get; } = new Guid("b48d858b-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DataSourceCoordinatesTag { get; } = new("b48d858b-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the channel definitions collection.
         /// </summary>
-        public static Guid ChannelDefinitionsTag { get; } = new Guid("b48d858d-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelDefinitionsTag { get; } = new("b48d858d-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the a single channel definition in the collection.
         /// </summary>
-        public static Guid OneChannelDefinitionTag { get; } = new Guid("b48d858e-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid OneChannelDefinitionTag { get; } = new("b48d858e-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the time that the data source record becomes effective.
         /// </summary>
-        public static Guid EffectiveTag { get; } = new Guid("62f28183-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid EffectiveTag { get; } = new("62f28183-f9c4-11cf-9d89-0080c72e70a3");
 
         // Static Methods
 
@@ -495,8 +495,8 @@ namespace Gemstone.PQDIF.Logical
         public static DataSourceRecord CreateDataSourceRecord(string dataSourceName)
         {
             Guid recordTypeTag = Record.GetTypeAsTag(RecordType.DataSource);
-            Record physicalRecord = new Record(recordTypeTag);
-            DataSourceRecord dataSourceRecord = new DataSourceRecord(physicalRecord);
+            Record physicalRecord = new(recordTypeTag);
+            DataSourceRecord dataSourceRecord = new(physicalRecord);
 
             DateTime now = DateTime.UtcNow;
             dataSourceRecord.DataSourceTypeID = DataSourceType.Simulate;

@@ -35,178 +35,178 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// The ID for no distrubance or undefined.
         /// </summary>
-        public static Guid None { get; } = new Guid("67f6af8f-f753-11cf-9d89-0080c72e70a3");
+        public static Guid None { get; } = new("67f6af8f-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Transient.
         /// </summary>
-        public static Guid Transient { get; } = new Guid("67f6af90-f753-0x11cf-9d89-0080c72e70a3");
+        public static Guid Transient { get; } = new("67f6af90-f753-0x11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Impulsive Transient.
         /// </summary>
-        public static Guid ImpulsiveTransient { get; } = new Guid("dd56ef60-7edd-11d2-b30a-00609789d193");
+        public static Guid ImpulsiveTransient { get; } = new("dd56ef60-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Impulsive Transient with nanosecond duration.
         /// </summary>
-        public static Guid ImpulsiveTransient_nano { get; } = new Guid("dd56ef61-7edd-11d2-b30a-00609789d193");
+        public static Guid ImpulsiveTransient_nano { get; } = new("dd56ef61-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Impulsive Transient with microsecond duration.
         /// </summary>
-        public static Guid ImpulsiveTransient_micro { get; } = new Guid("dd56ef63-7edd-11d2-b30a-00609789d193");
+        public static Guid ImpulsiveTransient_micro { get; } = new("dd56ef63-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Impulsive Transient with milisecond duration.
         /// </summary>
 
-        public static Guid ImpulsiveTransient_mili { get; } = new Guid("dd56ef64-7edd-11d2-b30a-00609789d193");
+        public static Guid ImpulsiveTransient_mili { get; } = new("dd56ef64-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Oscillatory Transient.
         /// </summary>
-        public static Guid OscillatoryTransient { get; } = new Guid("dd56ef65-7edd-11d2-b30a-00609789d193");
+        public static Guid OscillatoryTransient { get; } = new("dd56ef65-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Low Frequency Oscillatory Transient.
         /// </summary>
-        public static Guid OscillatoryTransient_low { get; } = new Guid("dd56ef66-7edd-11d2-b30a-00609789d193");
+        public static Guid OscillatoryTransient_low { get; } = new("dd56ef66-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Medium Frequency Oscillatory Transient.
         /// </summary>
-        public static Guid OscillatoryTransient_medium { get; } = new Guid("dd56ef67-7edd-11d2-b30a-00609789d193");
+        public static Guid OscillatoryTransient_medium { get; } = new("dd56ef67-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 High Frequency Oscillatory Transient.
         /// </summary>
-        public static Guid OscillatoryTransient_high { get; } = new Guid("dd56ef68-7edd-11d2-b30a-00609789d193");
+        public static Guid OscillatoryTransient_high { get; } = new("dd56ef68-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation
         /// </summary>n
-        public static Guid RMSVariationShortDuration { get; } = new Guid("67f6af91-f753-11cf-9d89-0080c72e70a3");
+        public static Guid RMSVariationShortDuration { get; } = new("67f6af91-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Instantaneous duration.
         /// </summary>
-        public static Guid RMSVariationShortDuration_Instantaneous { get; } = new Guid("dd56ef69-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_Instantaneous { get; } = new("dd56ef69-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Instantaneous Sag.
         /// </summary>
-        public static Guid RMSVariationShortDuration_InstantaneousSag { get; } = new Guid("dd56ef6a-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_InstantaneousSag { get; } = new("dd56ef6a-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Instantaneous Swell.
         /// </summary>
-        public static Guid RMSVariationShortDuration_InstantaneousSwell { get; } = new Guid("dd56ef6b-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_InstantaneousSwell { get; } = new("dd56ef6b-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Momentary Duration.
         /// </summary>
-        public static Guid RMSVariationShortDuration_Momentary { get; } = new Guid("dd56ef6c-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_Momentary { get; } = new("dd56ef6c-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Momentary Interruption.
         /// </summary>
-        public static Guid RMSVariationShortDuration_MomentaryInterruption { get; } = new Guid("dd56ef6d-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_MomentaryInterruption { get; } = new("dd56ef6d-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Momentary Sag.
         /// </summary>
-        public static Guid RMSVariationShortDuration_MomentarySag { get; } = new Guid("dd56ef6e-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_MomentarySag { get; } = new("dd56ef6e-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Momentary Swell.
         /// </summary>
-        public static Guid RMSVariationShortDuration_MomentarySwell { get; } = new Guid("dd56ef6f-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_MomentarySwell { get; } = new("dd56ef6f-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159Short Duration RMS Variation - Temporary Duration.
         /// </summary>
-        public static Guid RMSVariationShortDuration_Temporary { get; } = new Guid("dd56ef70-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_Temporary { get; } = new("dd56ef70-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Temporary Interruption.
         /// </summary>
-        public static Guid RMSVariationShortDuration_TemporaryInterruption { get; } = new Guid("dd56ef71-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_TemporaryInterruption { get; } = new("dd56ef71-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Temporary Sag.
         /// </summary>
-        public static Guid RMSVariationShortDuration_TemporarySag { get; } = new Guid("dd56ef72-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_TemporarySag { get; } = new("dd56ef72-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Short Duration RMS Variation - Temporary Swell.
         /// </summary>
-        public static Guid RMSVariationShortDuration_TemporarySwell { get; } = new Guid("dd56ef73-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationShortDuration_TemporarySwell { get; } = new("dd56ef73-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159  Long Duration RMS Variation.
         /// </summary>
-        public static Guid RMSVariationLongDuration { get; } = new Guid("67f6af92-f753-11cf-9d89-0080c72e70a3");
+        public static Guid RMSVariationLongDuration { get; } = new("67f6af92-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Long Duration RMS Variation - Interruption.
         /// </summary>
-        public static Guid RMSVariationLongDuration_Interrruption { get; } = new Guid("dd56ef74-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationLongDuration_Interrruption { get; } = new("dd56ef74-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Long Duration RMS Variation - Undervoltage.
         /// </summary>
-        public static Guid RMSVariationLongDuration_UnderVoltage { get; } = new Guid("dd56ef75-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationLongDuration_UnderVoltage { get; } = new("dd56ef75-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Long Duration RMS Variation - Overvoltage.
         /// </summary>
-        public static Guid RMSVariationLongDuration_OverVoltage { get; } = new Guid("dd56ef76-7edd-11d2-b30a-00609789d193");
+        public static Guid RMSVariationLongDuration_OverVoltage { get; } = new("dd56ef76-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Imbalance.
         /// </summary>
-        public static Guid Imbalance { get; } = new Guid("dd56ef77-7edd-11d2-b30a-00609789d193");
+        public static Guid Imbalance { get; } = new("dd56ef77-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Power Frequency Variation.
         /// </summary>
-        public static Guid PowerFrequencyVariation { get; } = new Guid("dd56ef7e-7edd-11d2-b30a-00609789d193");
+        public static Guid PowerFrequencyVariation { get; } = new("dd56ef7e-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Voltage Fluctuation.
         /// </summary>
-        public static Guid VoltageFuctuation { get; } = new Guid("67f6af93-f753-11cf-9d89-0080c72e70a3");
+        public static Guid VoltageFuctuation { get; } = new("67f6af93-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Distortion.
         /// </summary>
-        public static Guid WaveformDistortion { get; } = new Guid("67f6af94-f753-11cf-9d89-0080c72e70a3");
+        public static Guid WaveformDistortion { get; } = new("67f6af94-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 DC offset of voltage or current waveform.
         /// </summary>
-        public static Guid DCoffset { get; } = new Guid("dd56ef78-7edd-11d2-b30a-00609789d193");
+        public static Guid DCoffset { get; } = new("dd56ef78-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Harmonics Present.
         /// </summary>
-        public static Guid WaveformHarmonics { get; } = new Guid("dd56ef79-7edd-11d2-b30a-00609789d193");
+        public static Guid WaveformHarmonics { get; } = new("dd56ef79-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Interharmonics Present.
         /// </summary>
 
-        public static Guid WaveformInterHarmonics { get; } = new Guid("dd56ef7a-7edd-11d2-b30a-00609789d193");
+        public static Guid WaveformInterHarmonics { get; } = new("dd56ef7a-7edd-11d2-b30a-00609789d193");
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Notching Present.
         /// </summary>
-        public static Guid WaveformNotching { get; } = new Guid("67f6af95-f753-11cf-9d89-0080c72e70a3");
+        public static Guid WaveformNotching { get; } = new("67f6af95-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Noise Present.
         /// </summary>
-        public static Guid WaveformNoise { get; } = new Guid("67f6af96-f753-11cf-9d89-0080c72e70a3");
+        public static Guid WaveformNoise { get; } = new("67f6af96-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Gets information about the Disturbance identified by the given ID.

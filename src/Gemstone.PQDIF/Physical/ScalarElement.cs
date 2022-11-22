@@ -628,7 +628,7 @@ namespace Gemstone.PQDIF.Physical
             // timestamps. However, the constant defined in the standard is 25569 days, whereas the actual
             // number of days between those two dates is 25567 days; a two day difference. That is why we
             // need to also subtract two days here when parsing PQDIF timestamps.
-            DateTime epoch = new DateTime(1900, 1, 1);
+            DateTime epoch = new(1900, 1, 1);
             return epoch.AddDays(days - 2u).AddSeconds(seconds);
         }
 
@@ -638,7 +638,7 @@ namespace Gemstone.PQDIF.Physical
         /// <param name="value">The new value of this scalar as a <see cref="DateTime"/>.</param>
         public void SetTimestamp(DateTime value)
         {
-            DateTime epoch = new DateTime(1900, 1, 1);
+            DateTime epoch = new(1900, 1, 1);
             TimeSpan sinceEpoch = value - epoch;
             TimeSpan daysSinceEpoch = TimeSpan.FromDays(Math.Floor(sinceEpoch.TotalDays));
             TimeSpan secondsSinceMidnight = sinceEpoch - daysSinceEpoch;

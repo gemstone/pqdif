@@ -322,8 +322,8 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>NEw channel instance.</returns>
         public ChannelInstance AddNewChannelInstance(ChannelDefinition channelDefinition)
         {
-            CollectionElement channelInstanceElement = new CollectionElement { TagOfElement = OneChannelInstanceTag };
-            ChannelInstance channelInstance = new ChannelInstance(channelInstanceElement, this);
+            CollectionElement channelInstanceElement = new() { TagOfElement = OneChannelInstanceTag };
+            ChannelInstance channelInstance = new(channelInstanceElement, this);
 
             channelInstance.ChannelDefinitionIndex = (uint)channelDefinition.DataSource.ChannelDefinitions.IndexOf(channelDefinition);
             channelInstanceElement.AddElement(new CollectionElement { TagOfElement = ChannelInstance.SeriesInstancesTag });
@@ -356,7 +356,7 @@ namespace Gemstone.PQDIF.Logical
 
             foreach (CollectionElement channelSettingElement in channelInstanceElements)
             {
-                ChannelInstance instance = new ChannelInstance(channelSettingElement, this);
+                ChannelInstance instance = new(channelSettingElement, this);
 
                 if (Equals(channelInstance, instance))
                     channelInstancesElement.RemoveElement(channelSettingElement);
@@ -372,47 +372,47 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the name of the observation record.
         /// </summary>
-        public static Guid ObservationNameTag { get; } = new Guid("3d786f8a-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid ObservationNameTag { get; } = new("3d786f8a-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the time that the observation record was created.
         /// </summary>
-        public static Guid TimeCreateTag { get; } = new Guid("3d786f8b-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid TimeCreateTag { get; } = new("3d786f8b-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the start time of the data in the observation record.
         /// </summary>
-        public static Guid TimeStartTag { get; } = new Guid("3d786f8c-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid TimeStartTag { get; } = new("3d786f8c-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the type of trigger that caused the observation.
         /// </summary>
-        public static Guid TriggerMethodTag { get; } = new Guid("3d786f8d-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid TriggerMethodTag { get; } = new("3d786f8d-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the time the observation was triggered.
         /// </summary>
-        public static Guid TimeTriggeredTag { get; } = new Guid("3d786f8e-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid TimeTriggeredTag { get; } = new("3d786f8e-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the index into <see cref="ChannelInstancesTag"/> collection within this record. This specifies which channel(s) initiated the observation.
         /// </summary>
-        public static Guid ChannelTriggerIndexTag { get; } = new Guid("3d786f8f-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelTriggerIndexTag { get; } = new("3d786f8f-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the channel instances collection.
         /// </summary>
-        public static Guid ChannelInstancesTag { get; } = new Guid("3d786f91-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelInstancesTag { get; } = new("3d786f91-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies a single channel instance in the collection.
         /// </summary>
-        public static Guid OneChannelInstanceTag { get; } = new Guid("3d786f92-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid OneChannelInstanceTag { get; } = new("3d786f92-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the Disturbance Category.
         /// </summary>
-        public static Guid DisturbanceCategoryTag { get; } = new Guid("b48d8597-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid DisturbanceCategoryTag { get; } = new("b48d8597-f5f5-11cf-9d89-0080c72e70a3");
 
 
         // Static Methods
@@ -426,8 +426,8 @@ namespace Gemstone.PQDIF.Logical
         public static ObservationRecord CreateObservationRecord(DataSourceRecord dataSource, MonitorSettingsRecord? settings)
         {
             Guid recordTypeTag = Record.GetTypeAsTag(RecordType.Observation);
-            Record physicalRecord = new Record(recordTypeTag);
-            ObservationRecord observationRecord = new ObservationRecord(physicalRecord, dataSource, settings);
+            Record physicalRecord = new(recordTypeTag);
+            ObservationRecord observationRecord = new(physicalRecord, dataSource, settings);
 
             DateTime now = DateTime.UtcNow;
             observationRecord.Name = now.ToString();

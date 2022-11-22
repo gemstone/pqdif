@@ -151,12 +151,12 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the system side ratio.
         /// </summary>
-        public static Guid XDSystemSideRatioTag { get; } = new Guid("62f2818a-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid XDSystemSideRatioTag { get; } = new("62f2818a-f9c4-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the monitor side ratio.
         /// </summary>
-        public static Guid XDMonitorSideRatioTag { get; } = new Guid("62f2818b-f9c4-11cf-9d89-0080c72e70a3");
+        public static Guid XDMonitorSideRatioTag { get; } = new("62f2818b-f9c4-11cf-9d89-0080c72e70a3");
 
         #endregion
     }

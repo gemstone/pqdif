@@ -277,7 +277,7 @@ namespace Gemstone.PQDIF.Physical
         /// <returns>A string that represents the collection.</returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new();
             string[] lines;
 
             builder.AppendFormat("Collection -- Size: {0}, Tag: {1}", Size, TagOfElement);

@@ -116,7 +116,7 @@ namespace Gemstone.PQDIF.Physical
         /// <returns>A string representation of the record header.</returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new();
 
             builder.AppendFormat("Record type: {0}", TypeOfRecord);
             builder.AppendLine();

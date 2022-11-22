@@ -512,8 +512,8 @@ namespace Gemstone.PQDIF.Logical
         /// <returns>New series definition.</returns>
         public SeriesDefinition AddNewSeriesDefinition()
         {
-            CollectionElement seriesDefinitionElement = new CollectionElement { TagOfElement = OneSeriesDefinitionTag };
-            SeriesDefinition seriesDefinition = new SeriesDefinition(seriesDefinitionElement, this);
+            CollectionElement seriesDefinitionElement = new() { TagOfElement = OneSeriesDefinitionTag };
+            SeriesDefinition seriesDefinition = new(seriesDefinitionElement, this);
 
             seriesDefinition.ValueTypeID = SeriesValueType.Val;
             seriesDefinition.QuantityUnits = QuantityUnits.None;
@@ -548,7 +548,7 @@ namespace Gemstone.PQDIF.Logical
 
             foreach (CollectionElement seriesDefinitionElement in seriesDefinitionElements)
             {
-                SeriesDefinition definition = new SeriesDefinition(seriesDefinitionElement, this);
+                SeriesDefinition definition = new(seriesDefinitionElement, this);
 
                 if (Equals(seriesDefinition, definition))
                     seriesDefinitionsElement.RemoveElement(seriesDefinitionElement);
@@ -569,7 +569,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => obj is ChannelDefinition other
+        public override bool Equals(object? obj) => obj is ChannelDefinition other
             ? Equals(other)
             : false;
 
@@ -590,42 +590,42 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the channel definition index.
         /// </summary>
-        public static Guid ChannelDefinitionIndexTag { get; } = new Guid("b48d858f-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelDefinitionIndexTag { get; } = new("b48d858f-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the channel name.
         /// </summary>
-        public static Guid ChannelNameTag { get; } = new Guid("b48d8590-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid ChannelNameTag { get; } = new("b48d8590-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the phase ID.
         /// </summary>
-        public static Guid PhaseIDTag { get; } = new Guid("b48d8591-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid PhaseIDTag { get; } = new("b48d8591-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the quantity type.
         /// </summary>
-        public static Guid QuantityTypeIDTag { get; } = new Guid("b48d8592-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid QuantityTypeIDTag { get; } = new("b48d8592-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the quantity measured ID.
         /// </summary>
-        public static Guid QuantityMeasuredIDTag { get; } = new Guid("c690e872-f755-11cf-9d89-0080c72e70a3");
+        public static Guid QuantityMeasuredIDTag { get; } = new("c690e872-f755-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the quantity name.
         /// </summary>
-        public static Guid QuantityNameTag { get; } = new Guid("b48d8595-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid QuantityNameTag { get; } = new("b48d8595-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the series definitions collection.
         /// </summary>
-        public static Guid SeriesDefinitionsTag { get; } = new Guid("b48d8598-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid SeriesDefinitionsTag { get; } = new("b48d8598-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies a single series definition within the collection.
         /// </summary>
-        public static Guid OneSeriesDefinitionTag { get; } = new Guid("b48d859a-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid OneSeriesDefinitionTag { get; } = new("b48d859a-f5f5-11cf-9d89-0080c72e70a3");
 
         // Static Methods
 

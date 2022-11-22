@@ -446,7 +446,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object obj) => obj is SeriesDefinition other
+        public override bool Equals(object? obj) => obj is SeriesDefinition other
             ? Equals(other)
             : false;
 
@@ -467,32 +467,32 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// Tag that identifies the value type ID of the series.
         /// </summary>
-        public static Guid ValueTypeIDTag { get; } = new Guid("b48d859c-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid ValueTypeIDTag { get; } = new("b48d859c-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the quantity units ID of the series.
         /// </summary>
-        public static Guid QuantityUnitsIDTag { get; } = new Guid("b48d859b-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid QuantityUnitsIDTag { get; } = new("b48d859b-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the characteristic ID of the series.
         /// </summary>
-        public static Guid QuantityCharacteristicIDTag { get; } = new Guid("3d786f9e-f76e-11cf-9d89-0080c72e70a3");
+        public static Guid QuantityCharacteristicIDTag { get; } = new("3d786f9e-f76e-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the storage method ID of the series.
         /// </summary>
-        public static Guid StorageMethodIDTag { get; } = new Guid("b48d85a1-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid StorageMethodIDTag { get; } = new("b48d85a1-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the value type name of the series.
         /// </summary>
-        public static Guid ValueTypeNameTag { get; } = new Guid("b48d859d-f5f5-11cf-9d89-0080c72e70a3");
+        public static Guid ValueTypeNameTag { get; } = new("b48d859d-f5f5-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// Tag that identifies the nominal quantity of the series.
         /// </summary>
-        public static Guid SeriesNominalQuantityTag { get; } = new Guid("0fa118c8-cb4a-11d2-b30b-fe25cb9a1760");
+        public static Guid SeriesNominalQuantityTag { get; } = new("0fa118c8-cb4a-11d2-b30b-fe25cb9a1760");
 
         #endregion
     }
