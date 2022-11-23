@@ -104,6 +104,21 @@
       <summary>
              Gets the definitions of PQDIF tags as defined by the tag definitions file.
              </summary>
+      <remarks>
+        <para>
+             This property first tries to load definitions from the TagDefinitions.xml
+             file in the working directory of the application. If the file doesn't exist
+             or cannot be parsed as a valid XML file, then this property falls back on
+             the version hosted inside this assembly as an embedded resource.
+             </para>
+        <para>
+             Applications that need to customize the set of tags supported by this library
+             can use this property to generate the default TagDefinitions.xml file, edit
+             the file as necessary, and then place the edited version into the working
+             directory of the application. Alternatively, the default TagDefinitions.xml
+             file can be obtained directly from the source code for this library.
+             </para>
+      </remarks>
     </member>
     <member name="F:Gemstone.PQDIF.Tag.TagDefinitionsFileName">
       <summary>
@@ -1524,6 +1539,55 @@
       <summary>
              Represents a parser which parses the logical structure of a PQDIF file.
              </summary>
+      <remarks>
+        <para>
+             This class makes the data from PQD files readily available to applications and defines several
+             redundant properties throughout the logical hierarchy of the PQDIF file to also facilitate
+             the association of definitions with instances within the logical structure. The following
+             list enumerates some of the more useful associations within the hierarchy.
+             </para>
+        <list type="bullet">
+          <item>
+            <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.DataSource" />
+          </item>
+          <item>
+            <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.Settings" />
+          </item>
+          <item>
+            <see cref="P:Gemstone.PQDIF.Logical.SeriesDefinition.ChannelDefinition" />
+          </item>
+          <item>
+            <see cref="P:Gemstone.PQDIF.Logical.ChannelInstance.Definition" />
+          </item>
+          <item>
+            <see cref="P:Gemstone.PQDIF.Logical.SeriesInstance.Definition" />
+          </item>
+        </list>
+        <para>
+             Usage consists of iterating through observations (<see cref="T:Gemstone.PQDIF.Logical.ObservationRecord" />) to
+             examine each of the the measurements recorded in the file. As was noted in the list above,
+             the data source (<see cref="T:Gemstone.PQDIF.Logical.DataSourceRecord" />) and settings for the monitor
+             (<see cref="T:Gemstone.PQDIF.Logical.MonitorSettingsRecord" />) associated with each observation is exposed as a
+             property on the observation record. Note that the same data source and monitor settings
+             records may be referenced by multiple observation records in the file.
+             </para>
+        <para>
+             The following example demonstrates how to read all observation records from a PQDIF file
+             using the logical parser.
+             </para>
+        <code language="cs">
+             ContainerRecord containerRecord;
+             List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
+             string filePath = args[0];
+            
+             await using LogicalParser parser = new LogicalParser(filePath);
+             await parser.OpenAsync();
+             containerRecord = parser.ContainerRecord;
+            
+             while (await parser.HasNextObservationRecordAsync())
+                 observationRecords.Add(await parser.NextObservationRecordAsync());
+             </code>
+      </remarks>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor">
       <summary>
@@ -2027,6 +2091,18 @@
             Gets the starting time of the data in the observation record. This time should
             be used as the base time for all relative seconds recorded in the series instances.
             </summary>
+      <remarks>
+            The <see cref="T:Gemstone.PQDIF.Logical.ObservationRecord" /> contains two timestamp fields: <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.StartTime" /> and
+            <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.TimeTriggered" />. The StartTime is a required part of any Observation, whereas the 
+            <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.TimeTriggered" /> is optional. 
+            
+            The <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.StartTime" /> does not have to be the same as the trigger time and can therefore 
+            be chosen more or less arbitrarily. For instance, you can choose to record the 
+            <see cref="P:Gemstone.PQDIF.Logical.ObservationRecord.StartTime" /> as the timestamp of the first data point in the observation or the top 
+            of an interval in which the data was captured. The trigger time field is more well defined, 
+            essentially always representing the point in time at which the data source decided to capture 
+            some data in the PQDIF file.
+            </remarks>
       <exception cref="T:System.IO.InvalidDataException">StartTime element not found in observation record.</exception>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.ObservationRecord.TimeCreateTag">
@@ -3681,6 +3757,11 @@
       <summary>
             Transition event code series.
             </summary>
+      <remarks>
+            This series contains codes corresponding to values in a value
+            series that indicates what kind of transition caused the event
+            to be recorded. Used only with VALUELOG data.
+            </remarks>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.SeriesValueType.Val">
       <summary>
@@ -4152,6 +4233,12 @@
             Gets or sets the physical type of the value or values contained
             by the element.
             </summary>
+      <remarks>
+            This determines the data type and size of the
+            value or values. The value of this property is only relevant when
+            <see cref="P:Gemstone.PQDIF.Physical.Element.TypeOfElement" /> is either <see cref="F:Gemstone.PQDIF.Physical.ElementType.Scalar" />
+            or <see cref="F:Gemstone.PQDIF.Physical.ElementType.Vector" />.
+            </remarks>
     </member>
     <member name="T:Gemstone.PQDIF.Physical.ElementType">
       <summary>
@@ -4210,6 +4297,32 @@
       <summary>
              Represents a parser which parses the physical structure of a PQDIF file.
              </summary>
+      <remarks>
+        <para>
+             This class is used internally by the <see cref="T:Gemstone.PQDIF.Logical.LogicalParser" /> to read the
+             physical structure of the PQDIF file. If your goal is to read data from a PQD file into
+             an application, you probably do not want to instantiate the physical parser directly.
+             Instead, the logical parser will apply the rules governing the logical structure of the PQDIF
+             file to make the data more readily usable by an application that will be processing that data.
+             </para>
+        <para>
+             The following example of usage was adapted from the PQDIFDump utility, which represents a
+             bare minimum level of effort to read an uncompressed PQDIF file and display its contents
+             in a console application.
+             </para>
+        <code language="cs">
+             string filePath = args[0];
+             await using PhysicalParser parser = new PhysicalParser(filePath);
+             await parser.OpenAsync();
+            
+             while (parser.HasNextRecord())
+             {
+                 Record record = await parser.GetNextRecordAsync();
+                 Console.WriteLine(record);
+                 Console.WriteLine();
+             }
+             </code>
+      </remarks>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor">
       <summary>
@@ -4304,6 +4417,7 @@
             Gets or sets the maximum number of exceptions
             in the exception list before parser will quit.
             </summary>
+      <remarks>Enter a negative value to disable this safeguard.</remarks>
     </member>
     <member name="P:Gemstone.PQDIF.Physical.PhysicalParser.MaximumExceptionsReached">
       <summary>
@@ -5152,6 +5266,12 @@
             Gets or sets the physical type of the value or values contained
             by the element.
             </summary>
+      <remarks>
+            This determines the data type and size of the
+            value or values. The value of this property is only relevant when
+            <see cref="P:Gemstone.PQDIF.Physical.VectorElement.TypeOfElement" /> is either <see cref="F:Gemstone.PQDIF.Physical.ElementType.Scalar" />
+            or <see cref="F:Gemstone.PQDIF.Physical.ElementType.Vector" />.
+            </remarks>
     </member>
   </members>
 </doc>
