@@ -8,6 +8,7 @@ The Gemstone PQDIF Library organizes all Gemstone functionality for parsing and 
 [![GitHub license](https://img.shields.io/github/license/gemstone/pqdif?color=4CC61E)](https://github.com/gemstone/pqdif/blob/master/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/ghedacvalu5imiev?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/pqdif)
 ![CodeQL](https://github.com/gemstone/pqdif/workflows/CodeQL/badge.svg)
+[![NuGet](https://buildstats.info/nuget/Gemstone.PQDIF)](https://www.nuget.org/packages/Gemstone.PQDIF#readme-body-tab)
 
 ### Documentation
 [Full Library Documentation](https://gemstone.github.io/pqdif/help)
