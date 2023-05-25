@@ -85,7 +85,7 @@ namespace Gemstone.PQDIF
             XElement tagValues = doc.Descendants("tagValues").Single();
             XElement? tagElement = tagValues.Element(tag.StandardName);
 
-            if (tagElement == null)
+            if (tagElement is null)
                 return new List<Identifier>();
 
             return tagElement

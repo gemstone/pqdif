@@ -173,10 +173,10 @@ namespace Gemstone.PQDIF
         /// <exception cref="InvalidDataException">Unable to refresh tags from TagDefinitions.xml.</exception>
         public static Tag? GetTag(Guid id)
         {
-            if (TagLookup == null)
+            if (TagLookup is null)
                 RefreshTags(TagDefinitions);
 
-            if (TagLookup == null)
+            if (TagLookup is null)
                 throw new InvalidDataException($"Unable to refresh tags from {TagDefinitionsFileName}.");
 
             if (!TagLookup.TryGetValue(id, out Tag tag))

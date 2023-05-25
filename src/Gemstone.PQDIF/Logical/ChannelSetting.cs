@@ -94,7 +94,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 ScalarElement? xdSystemSideRatioElement = PhysicalStructure.GetScalarByTag(XDSystemSideRatioTag);
 
-                if (xdSystemSideRatioElement == null)
+                if (xdSystemSideRatioElement is null)
                     return 1.0D;
 
                 return xdSystemSideRatioElement.GetReal8();
@@ -116,7 +116,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 ScalarElement? xdMonitorSideRatioElement = PhysicalStructure.GetScalarByTag(XDMonitorSideRatioTag);
 
-                if (xdMonitorSideRatioElement == null)
+                if (xdMonitorSideRatioElement is null)
                     return 1.0D;
 
                 return xdMonitorSideRatioElement.GetReal8();

@@ -138,7 +138,7 @@ namespace Gemstone.PQDIF.Physical
             await using (BinaryWriter bodyWriter = new(bodyStream))
             {
                 // Write the record body to the memory stream
-                if (record.Body != null)
+                if (record.Body is not null)
                     WriteCollection(bodyWriter, record.Body.Collection);
 
                 // Read and compress the body to a byte array
@@ -152,7 +152,7 @@ namespace Gemstone.PQDIF.Physical
                 checksum = Adler.Adler32(adler, bodyImage, 0, bodyImage.Length);
 
                 // Save the checksum in the record body
-                if (record.Body != null)
+                if (record.Body is not null)
                     record.Body.Checksum = checksum;
             }
 

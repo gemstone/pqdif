@@ -198,7 +198,7 @@ namespace Gemstone.PQDIF.Logical
             RecordType recordType;
 
             // Read records from the file until we encounter an observation record or end of file
-            while (m_nextObservationRecord == null && m_physicalParser.HasNextRecord())
+            while (m_nextObservationRecord is null && m_physicalParser.HasNextRecord())
             {
                 physicalRecord = await m_physicalParser.GetNextRecordAsync();
                 recordType = physicalRecord.Header.TypeOfRecord;
@@ -220,7 +220,7 @@ namespace Gemstone.PQDIF.Logical
 
                     case RecordType.Observation:
                         // Found an observation record!
-                        if (m_currentDataSourceRecord == null)
+                        if (m_currentDataSourceRecord is null)
                             throw new InvalidDataException("Found observation record before finding data source record.");
 
                         m_nextObservationRecord = ObservationRecord.CreateObservationRecord(physicalRecord, m_currentDataSourceRecord, m_currentMonitorSettingsRecord);
@@ -232,7 +232,7 @@ namespace Gemstone.PQDIF.Logical
                 }
             }
 
-            return m_nextObservationRecord != null;
+            return m_nextObservationRecord is not null;
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Gemstone.PQDIF.Logical
             ObservationRecord? nextObservationRecord = m_nextObservationRecord;
             m_nextObservationRecord = null;
 
-            if (nextObservationRecord == null)
+            if (nextObservationRecord is null)
                 throw new InvalidOperationException("There are no more observation records in the PQDIF file.");
 
             return nextObservationRecord;
@@ -309,7 +309,7 @@ namespace Gemstone.PQDIF.Logical
             Record firstRecord = await m_physicalParser.GetNextRecordAsync();
             ContainerRecord = ContainerRecord.CreateContainerRecord(firstRecord);
 
-            if (ContainerRecord == null)
+            if (ContainerRecord is null)
                 throw new InvalidDataException("The first record in a PQDIF file must be a container record.");
 
             m_physicalParser.CompressionAlgorithm = ContainerRecord.CompressionAlgorithm;

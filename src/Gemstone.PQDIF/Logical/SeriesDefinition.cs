@@ -385,7 +385,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 VectorElement? valueTypeNameElement = PhysicalStructure.GetVectorByTag(ValueTypeNameTag);
 
-                if (valueTypeNameElement == null)
+                if (valueTypeNameElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(valueTypeNameElement.GetValues()).Trim((char)0);
@@ -406,7 +406,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 ScalarElement? seriesNominalQuantityElement = PhysicalStructure.GetScalarByTag(SeriesNominalQuantityTag);
 
-                if (seriesNominalQuantityElement == null)
+                if (seriesNominalQuantityElement is null)
                     return 0.0D;
 
                 return seriesNominalQuantityElement.GetReal8();

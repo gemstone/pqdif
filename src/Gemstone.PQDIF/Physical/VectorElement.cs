@@ -111,7 +111,7 @@ namespace Gemstone.PQDIF.Physical
         {
             get
             {
-                if (m_values == null)
+                if (m_values is null)
                     throw new InvalidOperationException("Unable to retrieve values from uninitialized vector; set the size and physical type of the vector first");
 
                 return m_values;

@@ -108,12 +108,12 @@ namespace Gemstone.PQDIF.Logical
 
                 MonitorSettingsRecord? monitorSettings = m_observationRecord.Settings;
 
-                if (monitorSettings == null)
+                if (monitorSettings is null)
                     return null;
 
                 IList<ChannelSetting>? channelSettings = monitorSettings.ChannelSettings;
 
-                if (channelSettings == null)
+                if (channelSettings is null)
                     return null;
 
                 return channelSettings.FirstOrDefault(channelSetting => channelSetting.ChannelDefinitionIndex == ChannelDefinitionIndex);
@@ -152,7 +152,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 ScalarElement? channelGroupIDElement = m_physicalStructure.GetScalarByTag(ChannelGroupIDTag);
 
-                if (channelGroupIDElement == null)
+                if (channelGroupIDElement is null)
                     return 0;
 
                 return channelGroupIDElement.GetInt2();
@@ -176,7 +176,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 VectorElement? moduleNameElement = m_physicalStructure.GetVectorByTag(ChannelTriggerModuleNameTag);
 
-                if (moduleNameElement == null)
+                if (moduleNameElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(moduleNameElement.GetValues()).Trim((char)0);
@@ -198,7 +198,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 VectorElement? deviceNameElement = m_physicalStructure.GetVectorByTag(CrossTriggerDeviceNameTag);
 
-                if (deviceNameElement == null)
+                if (deviceNameElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(deviceNameElement.GetValues()).Trim((char)0);
@@ -250,7 +250,7 @@ namespace Gemstone.PQDIF.Logical
 
             CollectionElement? seriesInstancesElement = m_physicalStructure.GetCollectionByTag(SeriesInstancesTag);
 
-            if (seriesInstancesElement == null)
+            if (seriesInstancesElement is null)
             {
                 seriesInstancesElement = new CollectionElement { TagOfElement = SeriesInstancesTag };
                 m_physicalStructure.AddElement(seriesInstancesElement);
@@ -269,7 +269,7 @@ namespace Gemstone.PQDIF.Logical
         {
             CollectionElement? seriesInstancesElement = m_physicalStructure.GetCollectionByTag(SeriesInstancesTag);
 
-            if (seriesInstancesElement == null)
+            if (seriesInstancesElement is null)
                 return;
 
             IList<SeriesDefinition> seriesDefinitions = Definition.SeriesDefinitions;

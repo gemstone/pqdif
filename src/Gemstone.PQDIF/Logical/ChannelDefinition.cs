@@ -384,7 +384,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 VectorElement? channelNameElement = m_physicalStructure.GetVectorByTag(ChannelNameTag);
 
-                if (channelNameElement == null)
+                if (channelNameElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(channelNameElement.GetValues()).Trim((char)0);
@@ -470,7 +470,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 VectorElement? quantityNameElement = m_physicalStructure.GetVectorByTag(QuantityNameTag);
 
-                if (quantityNameElement == null)
+                if (quantityNameElement is null)
                     return null;
 
                 return Encoding.ASCII.GetString(quantityNameElement.GetValues()).Trim((char)0);
@@ -522,7 +522,7 @@ namespace Gemstone.PQDIF.Logical
 
             CollectionElement? seriesDefinitionsElement = m_physicalStructure.GetCollectionByTag(SeriesDefinitionsTag);
 
-            if (seriesDefinitionsElement == null)
+            if (seriesDefinitionsElement is null)
             {
                 seriesDefinitionsElement = new CollectionElement { TagOfElement = SeriesDefinitionsTag };
                 m_physicalStructure.AddElement(seriesDefinitionsElement);
@@ -541,7 +541,7 @@ namespace Gemstone.PQDIF.Logical
         {
             CollectionElement? seriesDefinitionsElement = m_physicalStructure.GetCollectionByTag(SeriesDefinitionsTag);
 
-            if (seriesDefinitionsElement == null)
+            if (seriesDefinitionsElement is null)
                 return;
 
             List<CollectionElement> seriesDefinitionElements = seriesDefinitionsElement.GetElementsByTag(OneSeriesDefinitionTag).Cast<CollectionElement>().ToList();

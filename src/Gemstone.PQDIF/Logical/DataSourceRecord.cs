@@ -171,7 +171,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = m_physicalRecord.Body.Collection;
                 ScalarElement? vendorIDElement = collectionElement.GetScalarByTag(VendorIDTag);
 
-                if (vendorIDElement == null)
+                if (vendorIDElement is null)
                     return Vendor.None;
 
                 return vendorIDElement.GetGuid();
@@ -195,7 +195,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = m_physicalRecord.Body.Collection;
                 ScalarElement? equipmentIDElement = collectionElement.GetScalarByTag(EquipmentIDTag);
 
-                if (equipmentIDElement == null)
+                if (equipmentIDElement is null)
                     return Guid.Empty;
 
                 return equipmentIDElement.GetGuid();
@@ -288,7 +288,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = m_physicalRecord.Body.Collection;
                 VectorElement? dataSourceCoordinatesElement = collectionElement.GetVectorByTag(DataSourceCoordinatesTag);
 
-                if (dataSourceCoordinatesElement == null)
+                if (dataSourceCoordinatesElement is null)
                     return uint.MaxValue;
 
                 return dataSourceCoordinatesElement.GetUInt4(0);
@@ -313,7 +313,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = m_physicalRecord.Body.Collection;
                 VectorElement? dataSourceCoordinatesElement = collectionElement.GetVectorByTag(DataSourceCoordinatesTag);
 
-                if (dataSourceCoordinatesElement == null)
+                if (dataSourceCoordinatesElement is null)
                     return uint.MaxValue;
 
                 return dataSourceCoordinatesElement.GetUInt4(1);
@@ -389,7 +389,7 @@ namespace Gemstone.PQDIF.Logical
 
             CollectionElement? channelDefinitionsElement = m_physicalRecord.Body.Collection.GetCollectionByTag(ChannelDefinitionsTag);
 
-            if (channelDefinitionsElement == null)
+            if (channelDefinitionsElement is null)
             {
                 channelDefinitionsElement = new CollectionElement { TagOfElement = ChannelDefinitionsTag };
                 m_physicalRecord.Body.Collection.AddElement(channelDefinitionsElement);
@@ -408,7 +408,7 @@ namespace Gemstone.PQDIF.Logical
         {
             CollectionElement? channelDefinitionsElement = m_physicalRecord.Body.Collection.GetCollectionByTag(ChannelDefinitionsTag);
 
-            if (channelDefinitionsElement == null)
+            if (channelDefinitionsElement is null)
                 return;
 
             List<CollectionElement> channelDefinitionElements = channelDefinitionsElement.GetElementsByTag(OneChannelDefinitionTag).Cast<CollectionElement>().ToList();

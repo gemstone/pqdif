@@ -166,7 +166,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = PhysicalRecord.Body.Collection;
                 CollectionElement? channelSettingsArray = collectionElement.GetCollectionByTag(ChannelSettingsArrayTag);
 
-                if (channelSettingsArray == null)
+                if (channelSettingsArray is null)
                     return null;
 
                 return channelSettingsArray
@@ -187,7 +187,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = PhysicalRecord.Body.Collection;
                 ScalarElement? nominalFrequencyElement = collectionElement.GetScalarByTag(NominalFrequencyTag);
 
-                if (nominalFrequencyElement == null)
+                if (nominalFrequencyElement is null)
                     return DefaultNominalFrequency;
 
                 return nominalFrequencyElement.GetReal8();
@@ -219,7 +219,7 @@ namespace Gemstone.PQDIF.Logical
 
             CollectionElement? channelSettingsElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelSettingsArrayTag);
 
-            if (channelSettingsElement == null)
+            if (channelSettingsElement is null)
             {
                 channelSettingsElement = new CollectionElement { TagOfElement = OneChannelSettingTag };
                 PhysicalRecord.Body.Collection.AddElement(channelSettingsElement);
@@ -238,7 +238,7 @@ namespace Gemstone.PQDIF.Logical
         {
             CollectionElement? channelSettingsElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelSettingsArrayTag);
 
-            if (channelSettingsElement == null)
+            if (channelSettingsElement is null)
                 return;
 
             List<CollectionElement> channelSettingElements = channelSettingsElement.GetElementsByTag(OneChannelSettingTag).Cast<CollectionElement>().ToList();

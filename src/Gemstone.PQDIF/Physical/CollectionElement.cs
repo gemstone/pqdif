@@ -208,7 +208,7 @@ namespace Gemstone.PQDIF.Physical
         {
             ScalarElement? scalarElement = GetScalarByTag(tag);
 
-            if (scalarElement == null)
+            if (scalarElement is null)
             {
                 scalarElement = new ScalarElement();
                 scalarElement.TagOfElement = tag;
@@ -228,7 +228,7 @@ namespace Gemstone.PQDIF.Physical
         {
             VectorElement? vectorElement = GetVectorByTag(tag);
 
-            if (vectorElement == null)
+            if (vectorElement is null)
             {
                 vectorElement = new VectorElement();
                 vectorElement.TagOfElement = tag;

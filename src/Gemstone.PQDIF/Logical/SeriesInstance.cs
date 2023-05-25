@@ -86,7 +86,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 PhysicalStructure.RemoveElementsByTag(SeriesScaleTag);
 
-                if (value != null)
+                if (value is not null)
                 {
                     value.TagOfElement = SeriesScaleTag;
                     PhysicalStructure.AddElement(value);
@@ -109,7 +109,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 PhysicalStructure.RemoveElementsByTag(SeriesOffsetTag);
 
-                if (value != null)
+                if (value is not null)
                 {
                     value.TagOfElement = SeriesOffsetTag;
                     PhysicalStructure.AddElement(value);
@@ -153,7 +153,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? seriesShareChannelIndexScalar = PhysicalStructure
                     .GetScalarByTag(SeriesShareChannelIndexTag);
 
-                return seriesShareChannelIndexScalar != null
+                return seriesShareChannelIndexScalar is not null
                     ? seriesShareChannelIndexScalar.GetUInt4()
                     : (uint?)null;
             }
@@ -184,7 +184,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? seriesShareSeriesIndexScalar = PhysicalStructure
                     .GetScalarByTag(SeriesShareSeriesIndexTag);
 
-                return seriesShareSeriesIndexScalar != null
+                return seriesShareSeriesIndexScalar is not null
                     ? seriesShareSeriesIndexScalar.GetUInt4()
                     : (uint?)null;
             }
@@ -214,7 +214,7 @@ namespace Gemstone.PQDIF.Logical
             {
                 uint? seriesShareChannelIndex = SeriesShareChannelIndex;
 
-                return seriesShareChannelIndex != null
+                return seriesShareChannelIndex is not null
                     ? Channel.ObservationRecord.ChannelInstances[(int)seriesShareChannelIndex]
                     : null;
             }
@@ -231,7 +231,7 @@ namespace Gemstone.PQDIF.Logical
                 ChannelInstance? seriesShareChannel = SeriesShareChannel;
                 SeriesInstance? seriesShareSeries = null;
 
-                if (seriesShareSeriesIndex != null && seriesShareChannel != null)
+                if (seriesShareSeriesIndex is not null && seriesShareChannel is not null)
                     seriesShareSeries = seriesShareChannel.SeriesInstances[(int)seriesShareSeriesIndex];
 
                 return seriesShareSeries;
@@ -329,8 +329,8 @@ namespace Gemstone.PQDIF.Logical
             bool incremented = (storageMethods & StorageMethods.Increment) != 0;
 
             bool scaled = (storageMethods & StorageMethods.Scaled) != 0;
-            dynamic offset = SeriesOffset != null ? SeriesOffset.Get() : 0;
-            dynamic scale = SeriesScale != null ? SeriesScale.Get() : 1;
+            dynamic offset = SeriesOffset is not null ? SeriesOffset.Get() : 0;
+            dynamic scale = SeriesScale is not null ? SeriesScale.Get() : 1;
             dynamic value;
 
             if (!scaled)
@@ -385,7 +385,7 @@ namespace Gemstone.PQDIF.Logical
 
         private void ApplyTransducerRatio(IList<object> values)
         {
-            if (Channel.ObservationRecord.Settings == null)
+            if (Channel.ObservationRecord.Settings is null)
                 return;
 
             if (!Channel.ObservationRecord.Settings.UseTransducer)
@@ -393,7 +393,7 @@ namespace Gemstone.PQDIF.Logical
 
             ChannelSetting? channelSetting = Channel.Setting;
 
-            if (channelSetting == null)
+            if (channelSetting is null)
                 return;
 
             if (!channelSetting.HasElement(ChannelSetting.XDSystemSideRatioTag))

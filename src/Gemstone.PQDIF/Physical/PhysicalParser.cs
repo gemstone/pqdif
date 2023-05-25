@@ -251,7 +251,7 @@ namespace Gemstone.PQDIF.Physical
         /// <exception cref="InvalidOperationException"><see cref="FilePath"/> has not been defined.</exception>
         public Task OpenAsync()
         {
-            if (FilePath == null)
+            if (FilePath is null)
                 throw new InvalidOperationException("Unable to open PQDIF file when no file name has been defined.");
 
             using (m_stream)
@@ -297,7 +297,7 @@ namespace Gemstone.PQDIF.Physical
         /// <exception cref="EndOfStreamException">End of stream encountered while reading the next record.</exception>
         public async Task<Record> GetNextRecordAsync()
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             if (!m_hasNextRecord)
@@ -327,7 +327,7 @@ namespace Gemstone.PQDIF.Physical
         /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
         public void Seek(RecordHeader header)
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             m_stream.Seek(header.Position, SeekOrigin.Begin);
@@ -339,7 +339,7 @@ namespace Gemstone.PQDIF.Physical
         /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
         public void Reset()
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             m_compressionAlgorithm = CompressionAlgorithm.None;
@@ -356,7 +356,7 @@ namespace Gemstone.PQDIF.Physical
         /// <exception cref="InvalidOperationException">The PQDIF file is not open.</exception>
         public async Task CloseAsync()
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             await m_stream.FlushAsync();
@@ -370,13 +370,13 @@ namespace Gemstone.PQDIF.Physical
         public async ValueTask DisposeAsync()
         {
 #if NETSTANDARD2_0
-            if (!m_leaveStreamOpen && m_stream != null)
+            if (!m_leaveStreamOpen && m_stream is not null)
             {
                 await m_stream.FlushAsync();
                 m_stream.Dispose();
             }
 #else
-            if (!m_leaveStreamOpen && m_stream != null)
+            if (!m_leaveStreamOpen && m_stream is not null)
                 await m_stream.DisposeAsync();
 #endif
 
@@ -389,7 +389,7 @@ namespace Gemstone.PQDIF.Physical
         /// </summary>
         public void Dispose()
         {
-            if (!m_leaveStreamOpen && m_stream != null)
+            if (!m_leaveStreamOpen && m_stream is not null)
                 m_stream.Dispose();
 
             m_stream = null;
@@ -399,7 +399,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads bytes from the stream into a byte array of the given size.
         private async Task<byte[]> ReadBytesAsync(int size)
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             byte[] data = new byte[size];
@@ -422,7 +422,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads the header of a record from the PQDIF file.
         private async Task<RecordHeader> ReadRecordHeaderAsync()
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             const int HeaderSize = 64;
@@ -448,7 +448,7 @@ namespace Gemstone.PQDIF.Physical
         // Reads the body of a record from the PQDIF file.
         private async Task<RecordBody> ReadRecordBodyAsync(int byteSize)
         {
-            if (m_stream == null)
+            if (m_stream is null)
                 throw new InvalidOperationException("PQDIF file is not open.");
 
             if (byteSize == 0)

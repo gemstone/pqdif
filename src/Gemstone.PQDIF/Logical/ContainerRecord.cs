@@ -274,7 +274,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? compressionStyleElement = collectionElement.GetScalarByTag(CompressionStyleTag);
                 uint compressionStyleID = (uint)CompressionStyle.None;
 
-                if (compressionStyleElement != null)
+                if (compressionStyleElement is not null)
                     compressionStyleID = compressionStyleElement.GetUInt4();
 
                 return (CompressionStyle)compressionStyleID;
@@ -299,7 +299,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? compressionAlgorithmElement = collectionElement.GetScalarByTag(CompressionAlgorithmTag);
                 uint compressionAlgorithmID = (uint)CompressionAlgorithm.None;
 
-                if (compressionAlgorithmElement != null)
+                if (compressionAlgorithmElement is not null)
                     compressionAlgorithmID = compressionAlgorithmElement.GetUInt4();
 
                 return (CompressionAlgorithm)compressionAlgorithmID;

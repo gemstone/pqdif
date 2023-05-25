@@ -223,7 +223,7 @@ namespace Gemstone.PQDIF.Logical
                 ScalarElement? timeTriggeredElement = PhysicalRecord.Body.Collection
                     .GetScalarByTag(TimeTriggeredTag);
 
-                if (timeTriggeredElement == null)
+                if (timeTriggeredElement is null)
                     return DateTime.MinValue;
 
                 return timeTriggeredElement.GetTimestamp();
@@ -247,7 +247,7 @@ namespace Gemstone.PQDIF.Logical
                 CollectionElement collectionElement = PhysicalRecord.Body.Collection;
                 ScalarElement? DisturbanceIDElement = collectionElement.GetScalarByTag(DisturbanceCategoryTag);
 
-                if (DisturbanceIDElement == null)
+                if (DisturbanceIDElement is null)
                     return DisturbanceCategory.None;
 
                 return DisturbanceIDElement.GetGuid();
@@ -272,7 +272,7 @@ namespace Gemstone.PQDIF.Logical
                 VectorElement? channelTriggerIndexElement = PhysicalRecord.Body.Collection
                     .GetVectorByTag(ChannelTriggerIndexTag);
 
-                if (channelTriggerIndexElement == null)
+                if (channelTriggerIndexElement is null)
                     return new uint[0];
 
                 return Enumerable.Range(0, channelTriggerIndexElement.Size)
@@ -330,7 +330,7 @@ namespace Gemstone.PQDIF.Logical
 
             CollectionElement? channelInstancesElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelInstancesTag);
 
-            if (channelInstancesElement == null)
+            if (channelInstancesElement is null)
             {
                 channelInstancesElement = new CollectionElement { TagOfElement = ChannelInstancesTag };
                 PhysicalRecord.Body.Collection.AddElement(channelInstancesElement);
@@ -349,7 +349,7 @@ namespace Gemstone.PQDIF.Logical
         {
             CollectionElement? channelInstancesElement = PhysicalRecord.Body.Collection.GetCollectionByTag(ChannelInstancesTag);
 
-            if (channelInstancesElement == null)
+            if (channelInstancesElement is null)
                 return;
 
             List<CollectionElement> channelInstanceElements = channelInstancesElement.GetElementsByTag(OneChannelInstanceTag).Cast<CollectionElement>().ToList();

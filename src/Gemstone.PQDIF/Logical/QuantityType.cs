@@ -126,7 +126,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="id">The ID to be tested.</param>
         /// <returns>True if the given ID is a quantity type ID; false otherwise.</returns>
         public static bool IsQuantityTypeID(Guid id) =>
-            GetInfo(id) != null;
+            GetInfo(id) is not null;
 
         private static Dictionary<Guid, Identifier> QuantityTypeLookup
         {

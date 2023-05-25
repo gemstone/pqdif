@@ -149,13 +149,13 @@ namespace Gemstone.PQDIF.Logical
         /// </exception>
         public async Task WriteAsync(ContainerRecord containerRecord)
         {
-            if (containerRecord == null)
+            if (containerRecord is null)
                 throw new ArgumentNullException("containerRecord");
 
             if (m_disposed)
                 throw new ObjectDisposedException(GetType().Name);
 
-            if (m_containerRecord != null)
+            if (m_containerRecord is not null)
                 throw new InvalidOperationException("Only one container record can be written to a PQDIF file.");
 
             ValidateContainerRecord(containerRecord);
@@ -182,22 +182,22 @@ namespace Gemstone.PQDIF.Logical
         /// <exception cref="InvalidDataException">The PQDIF data is invalid.</exception>
         public async Task WriteAsync(ObservationRecord observationRecord, bool lastRecord = false)
         {
-            if (observationRecord == null)
+            if (observationRecord is null)
                 throw new ArgumentNullException("observationRecord");
 
             if (m_disposed)
                 throw new ObjectDisposedException(GetType().Name);
 
-            if (m_containerRecord == null)
+            if (m_containerRecord is null)
                 throw new InvalidOperationException("Container record must be the first record in a PQDIF file.");
 
-            if (observationRecord.DataSource == null)
+            if (observationRecord.DataSource is null)
                 throw new InvalidOperationException("An observation record must have a data source.");
 
             if (!ReferenceEquals(m_currentDataSource, observationRecord.DataSource))
                 ValidateDataSourceRecord(observationRecord.DataSource);
 
-            if (observationRecord.Settings != null && !ReferenceEquals(m_currentMonitorSettings, observationRecord.Settings))
+            if (observationRecord.Settings is not null && !ReferenceEquals(m_currentMonitorSettings, observationRecord.Settings))
                 ValidateMonitorSettingsRecord(observationRecord.Settings);
 
             ValidateObservationRecord(observationRecord);
@@ -209,7 +209,7 @@ namespace Gemstone.PQDIF.Logical
                 await m_physicalWriter.WriteRecordAsync(observationRecord.DataSource.PhysicalRecord);
             }
 
-            if (observationRecord.Settings != null && !ReferenceEquals(m_currentMonitorSettings, observationRecord.Settings))
+            if (observationRecord.Settings is not null && !ReferenceEquals(m_currentMonitorSettings, observationRecord.Settings))
             {
                 m_currentMonitorSettings = observationRecord.Settings;
                 await m_physicalWriter.WriteRecordAsync(observationRecord.Settings.PhysicalRecord);
