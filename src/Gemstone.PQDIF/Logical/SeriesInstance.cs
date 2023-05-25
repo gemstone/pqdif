@@ -155,7 +155,7 @@ namespace Gemstone.PQDIF.Logical
 
                 return seriesShareChannelIndexScalar is not null
                     ? seriesShareChannelIndexScalar.GetUInt4()
-                    : (uint?)null;
+                    : null;
             }
             set
             {
@@ -186,7 +186,7 @@ namespace Gemstone.PQDIF.Logical
 
                 return seriesShareSeriesIndexScalar is not null
                     ? seriesShareSeriesIndexScalar.GetUInt4()
-                    : (uint?)null;
+                    : null;
             }
             set
             {
@@ -248,9 +248,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="values">The values to be written to the PQDIF file.</param>
         public void SetValues(IList<object> values)
         {
-            VectorElement seriesValuesElement;
-
-            seriesValuesElement = new VectorElement
+            VectorElement seriesValuesElement = new()
             {
                 Size = values.Count,
                 TagOfElement = SeriesValuesTag,
@@ -272,9 +270,7 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="increment">The amount by which to increment each value in the series.</param>
         public void SetValues(object start, object count, object increment)
         {
-            VectorElement seriesValuesElement;
-
-            seriesValuesElement = new VectorElement
+            VectorElement seriesValuesElement = new()
             {
                 Size = 3,
                 TagOfElement = SeriesValuesTag,

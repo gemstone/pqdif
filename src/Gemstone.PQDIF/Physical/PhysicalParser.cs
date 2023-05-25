@@ -411,7 +411,7 @@ namespace Gemstone.PQDIF.Physical
                 int bytesRead = await m_stream.ReadAsync(data, offset, count);
 
                 if (bytesRead == 0)
-                    throw new EndOfStreamException($"Unexpected end of stream encountered");
+                    throw new EndOfStreamException("Unexpected end of stream encountered");
 
                 offset += bytesRead;
             }
