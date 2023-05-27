@@ -197,9 +197,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="vendorID">Globally unique identifier for the vendor.</param>
         /// <returns>The information about the vendor.</returns>
-        public static Identifier? GetInfo(Guid vendorID) => VendorLookup.TryGetValue(vendorID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid vendorID) => 
+            VendorLookup.TryGetValue(vendorID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Converts the given vendor ID to a string containing the name of the vendor.

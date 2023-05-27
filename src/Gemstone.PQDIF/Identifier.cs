@@ -92,10 +92,10 @@ namespace Gemstone.PQDIF
                 .Elements()
                 .Select(element =>
                 {
-                    string name = (string)element.Element("name");
-                    string standardName = (string)element.Element("standardName");
-                    string value = (string)element.Element("value");
-                    string description = (string)element.Element("description");
+                    string name = (string?)element.Element("name") ?? "undefined";
+                    string standardName = (string?)element.Element("standardName") ?? "undefined";
+                    string value = (string?)element.Element("value") ?? "";
+                    string description = (string?)element.Element("description") ?? "";
                     return new Identifier(name, standardName, value, description);
                 })
                 .ToList()

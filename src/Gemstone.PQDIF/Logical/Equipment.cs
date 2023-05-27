@@ -572,7 +572,7 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="equipmentID">The identifier for the equipment.</param>
         /// <returns>Information about the equipment.</returns>
-        public static Identifier? GetInfo(Guid equipmentID) => EquipmentLookup.TryGetValue(equipmentID, out Identifier identifier)
+        public static Identifier? GetInfo(Guid equipmentID) => EquipmentLookup.TryGetValue(equipmentID, out Identifier? identifier)
             ? identifier
             : null;
 

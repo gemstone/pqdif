@@ -641,9 +641,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="quantityCharacteristicID">The identifier for the quantity characteristic.</param>
         /// <returns>Inforamtion about the quantity characteristic.</returns>
-        public static Identifier? GetInfo(Guid quantityCharacteristicID) => QuantityCharacteristicLookup.TryGetValue(quantityCharacteristicID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid quantityCharacteristicID) => 
+            QuantityCharacteristicLookup.TryGetValue(quantityCharacteristicID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Returns the name of the given quantity characteristic.

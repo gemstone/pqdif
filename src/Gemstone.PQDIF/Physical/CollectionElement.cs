@@ -278,13 +278,14 @@ namespace Gemstone.PQDIF.Physical
         public override string ToString()
         {
             StringBuilder builder = new();
-            string[] lines;
 
             builder.AppendFormat("Collection -- Size: {0}, Tag: {1}", Size, TagOfElement);
 
             foreach (Element element in m_elements)
             {
-                lines = element.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                #pragma warning disable CS8602 // Dereference of a possibly null reference.
+                string[] lines = element?.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None) ?? Array.Empty<string>();
+                #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                 foreach (string line in lines)
                 {

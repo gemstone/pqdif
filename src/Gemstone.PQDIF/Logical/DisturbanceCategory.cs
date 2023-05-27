@@ -58,10 +58,9 @@ namespace Gemstone.PQDIF.Logical
         public static Guid ImpulsiveTransient_micro { get; } = new("dd56ef63-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
-        /// The ID for a IEEE 1159 Impulsive Transient with milisecond duration.
+        /// The ID for a IEEE 1159 Impulsive Transient with millisecond duration.
         /// </summary>
-
-        public static Guid ImpulsiveTransient_mili { get; } = new("dd56ef64-7edd-11d2-b30a-00609789d193");
+        public static Guid ImpulsiveTransient_milli { get; } = new("dd56ef64-7edd-11d2-b30a-00609789d193");
 
         /// <summary>
         /// The ID for a IEEE 1159 Oscillatory Transient.
@@ -176,7 +175,7 @@ namespace Gemstone.PQDIF.Logical
         /// <summary>
         /// The ID for a IEEE 1159 Voltage Fluctuation.
         /// </summary>
-        public static Guid VoltageFuctuation { get; } = new("67f6af93-f753-11cf-9d89-0080c72e70a3");
+        public static Guid VoltageFluctuation { get; } = new("67f6af93-f753-11cf-9d89-0080c72e70a3");
 
         /// <summary>
         /// The ID for a IEEE 1159 Waveform Distortion.
@@ -213,9 +212,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="disturbanceCategoryID">Globally unique identifier for the Disturbance Category.</param>
         /// <returns>The information about the vendor.</returns>
-        public static Identifier? GetInfo(Guid disturbanceCategoryID) => DisturbanceLookup.TryGetValue(disturbanceCategoryID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid disturbanceCategoryID) => 
+            DisturbanceLookup.TryGetValue(disturbanceCategoryID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Converts the given Disturbance ID to a string containing the name of the Disturbance.

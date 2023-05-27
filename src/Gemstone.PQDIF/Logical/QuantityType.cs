@@ -108,9 +108,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="quantityTypeID">The quantity type ID.</param>
         /// <returns>Information about the quantity type.</returns>
-        public static Identifier? GetInfo(Guid quantityTypeID) => QuantityTypeLookup.TryGetValue(quantityTypeID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid quantityTypeID) => 
+            QuantityTypeLookup.TryGetValue(quantityTypeID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Gets the name of the quantity type with the given ID.

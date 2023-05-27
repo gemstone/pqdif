@@ -437,8 +437,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.</returns>
-        public bool Equals(SeriesDefinition other) =>
-            ReferenceEquals(PhysicalStructure, other.PhysicalStructure);
+        public bool Equals(SeriesDefinition? other) =>
+            ReferenceEquals(PhysicalStructure, other?.PhysicalStructure);
 
         /// <summary>
         /// Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>.
@@ -446,9 +446,8 @@ namespace Gemstone.PQDIF.Logical
         /// <param name="obj">The object to compare with the current object. </param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
         /// <filterpriority>2</filterpriority>
-        public override bool Equals(object? obj) => obj is SeriesDefinition other
-            ? Equals(other)
-            : false;
+        public override bool Equals(object? obj) => 
+            obj is SeriesDefinition other && Equals(other);
 
         /// <summary>
         /// Serves as a hash function for a particular type. 

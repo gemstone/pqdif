@@ -219,9 +219,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="seriesValueTypeID">The identifier for the series value type.</param>
         /// <returns>Information about the series value type.</returns>
-        public static Identifier? GetInfo(Guid seriesValueTypeID) => SeriesValueTypeLookup.TryGetValue(seriesValueTypeID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid seriesValueTypeID) => 
+            SeriesValueTypeLookup.TryGetValue(seriesValueTypeID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Returns the name of the given series value type.

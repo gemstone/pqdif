@@ -53,14 +53,14 @@ namespace Gemstone.PQDIF
         // defining them in the TagDefinitions.xml file.
         private Tag(XDocument doc, XElement element)
         {
-            ID = Guid.Parse((string)element.Element("id"));
-            Name = (string)element.Element("name");
-            StandardName = (string)element.Element("standardName");
-            Description = (string)element.Element("description");
+            ID = Guid.Parse((string?)element.Element("id") ?? Guid.Empty.ToString());
+            Name = (string?)element.Element("name") ?? "undefined";
+            StandardName = (string?)element.Element("standardName") ?? "undefined";
+            Description = (string?)element.Element("description") ?? "";
             ElementType = GetElementType(element);
             PhysicalType = GetPhysicalType(element);
-            Required = Convert.ToBoolean((string)element.Element("required") ?? "False");
-            FormatString = (string)element.Element("formatString");
+            Required = Convert.ToBoolean((string?)element.Element("required") ?? "False");
+            FormatString = (string?)element.Element("formatString") ?? "";
             ValidIdentifiers = Identifier.GenerateIdentifiers(doc, this);
         }
 
@@ -156,7 +156,7 @@ namespace Gemstone.PQDIF
                 catch
                 {
                     Assembly pqdifAssembly = Assembly.GetExecutingAssembly();
-                    using Stream resourceStream = pqdifAssembly.GetManifestResourceStream(TagDefinitionsFileName);
+                    using Stream resourceStream = pqdifAssembly.GetManifestResourceStream(TagDefinitionsFileName)!;
                     return XDocument.Load(resourceStream);
                 }
             }
@@ -178,7 +178,7 @@ namespace Gemstone.PQDIF
             if (TagLookup is null)
                 throw new InvalidDataException($"Unable to refresh tags from {TagDefinitionsFileName}.");
 
-            if (!TagLookup.TryGetValue(id, out Tag tag))
+            if (!TagLookup.TryGetValue(id, out Tag? tag))
                 return null;
 
             return tag;
@@ -207,7 +207,7 @@ namespace Gemstone.PQDIF
         // Failing that, attempts to parse it as an integer instead.
         private static ElementType GetElementType(XElement element)
         {
-            string elementTypeName = (string)element.Element("elementType");
+            string? elementTypeName = (string?)element.Element("elementType");
 
             if (Enum.TryParse(elementTypeName, out ElementType elementType))
                 return elementType;
@@ -222,7 +222,7 @@ namespace Gemstone.PQDIF
         // Failing that, attempts to parse it as an integer instead.
         private static PhysicalType GetPhysicalType(XElement element)
         {
-            string physicalTypeName = (string)element.Element("physicalType");
+            string? physicalTypeName = (string?)element.Element("physicalType");
 
             if (Enum.TryParse(physicalTypeName, out PhysicalType physicalType))
                 return physicalType;

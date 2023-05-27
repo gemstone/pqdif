@@ -67,9 +67,8 @@ namespace Gemstone.PQDIF.Logical
         /// </summary>
         /// <param name="dataSourceTypeID">Globally unique identifier for the data source type.</param>
         /// <returns>The information about the data source type.</returns>
-        public static Identifier? GetInfo(Guid dataSourceTypeID) => DataSourceTypeLookup.TryGetValue(dataSourceTypeID, out Identifier identifier)
-            ? identifier
-            : null;
+        public static Identifier? GetInfo(Guid dataSourceTypeID) => 
+            DataSourceTypeLookup.TryGetValue(dataSourceTypeID, out Identifier? identifier) ? identifier : null;
 
         /// <summary>
         /// Converts the given data source type ID to a string containing the name of the data source type.
