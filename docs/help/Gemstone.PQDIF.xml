@@ -819,9 +819,9 @@
             The ID for a IEEE 1159 Impulsive Transient with microsecond duration.
             </summary>
     </member>
-    <member name="P:Gemstone.PQDIF.Logical.DisturbanceCategory.ImpulsiveTransient_mili">
+    <member name="P:Gemstone.PQDIF.Logical.DisturbanceCategory.ImpulsiveTransient_milli">
       <summary>
-            The ID for a IEEE 1159 Impulsive Transient with milisecond duration.
+            The ID for a IEEE 1159 Impulsive Transient with millisecond duration.
             </summary>
     </member>
     <member name="P:Gemstone.PQDIF.Logical.DisturbanceCategory.ImpulsiveTransient_nano">
@@ -951,7 +951,7 @@
             The ID for a IEEE 1159 Transient.
             </summary>
     </member>
-    <member name="P:Gemstone.PQDIF.Logical.DisturbanceCategory.VoltageFuctuation">
+    <member name="P:Gemstone.PQDIF.Logical.DisturbanceCategory.VoltageFluctuation">
       <summary>
             The ID for a IEEE 1159 Voltage Fluctuation.
             </summary>
@@ -1575,7 +1575,7 @@
              The following example demonstrates how to read all observation records from a PQDIF file
              using the logical parser.
              </para>
-        <code language="cs">
+        <code>
              ContainerRecord containerRecord;
              List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
              string filePath = args[0];
@@ -4310,7 +4310,7 @@
              bare minimum level of effort to read an uncompressed PQDIF file and display its contents
              in a console application.
              </para>
-        <code language="cs">
+        <code>
              string filePath = args[0];
              await using PhysicalParser parser = new PhysicalParser(filePath);
              await parser.OpenAsync();
