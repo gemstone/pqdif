@@ -29,6 +29,8 @@
       <Argument Key="includeEnumValues" Value="true" />
       <Argument Key="baseSourceCodeUrl" Value="https://github.com/gemstone/pqdif/blob/master/src/" />
       <Argument Key="requestExampleUrl" Value="Create a new issue: https://github.com/gemstone/pqdif/issues/new " />
+      <Argument Key="LogoUrl" Value="https://gemstone.github.io/pdqif/" />
+      <Argument Key="CollapsibleSections" Value="True" />
     </TransformComponentArguments>
     <HelpFileFormat>Website</HelpFileFormat>
     <SyntaxFilters>C#, Visual Basic, Managed C++, JavaScript</SyntaxFilters>
