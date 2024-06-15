@@ -1575,7 +1575,7 @@
              The following example demonstrates how to read all observation records from a PQDIF file
              using the logical parser.
              </para>
-        <code language="cs">
+        <code>
              ContainerRecord containerRecord;
              List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
              string filePath = args[0];
@@ -4310,18 +4310,18 @@
              bare minimum level of effort to read an uncompressed PQDIF file and display its contents
              in a console application.
              </para>
-        <code>
-             string filePath = args[0];
-             await using PhysicalParser parser = new PhysicalParser(filePath);
-             await parser.OpenAsync();
-            
-             while (parser.HasNextRecord())
-             {
-                 Record record = await parser.GetNextRecordAsync();
-                 Console.WriteLine(record);
-                 Console.WriteLine();
-             }
-             </code>
+        <codeSnippetGroup>
+          <code language="cs" codeLanguage="CSharp" style="cs">string filePath = args[0];
+await using PhysicalParser parser = new PhysicalParser(filePath);
+await parser.OpenAsync();
+
+while (parser.HasNextRecord())
+{
+    Record record = await parser.GetNextRecordAsync();
+    Console.WriteLine(record);
+    Console.WriteLine();
+}</code>
+        </codeSnippetGroup>
       </remarks>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor">
