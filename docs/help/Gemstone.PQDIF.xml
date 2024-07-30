@@ -4310,18 +4310,18 @@
              bare minimum level of effort to read an uncompressed PQDIF file and display its contents
              in a console application.
              </para>
-        <codeSnippetGroup>
-          <code language="cs" codeLanguage="CSharp" style="cs">string filePath = args[0];
-await using PhysicalParser parser = new PhysicalParser(filePath);
-await parser.OpenAsync();
-
-while (parser.HasNextRecord())
-{
-    Record record = await parser.GetNextRecordAsync();
-    Console.WriteLine(record);
-    Console.WriteLine();
-}</code>
-        </codeSnippetGroup>
+        <code>
+             string filePath = args[0];
+             await using PhysicalParser parser = new PhysicalParser(filePath);
+             await parser.OpenAsync();
+            
+             while (parser.HasNextRecord())
+             {
+                 Record record = await parser.GetNextRecordAsync();
+                 Console.WriteLine(record);
+                 Console.WriteLine();
+             }
+             </code>
       </remarks>
     </member>
     <member name="M:Gemstone.PQDIF.Physical.PhysicalParser.#ctor">
