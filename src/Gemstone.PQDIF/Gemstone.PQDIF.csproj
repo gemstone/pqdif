@@ -72,7 +72,7 @@
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 
-  <PropertyGroup Condition="'$(SIGNTOOL)' != ''">
+  <PropertyGroup Condition="'$(SIGNTOOL)' != '' AND '$(TargetFramework)' != 'netstandard2.1'">
     <PostBuildEvent>$(SIGNTOOL) $(TargetPath)</PostBuildEvent>
   </PropertyGroup>
 
