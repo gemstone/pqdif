@@ -60,7 +60,7 @@ namespace Gemstone.PQDIF
             ElementType = GetElementType(element);
             PhysicalType = GetPhysicalType(element);
             Required = Convert.ToBoolean((string?)element.Element("required") ?? "False");
-            FormatString = (string?)element.Element("formatString") ?? "";
+            FormatString = (string?)element.Element("formatString");
             ValidIdentifiers = Identifier.GenerateIdentifiers(doc, this);
         }
 
@@ -110,7 +110,7 @@ namespace Gemstone.PQDIF
         /// Format string specified for some tags as a
         /// hint for how the value should be displayed.
         /// </summary>
-        public string FormatString { get; }
+        public string? FormatString { get; }
 
         /// <summary>
         /// Gets the collection of valid identifiers for this tag.
