@@ -1575,7 +1575,7 @@
              The following example demonstrates how to read all observation records from a PQDIF file
              using the logical parser.
              </para>
-        <code>
+        <code language="cs">
              ContainerRecord containerRecord;
              List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
              string filePath = args[0];
