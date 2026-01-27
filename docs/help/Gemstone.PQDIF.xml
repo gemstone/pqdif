@@ -1575,18 +1575,18 @@
              The following example demonstrates how to read all observation records from a PQDIF file
              using the logical parser.
              </para>
-        <code language="cs">
-             ContainerRecord containerRecord;
-             List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
-             string filePath = args[0];
-            
-             await using LogicalParser parser = new LogicalParser(filePath);
-             await parser.OpenAsync();
-             containerRecord = parser.ContainerRecord;
-            
-             while (await parser.HasNextObservationRecordAsync())
-                 observationRecords.Add(await parser.NextObservationRecordAsync());
-             </code>
+        <codeSnippetGroup>
+          <code language="cs" codeLanguage="CSharp" style="cs">ContainerRecord containerRecord;
+List&lt;ObservationRecord&gt; observationRecords = new List&lt;ObservationRecord&gt;();
+string filePath = args[0];
+
+await using LogicalParser parser = new LogicalParser(filePath);
+await parser.OpenAsync();
+containerRecord = parser.ContainerRecord;
+
+while (await parser.HasNextObservationRecordAsync())
+    observationRecords.Add(await parser.NextObservationRecordAsync());</code>
+        </codeSnippetGroup>
       </remarks>
     </member>
     <member name="M:Gemstone.PQDIF.Logical.LogicalParser.#ctor">
