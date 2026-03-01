@@ -4560,6 +4560,11 @@
             128-bit globally unique identifier
             </summary>
     </member>
+    <member name="M:Gemstone.PQDIF.Physical.PhysicalTypeExtensions.GetByteSize(Gemstone.PQDIF.Physical.PhysicalType)">
+      <summary>
+            Gets the size of the physical type, in bytes.
+            </summary>
+    </member>
     <member name="T:Gemstone.PQDIF.Physical.PhysicalTypeExtensions">
       <summary>
             Defines extension methods for <see cref="T:Gemstone.PQDIF.Physical.PhysicalType" />.
